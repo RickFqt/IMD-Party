@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyhxq0yjqj21f"
-path="res://.godot/imported/tile_0320.png-e68d3b6d852a3e6206d8dbac318c153d.ctex"
+uid="uid://bsbx64noi6xx1"
+path="res://.godot/imported/tile_0350.png-6edc6a8842bb776919abd6bbf2d02f7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Kenney-Urban-Pack/Tiles/tile_0320.png"
-dest_files=["res://.godot/imported/tile_0320.png-e68d3b6d852a3e6206d8dbac318c153d.ctex"]
+source_file="res://actors/assets/tile_0350.png"
+dest_files=["res://.godot/imported/tile_0350.png-6edc6a8842bb776919abd6bbf2d02f7e.ctex"]
 
 [params]
 
