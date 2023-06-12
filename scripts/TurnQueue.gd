@@ -22,6 +22,11 @@ func play_turn():
 		active_character = get_child(new_index)
 		i = i - 1
 		# if new_index == 0 --> mini-game!
+		# ir pro minigame
+		# voltar pro mini game
 		if i != 0:
 			print("mudou o player!")
 			await play_turn()
+
+# TODO:
+# Mudar pros minigames!

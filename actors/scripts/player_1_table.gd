@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var animation := $anim as AnimatedSprite2D
 #@onready var remote_transform := $remote as RemoteTransform2D
 @onready var camera := $camera as Camera2D
+var roll: bool = false
 
 var direction = Vector2.ZERO
 
@@ -15,7 +16,10 @@ func play_turn():
 	camera.make_current()
 	
 	#roll dice
+	
 	print("Rode o dado!!!")
+	#while(!roll):
+	#	roll = false
 	
 	var dice = (randi() % 6 + 1)
 	print("numero sorteado: ", dice)
@@ -26,6 +30,11 @@ func play_turn():
 	# If casa especial, ????
 	
 func _physics_process(delta):
+	#if(Input.is_action_just_pressed("roll_dice")):
+	#	roll = true
+	#else:
+	#	roll = false
+	
 	velocity = direction.normalized() * move_speed
 	move_and_slide()
 
@@ -59,3 +68,8 @@ func move(number):
 #	if(batata):
 #		var camera_path = camera.get_path()
 #		remote_transform.remote_path = camera_path
+
+# TODO:
+# Player Rodar o dado
+# Mudar a direção (casas específicas)
+# Casas especiais
