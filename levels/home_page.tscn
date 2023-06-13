@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://drgjpk78y05t8"]
 
-[ext_resource type="Script" path="res://levels/home_page.gd" id="1_cobcs"]
 [ext_resource type="Texture2D" uid="uid://c3vdt3eny2hmh" path="res://assets/Kenney-Urban-Pack/Tilemap/tilemap.png" id="1_ke2y2"]
+[ext_resource type="Script" path="res://scripts/home_page.gd" id="1_y4hvj"]
 [ext_resource type="PackedScene" uid="uid://brk5oblqbj4m4" path="res://levels/HUD.tscn" id="2_o2ekh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2cot8"]
@@ -170,7 +170,7 @@ physics_layer_0/collision_layer = 1
 sources/18 = SubResource("TileSetAtlasSource_2cot8")
 
 [node name="home_page" type="Node2D"]
-script = ExtResource("1_cobcs")
+script = ExtResource("1_y4hvj")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_wsxol")
