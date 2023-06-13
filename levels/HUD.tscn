@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://brk5oblqbj4m4"]
+
+[ext_resource type="Script" path="res://levels/HUD.gd" id="1_a55s4"]
+[ext_resource type="FontFile" uid="uid://y3w3pfsp0bab" path="res://assets/at01.ttf" id="2_jcx56"]
+
+[node name="HUD" type="CanvasLayer"]
+follow_viewport_enabled = true
+script = ExtResource("1_a55s4")
+
+[node name="IMD" type="Label" parent="."]
+offset_left = 117.0
+offset_top = 15.0
+offset_right = 198.0
+offset_bottom = 75.0
+theme_override_fonts/font = ExtResource("2_jcx56")
+theme_override_font_sizes/font_size = 72
+text = "IMD"
+
+[node name="Party" type="Label" parent="."]
+offset_left = 174.0
+offset_top = 60.0
+offset_right = 215.0
+offset_bottom = 86.0
+theme_override_fonts/font = ExtResource("2_jcx56")
+theme_override_font_sizes/font_size = 24
+text = "Party"
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 63.0
+offset_top = 133.0
+offset_right = 101.0
+offset_bottom = 154.0
+theme_override_fonts/font = ExtResource("2_jcx56")
+theme_override_font_sizes/font_size = 0
+text = "START
+"
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 204.0
+offset_top = 133.0
+offset_right = 242.0
+offset_bottom = 154.0
+theme_override_fonts/font = ExtResource("2_jcx56")
+theme_override_font_sizes/font_size = 0
+text = "EXIT
+"
+
+[node name="CreditsButton" type="Button" parent="."]
+offset_left = 125.0
+offset_top = 133.0
+offset_right = 179.0
+offset_bottom = 154.0
+theme_override_fonts/font = ExtResource("2_jcx56")
+text = "CREDITS
+"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_CreditsButton_pressed"]
