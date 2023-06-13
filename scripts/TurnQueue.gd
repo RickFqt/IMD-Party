@@ -21,12 +21,19 @@ func play_turn():
 		var new_index : int = (active_character.get_index() + 1) % get_child_count()
 		active_character = get_child(new_index)
 		i = i - 1
-		# if new_index == 0 --> mini-game!
-		# ir pro minigame
-		# voltar pro mini game
+		change_to_minigame(new_index)
 		if i != 0:
 			print("mudou o player!")
 			await play_turn()
+		
+		
+func change_to_minigame(new_index):
+	if new_index == 0:
+		get_tree().change_scene_to_file("res://levels/minigame.tscn")
+			
+		# ir pro minigame
+		# voltar pro mini game
+
 
 # TODO:
 # Mudar pros minigames!

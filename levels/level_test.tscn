@@ -498,6 +498,7 @@ texture = ExtResource("2_0phsk")
 sources/2 = SubResource("TileSetAtlasSource_y5mud")
 
 [node name="LevelTest" type="Node2D"]
+position = Vector2(-258, -84)
 script = ExtResource("1_bct04")
 
 [node name="TileMap" type="TileMap" parent="."]
