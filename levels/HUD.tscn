@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://brk5oblqbj4m4"]
+[gd_scene load_steps=4 format=3 uid="uid://brk5oblqbj4m4"]
 
 [ext_resource type="Script" path="res://levels/HUD.gd" id="1_a55s4"]
 [ext_resource type="FontFile" uid="uid://y3w3pfsp0bab" path="res://assets/at01.ttf" id="2_jcx56"]
+[ext_resource type="Texture2D" uid="uid://dihun7xhqgrj7" path="res://assets/button.png" id="3_gh7du"]
 
 [node name="HUD" type="CanvasLayer"]
 follow_viewport_enabled = true
@@ -12,6 +13,8 @@ offset_left = 117.0
 offset_top = 15.0
 offset_right = 198.0
 offset_bottom = 75.0
+theme_override_colors/font_color = Color(0.00784314, 0.207843, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0.772549, 1)
 theme_override_fonts/font = ExtResource("2_jcx56")
 theme_override_font_sizes/font_size = 72
 text = "IMD"
@@ -21,40 +24,78 @@ offset_left = 174.0
 offset_top = 60.0
 offset_right = 215.0
 offset_bottom = 86.0
+theme_override_colors/font_color = Color(0.00784314, 0.207843, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0.772549, 1)
 theme_override_fonts/font = ExtResource("2_jcx56")
 theme_override_font_sizes/font_size = 24
 text = "Party"
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(73, 140)
+scale = Vector2(3, 2.5)
+texture = ExtResource("3_gh7du")
+
 [node name="StartButton" type="Button" parent="."]
-offset_left = 63.0
-offset_top = 133.0
-offset_right = 101.0
-offset_bottom = 154.0
+offset_left = 54.0
+offset_top = 123.0
+offset_right = 92.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_jcx56")
 theme_override_font_sizes/font_size = 0
 text = "START
 "
+flat = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(154, 140)
+scale = Vector2(3, 2.5)
+texture = ExtResource("3_gh7du")
+
+[node name="CreditsButton" type="Button" parent="."]
+offset_left = 128.0
+offset_top = 123.0
+offset_right = 182.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jcx56")
+text = "CREDITS
+"
+flat = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(238, 140)
+scale = Vector2(3, 2.5)
+texture = ExtResource("3_gh7du")
 
 [node name="ExitButton" type="Button" parent="."]
-offset_left = 204.0
-offset_top = 133.0
-offset_right = 242.0
-offset_bottom = 154.0
+offset_left = 219.0
+offset_top = 123.0
+offset_right = 257.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("2_jcx56")
 theme_override_font_sizes/font_size = 0
 text = "EXIT
 "
-
-[node name="CreditsButton" type="Button" parent="."]
-offset_left = 125.0
-offset_top = 133.0
-offset_right = 179.0
-offset_bottom = 154.0
-theme_override_fonts/font = ExtResource("2_jcx56")
-text = "CREDITS
-"
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="CreditsButton" to="." method="_on_CreditsButton_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
