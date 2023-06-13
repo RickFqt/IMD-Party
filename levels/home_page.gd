@@ -1,7 +1,7 @@
 extends Node2D
 
 func new_game():
-	get_tree().change_scene_to_file("res://levels/level_test.tscn")
+	get_tree().change_scene_to_file("res://levels/world_1.tscn")
 
 func exit_game():
 	get_tree().change_scene_to_file("res://levels/level_test.tscn")
