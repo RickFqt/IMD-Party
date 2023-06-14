@@ -8,6 +8,9 @@ extends CharacterBody2D
 @onready var camera := $camera as Camera2D
 var list_positions = [Vector2(0,100), Vector2(0,200), Vector2(100,200), Vector2(100,100), Vector2(100,0), Vector2(0,0)]
 var curr_position = 0
+var moedas_obrigatorias = 0
+var moedas_optativas = 0
+var n_diplomas = 0
 
 var able_to_move = false
 
@@ -28,11 +31,20 @@ func play_turn():
 	
 	var dice = (randi() % 6 + 1)
 	print("numero sorteado: ", dice)
-	await move(dice) # TODO: mudar para andar em casas específicas
+	await move(dice)
 		
 	animation.play("idle")
 	
 	# If casa especial, ????
+	# If casa de diploma
+	# 	If(comprar_diploma)
+	#		moedas_obrigatorias -= blau, moedas_optativas -= blei
+	#		n_diplomas += 1
+	# 		Colocar a casa do diploma em outro lugar do mapa
+	# Elif sala de aula
+	#	if(professor_na_sala)
+	##		mini_game_bonus()
+	
 	
 func _physics_process(delta):
 	
