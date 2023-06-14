@@ -509,10 +509,10 @@ layer_0/tile_data = PackedInt32Array(65537, 524290, 3, 65538, 589826, 3, 65539, 
 [node name="TurnQueue" parent="." instance=ExtResource("2_ch4hk")]
 
 [node name="player1_table" parent="TurnQueue" instance=ExtResource("3_yndm5")]
-position = Vector2(108, 68)
+position = Vector2(2, 4)
 
 [node name="player1_table2" parent="TurnQueue" instance=ExtResource("3_yndm5")]
-position = Vector2(166, 87)
+position = Vector2(50, 4)
 
 [node name="camera" type="Camera2D" parent="."]
 position = Vector2(160, 90)

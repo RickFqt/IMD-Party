@@ -31,7 +31,7 @@ func play_turn():
 		
 func change_to_minigame():
 	# ir pro minigame
-	get_tree().change_scene_to_file("res://levels/minigame.tscn")
+	get_tree().change_scene_to_file("res://levels/minigame_test.tscn")
 	# voltar do mini game
 
 
