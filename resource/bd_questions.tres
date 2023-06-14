@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c746ihqk1gfgx"]
+
+[ext_resource type="Resource" uid="uid://dvxmc3g3ddnvr" path="res://resource/questions/teste.tres" id="1_jqxyu"]
+
+[sub_resource type="GDScript" id="GDScript_ows6y"]
+script/source = "extends Resource
+
+class_name Perguntas
+
+@export var perguntas : Array[Resource]
+"
+
+[resource]
+resource_name = "Bd_Questions"
+script = SubResource("GDScript_ows6y")
+perguntas = Array[Resource]([ExtResource("1_jqxyu")])
