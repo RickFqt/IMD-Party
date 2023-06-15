@@ -1,68 +1,100 @@
 extends CharacterBody2D
 
 @export_category("Variables")
-@export var move_speed: float = 64.0
+@export var move_speed: float = 120.0
 
 @onready var animation := $anim as AnimatedSprite2D
 #@onready var remote_transform := $remote as RemoteTransform2D
 @onready var camera := $camera as Camera2D
-var roll: bool = false
+var list_positions = [Vector2(0,100), Vector2(0,200), Vector2(100,200), Vector2(100,100), Vector2(100,0), Vector2(0,0)]
+var curr_position = 0
+var moedas_obrigatorias = 0
+var moedas_optativas = 0
+var n_diplomas = 0
 
-var direction = Vector2.ZERO
+var able_to_move = false
+
+signal roll
+signal reached_location
+
+var target_location
 
 func play_turn():
 	
-	#remote_transform.align()
 	camera.make_current()
 	
-	#roll dice
 	
 	print("Rode o dado!!!")
-	#while(!roll):
-	#	roll = false
+
+	# Espere o jogador rolar o dado
+	await roll
 	
 	var dice = (randi() % 6 + 1)
 	print("numero sorteado: ", dice)
-	await move(dice) # TODO: mudar para andar em casas específicas
+	await move(dice)
 		
 	animation.play("idle")
 	
 	# If casa especial, ????
+	# If casa de diploma
+	# 	If(comprar_diploma)
+	#		moedas_obrigatorias -= blau, moedas_optativas -= blei
+	#		n_diplomas += 1
+	# 		Colocar a casa do diploma em outro lugar do mapa
+	# Elif sala de aula
+	#	if(professor_na_sala)
+	##		mini_game_bonus()
+	
 	
 func _physics_process(delta):
-	#if(Input.is_action_just_pressed("roll_dice")):
-	#	roll = true
-	#else:
-	#	roll = false
 	
-	velocity = direction.normalized() * move_speed
-	move_and_slide()
+	if(able_to_move):
+		velocity = position.direction_to(target_location) * move_speed
+		
+		if position.distance_to(target_location) > 10:
+			move_and_slide()
+		else:
+			# Emite se o jogador chegou no local desejado
+			reached_location.emit()
+			able_to_move = false
+	
+	# Emite se o jogador rolou o dado
+	if(Input.is_action_just_pressed("roll_dice")):
+		roll.emit()
 
 func move(number):
-	
-	direction = Vector2.ZERO
 	
 	if number <= 0:
 		return
 	
-	# TODO: Mudar isso aqui
-	if number % 4 == 0:
-		direction.x = 1
-		animation.play("move_right")
-	elif number % 4 == 1:
-		direction.y = 1
-		animation.play("move_down")
-	elif number % 4 == 2:
-		direction.x = -1
-		animation.play("move_left")
-	elif number % 4 == 3:
-		direction.y = -1
-		animation.play("move_up")
+	# Set target location
+	target_location = list_positions[(curr_position + 1) % list_positions.size()]
+
+	# Espere o jogador chegar na casa desejada
+	await move_to_location(target_location)
 	
+	# Atualiza a posição atual do jogador
+	target_location = position
+	curr_position += 1
 	
-	await get_tree().create_timer(1.3).timeout
+	# Espera um tico
+	await get_tree().create_timer(0.3).timeout
 
 	await move(number - 1)
+	
+func move_to_location(location):
+	able_to_move = true
+	if(position.x > location.x + 10):
+		animation.play("move_left")
+	elif(position.x + 10 < location.x):
+		animation.play("move_right")
+	elif(position.y > location.y + 10):
+		animation.play("move_up")
+	else:
+		animation.play("move_down")
+	# Espere o jogador chegar na casa desejada
+	await reached_location
+
 
 #func follow_camera(camera, batata):
 #	if(batata):

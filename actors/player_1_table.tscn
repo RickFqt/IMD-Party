@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cvu5su62sv23g"]
+[gd_scene load_steps=14 format=3 uid="uid://cvu5su62sv23g"]
 
 [ext_resource type="Texture2D" uid="uid://dhabyulrp2513" path="res://actors/assets/tile_0024.png" id="1_bxx1a"]
 [ext_resource type="Script" path="res://actors/scripts/player_1_table.gd" id="1_hsja7"]
@@ -80,11 +80,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_le5pu"]
-size = Vector2(8, 2)
-
 [node name="player1_table" type="CharacterBody2D"]
-position = Vector2(139, 85)
 script = ExtResource("1_hsja7")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
@@ -93,8 +89,6 @@ sprite_frames = SubResource("SpriteFrames_wr0y8")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_le5pu")
-
 [node name="camera" type="Camera2D" parent="."]
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
