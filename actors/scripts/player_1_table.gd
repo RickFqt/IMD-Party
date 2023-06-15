@@ -95,7 +95,6 @@ func move_to_location(location):
 	# Espere o jogador chegar na casa desejada
 	await reached_location
 
-
 #func follow_camera(camera, batata):
 #	if(batata):
 #		var camera_path = camera.get_path()
