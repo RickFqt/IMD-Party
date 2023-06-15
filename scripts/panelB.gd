@@ -1,9 +1,10 @@
 extends Panel
 
 signal countdown_finished
+signal endTime
 
 var idx : int
-var score : int
+var scoreP2 : int
 var answer : int
 var perguntas = []
 var buttonsDisabled : bool
@@ -20,7 +21,9 @@ func _ready():
 	var perguntasResource = load("res://resource/bd_questions.tres")
 	
 	idx = 0
-	score = 0
+	scoreP2 = 0
+	
+	$ScoreLabel_P2.text = "SCORE: " + str(scoreP2)
 	
 	for p in perguntasResource.perguntas:
 		perguntas.append(p)
@@ -73,7 +76,8 @@ func _onAnswerSelected():
 	if answer == respostaCorretaAtual:
 		# Resposta correta
 		print("Resposta correta!")
-		score = score + 1
+		scoreP2 = scoreP2 + 1
+		$ScoreLabel_P2.text = "SCORE: " + str(scoreP2)
 		if answer == 1:
 			$ButtonA_P2.add_theme_color_override("font_color", Color( 0, 1, 0, 1))
 		elif answer == 2:
@@ -111,4 +115,7 @@ func next_Question():
 		show_pergunta(idx)
 	else: 
 		print("Acabaram as perguntas")
-		print("Pontuação final: ", score)
+		print("Pontuação final: ", scoreP2)
+
+func end_Game():
+	print("Fim de jogo!")
