@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Pergunta" load_steps=2 format=3 uid="uid://dvxmc3g3ddnvr"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dvxmc3g3ddnvr"]
 
 [ext_resource type="Script" path="res://scripts/question.gd" id="1_m7p6a"]
 
@@ -9,4 +9,4 @@ opcaoA = "A"
 opcaoB = "B"
 opcaoC = "C"
 opcaoD = "D"
-respostaCorreta = "A"
+respostaCorreta = 2

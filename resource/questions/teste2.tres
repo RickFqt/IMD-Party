@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bg47hyl0gsr71"]
+
+[ext_resource type="Script" path="res://scripts/question.gd" id="1_tw2e5"]
+
+[resource]
+script = ExtResource("1_tw2e5")
+pergunta = "Teste2"
+opcaoA = "A2"
+opcaoB = "B2"
+opcaoC = "C2"
+opcaoD = "D2"
+respostaCorreta = 3
