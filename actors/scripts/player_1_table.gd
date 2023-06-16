@@ -26,10 +26,13 @@ func play_turn():
 	camera.make_current()
 	
 	
+	# TODO: Fazer o dado aparecer
 	print("Rode o dado!!!")
 
 	# Espere o jogador rolar o dado
 	await roll
+	
+	# TODO: Fazer o dado mostrar o numero sorteado
 	
 	var dice = (randi() % 6 + 1)
 	print("numero sorteado: ", dice)
@@ -37,15 +40,9 @@ func play_turn():
 		
 	animation.play(str(player_number) +"_idle")
 	
-	# If casa especial, ????
-	# If casa de diploma
-	# 	If(comprar_diploma)
-	#		moedas_obrigatorias -= blau, moedas_optativas -= blei
-	#		n_diplomas += 1
-	# 		Colocar a casa do diploma em outro lugar do mapa
-	# Elif sala de aula
-	#	if(professor_na_sala)
-	##		mini_game_bonus()
+	# TODO: Verifica se está em uma casa especial (de sala)
+	# if control.locations[curr_position].special:
+		# print("olhaii sala de aula aeeeee")
 	
 	
 func _physics_process(delta):
@@ -71,12 +68,12 @@ func move(number):
 	
 	# Set target location
 	
-	if(curr_position != -1 and (curr_position + 1) % control.locations.size() == 0):
-		target_location = control.locations[5]
+	if(curr_position != -1 and ((curr_position + 1) % control.locations.size() == 0)):
+		target_location = control.locations[5].loc
 		# Atualiza a posição atual do jogador
 		curr_position = 5
 	else:
-		target_location = control.locations[(curr_position + 1) % control.locations.size()]
+		target_location = control.locations[(curr_position + 1) % control.locations.size()].loc
 		# Atualiza a posição atual do jogador
 		curr_position += 1
 
@@ -87,6 +84,10 @@ func move(number):
 	
 	# Espera um tico
 	await get_tree().create_timer(0.3).timeout
+	
+	# TODO: Verifica se está em uma casa especial (de diploma)
+	# if control.locations[curr_position].special:
+		# print("olhaii diploma aeeeee")
 
 	await move(number - 1)
 	
@@ -103,12 +104,5 @@ func move_to_location(location):
 	# Espere o jogador chegar na casa desejada
 	await reached_location
 
-#func follow_camera(camera, batata):
-#	if(batata):
-#		var camera_path = camera.get_path()
-#		remote_transform.remote_path = camera_path
-
 # TODO:
-# Player Rodar o dado
-# Mudar a direção (casas específicas)
 # Casas especiais
