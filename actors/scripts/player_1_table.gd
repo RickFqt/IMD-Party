@@ -9,7 +9,7 @@ extends CharacterBody2D
 @onready var camera := $camera as Camera2D
 var player_number = 0
 #var list_positions = [Vector2(0,100), Vector2(0,200), Vector2(100,200), Vector2(100,100), Vector2(100,0), Vector2(0,0)]
-var curr_position = 0
+var curr_position = -1
 var moedas_obrigatorias = 0
 var moedas_optativas = 0
 var n_diplomas = 0
@@ -70,14 +70,20 @@ func move(number):
 		return
 	
 	# Set target location
-	target_location = control.locations[(curr_position + 1) % control.locations.size()]
+	
+	if(curr_position != -1 and (curr_position + 1) % control.locations.size() == 0):
+		target_location = control.locations[5]
+		# Atualiza a posição atual do jogador
+		curr_position = 5
+	else:
+		target_location = control.locations[(curr_position + 1) % control.locations.size()]
+		# Atualiza a posição atual do jogador
+		curr_position += 1
 
 	# Espere o jogador chegar na casa desejada
 	await move_to_location(target_location)
 	
-	# Atualiza a posição atual do jogador
-	target_location = position
-	curr_position += 1
+	#target_location = position
 	
 	# Espera um tico
 	await get_tree().create_timer(0.3).timeout

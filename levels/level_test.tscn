@@ -143,7 +143,6 @@ separation = Vector2i(1, 1)
 sources/1 = SubResource("TileSetAtlasSource_8tg7v")
 
 [node name="LevelTest" type="Node2D"]
-position = Vector2(-258, -84)
 script = ExtResource("1_bct04")
 
 [node name="TileMap" type="TileMap" parent="."]
