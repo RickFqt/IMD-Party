@@ -1,17 +1,19 @@
 extends Node
 
-var countdownLabel: Label
-var countdownTimer: Timer
+signal countdown_finished
+signal endTime
+
 var timeRemaining: int = 0
 var countdownStep: float = 1
 var countdownSeconds: int = 5
 
-func _ready():
-	# Referenciar a Label e o Timer
-	countdownLabel = $CountdownLabel
-	countdownTimer = $CountdownTimer
-	countdownTimer.timeout.connect(_onCountdownTick)
+@onready var countdownLabel = $CountdownLabel
+@onready var countdownTimer = $CountdownTimer
+@onready var timerLabel = $TimerLabel
+@onready var gameTimer = $GameTimer
 
+func _ready():
+	countdownTimer.timeout.connect(_onCountdownTick)
 	# Iniciar a contagem regressiva
 	startCountdown()
 
@@ -27,7 +29,7 @@ func startCountdown():
 func _onCountdownTick():
 	countdownSeconds -= 1
 	countdownLabel.text = str(countdownSeconds)
-
+	
 	if countdownSeconds <= 0:
 		countdownLabel.text = "Começem!"	
 		await get_tree().create_timer(1).timeout	
@@ -36,26 +38,25 @@ func _onCountdownTick():
 		countdownTimer.stop()
 		
 		emit_signal("countdown_finished")
-		
-		countdownTimer.timeout.disconnect(_onCountdownTick)
-		countdownTimer.timeout.connect(_onTimerCountdownTick)
-		_gameStart()
+		print("Countdown finished")
 		
 
 func _gameStart():
-	timeRemaining = 29  # Defina o tempo máximo em segundos (por exemplo, 10 segundos)
-	$TimerLabel.text = str(timeRemaining)
-	$TimerLabel.show()
-	$CountdownTimer.start(timeRemaining)
-	$CountdownTimer.set_wait_time(countdownStep)
-	$CountdownTimer.start()
+	timeRemaining = 29  # Defina o tempo máximo em segundos (por exemplo, 10 segundos)	
+	timerLabel.text = str(timeRemaining)
+	timerLabel.show()
+	gameTimer.start(timeRemaining)
+	gameTimer.set_wait_time(countdownStep)
+	gameTimer.start()
+	gameTimer.timeout.connect(_onTimerCountdownTick)	
 	
 func _onTimerCountdownTick():
 	timeRemaining -= 1
-	$TimerLabel.text = str(timeRemaining)
+	timerLabel.text = str(timeRemaining)
 	if timeRemaining <= 0:
-		$TimerLabel.hide()
-		$CountdownTimer.stop()
+		timerLabel.hide()
+		gameTimer.stop()
 		countdownLabel.text = "Fim!"
 		countdownLabel.show()
 		emit_signal("endTime")
+		print("Time ended")
