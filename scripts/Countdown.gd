@@ -14,6 +14,7 @@ var countdownSeconds: int = 5
 
 func _ready():
 	countdownTimer.timeout.connect(_onCountdownTick)
+	gameTimer.timeout.connect(_onTimerCountdownTick)
 	# Iniciar a contagem regressiva
 	startCountdown()
 
@@ -48,7 +49,6 @@ func _gameStart():
 	gameTimer.start(timeRemaining)
 	gameTimer.set_wait_time(countdownStep)
 	gameTimer.start()
-	gameTimer.timeout.connect(_onTimerCountdownTick)	
 	
 func _onTimerCountdownTick():
 	timeRemaining -= 1

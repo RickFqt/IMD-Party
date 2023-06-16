@@ -42,7 +42,7 @@ func _onCountdownFinished():
 	show_pergunta(idx)
 	
 func show_pergunta(id : int):
-	var perguntaAtual = perguntas[idx]
+	var perguntaAtual = perguntas[id]
 		
 	LabelQuestionP1.text = perguntaAtual.pergunta # Atribua o texto da pergunta à propriedade 'text' da label
 	ButtonAP1.text = perguntaAtual.opcaoA # Atribua o texto da opção A à propriedade 'text' do button
