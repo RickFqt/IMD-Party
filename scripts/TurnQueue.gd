@@ -11,8 +11,8 @@ var camera_path
 
 func initialize():
 	
-	if(!control.Control_iniciado):		
-		control.inicializar_control($player1_table.position, $player1_table.curr_position, $player1_table.moedas_obrigatorias, $player1_table.moedas_optativas, $player1_table.n_diplomas,
+	if(!control.players_inicializados):		
+		control.inicializar_players($player1_table.position, $player1_table.curr_position, $player1_table.moedas_obrigatorias, $player1_table.moedas_optativas, $player1_table.n_diplomas,
 								$player1_table2.position, $player1_table2.curr_position, $player1_table2.moedas_obrigatorias, $player1_table2.moedas_optativas, $player1_table.n_diplomas,
 								semestre_atual, numero_turno)
 	else:

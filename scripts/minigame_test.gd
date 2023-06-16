@@ -12,5 +12,5 @@ func _process(delta):
 	pass
 
 func play_minigame():
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(2).timeout
 	control.trocar_cena("res://levels/level_test.tscn")
