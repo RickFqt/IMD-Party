@@ -8,7 +8,7 @@ extends CharacterBody2D
 #@onready var remote_transform := $remote as RemoteTransform2D
 @onready var camera := $camera as Camera2D
 var player_number = 0
-var list_positions = [Vector2(0,100), Vector2(0,200), Vector2(100,200), Vector2(100,100), Vector2(100,0), Vector2(0,0)]
+#var list_positions = [Vector2(0,100), Vector2(0,200), Vector2(100,200), Vector2(100,100), Vector2(100,0), Vector2(0,0)]
 var curr_position = 0
 var moedas_obrigatorias = 0
 var moedas_optativas = 0
@@ -53,7 +53,7 @@ func _physics_process(delta):
 	if(able_to_move):
 		velocity = position.direction_to(target_location) * move_speed
 		
-		if position.distance_to(target_location) > 10:
+		if position.distance_to(target_location) > 2:
 			move_and_slide()
 		else:
 			# Emite se o jogador chegou no local desejado
@@ -70,7 +70,7 @@ func move(number):
 		return
 	
 	# Set target location
-	target_location = list_positions[(curr_position + 1) % list_positions.size()]
+	target_location = control.locations[(curr_position + 1) % control.locations.size()]
 
 	# Espere o jogador chegar na casa desejada
 	await move_to_location(target_location)
