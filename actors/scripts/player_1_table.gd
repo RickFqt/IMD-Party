@@ -3,9 +3,11 @@ extends CharacterBody2D
 @export_category("Variables")
 @export var move_speed: float = 120.0
 
+@onready var control = get_node("/root/controle")
 @onready var animation := $anim as AnimatedSprite2D
 #@onready var remote_transform := $remote as RemoteTransform2D
 @onready var camera := $camera as Camera2D
+var player_number = 0
 var list_positions = [Vector2(0,100), Vector2(0,200), Vector2(100,200), Vector2(100,100), Vector2(100,0), Vector2(0,0)]
 var curr_position = 0
 var moedas_obrigatorias = 0
@@ -33,7 +35,7 @@ func play_turn():
 	print("numero sorteado: ", dice)
 	await move(dice)
 		
-	animation.play("idle")
+	animation.play(str(player_number) +"_idle")
 	
 	# If casa especial, ????
 	# If casa de diploma
@@ -85,16 +87,15 @@ func move(number):
 func move_to_location(location):
 	able_to_move = true
 	if(position.x > location.x + 10):
-		animation.play("move_left")
+		animation.play(str(player_number) + "_move_left")
 	elif(position.x + 10 < location.x):
-		animation.play("move_right")
+		animation.play(str(player_number) +"_move_right")
 	elif(position.y > location.y + 10):
-		animation.play("move_up")
+		animation.play(str(player_number) +"_move_up")
 	else:
-		animation.play("move_down")
+		animation.play(str(player_number) +"_move_down")
 	# Espere o jogador chegar na casa desejada
 	await reached_location
-
 
 #func follow_camera(camera, batata):
 #	if(batata):

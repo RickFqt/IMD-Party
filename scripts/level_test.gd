@@ -7,6 +7,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$TurnQueue/player1_table/anim.play("0_idle")
+	$TurnQueue/player1_table2/anim.play("1_idle")
 	turnqueue.initialize()
 
 
