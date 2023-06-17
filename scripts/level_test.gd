@@ -12,9 +12,13 @@ func _ready():
 	$TurnQueue/player1_table2/anim.play("1_idle")
 	if(!control.loc_inicializado):
 		control.inicializar_locations($GetLocations.get_locations())
+		randomize_star()
 	turnqueue.initialize()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func randomize_star():
+	

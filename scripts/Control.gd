@@ -5,6 +5,7 @@ var loc_inicializado: bool = false
 var players_inicializados: bool = false
 
 # TODO: inicializar as animações dos players direito
+# Infos do player1
 var player1 = {
 	location = Vector2(0,0),
 	index_location = 0,
@@ -14,6 +15,7 @@ var player1 = {
 	animation = 0
 }
 
+# Indos do player2
 var player2 = {
 	location = Vector2(0,0),
 	index_location = 0,
@@ -26,6 +28,7 @@ var player2 = {
 var players = []
 
 var locations = []
+var star_location = Vector2.ZERO
 
 var semestre
 var turno
