@@ -28,7 +28,7 @@ var player2 = {
 var players = []
 
 var locations = []
-var star_location = Vector2.ZERO
+var star_location = {loc = Vector2(0,0), index = 0}
 
 var semestre
 var turno
@@ -40,6 +40,15 @@ func _ready():
 func inicializar_locations(loc):
 	locations = loc.duplicate(true)
 	loc_inicializado = true
+
+func inicializar_star(n):
+	star_location.loc = locations[n].loc
+	star_location.index = n
+	#locations[n].special = true
+
+func atualizar_star(new_n):
+	#locations[star_location.index].special = false
+	inicializar_star(new_n)
 
 func inicializar_players(loc1, idx1, m_ob1, m_opt1, dip1, loc2, idx2, m_ob2, m_opt2, dip2, sem, turn, force := false):
 	if !players_inicializados or force:

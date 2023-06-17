@@ -8,6 +8,8 @@ var active_character
 var numero_turno = 1
 var semestre_atual = 1
 var camera_path
+var continue_turns = false
+signal player_finished_turn
 
 func initialize():
 	
@@ -35,6 +37,15 @@ func play_turn():
 		
 		# Inicia o turno do player
 		await active_character.play_turn()
+		
+		# Indica o fim do turno do player
+		continue_turns = false
+		player_finished_turn.emit()
+		
+		# Espera para iniciar o turno do próximo player, se necessário
+		while !continue_turns:
+			# print("batata")
+			await get_tree().create_timer(2).timeout
 		
 		# Troca o player
 		var new_index : int = (active_character.get_index() + 1) % get_child_count()
@@ -79,3 +90,8 @@ func save_game():
 	control.update_control($player1_table.position, $player1_table.curr_position, $player1_table.moedas_obrigatorias, $player1_table.moedas_optativas, $player1_table.n_diplomas,
 						   $player1_table2.position, $player1_table2.curr_position, $player1_table2.moedas_obrigatorias, $player1_table2.moedas_optativas, $player1_table.n_diplomas,
 						   semestre_atual, numero_turno)
+
+
+func _on_level_continue_turns():
+	#print("continue turns true!")
+	continue_turns = true

@@ -18,6 +18,7 @@ var able_to_move = false
 
 signal roll
 signal reached_location
+signal reached_star
 
 var target_location
 
@@ -86,8 +87,12 @@ func move(number):
 	await get_tree().create_timer(0.3).timeout
 	
 	# TODO: Verifica se está em uma casa especial (de diploma)
-	# if control.locations[curr_position].special:
-		# print("olhaii diploma aeeeee")
+	if control.star_location.index == curr_position:
+		print("olhaii diploma aeeeee")
+		animation.play(str(player_number) +"_idle")
+		await get_tree().create_timer(2).timeout
+		reached_star.emit()
+		
 
 	await move(number - 1)
 	
