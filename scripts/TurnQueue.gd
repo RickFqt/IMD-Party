@@ -1,5 +1,6 @@
 extends Node2D
 
+# "Classe" que controla os turnos entre os jogadores
 
 class_name TurnQueue
 
@@ -7,21 +8,26 @@ class_name TurnQueue
 var active_character
 var numero_turno = 1
 var semestre_atual = 1
-var camera_path
+#var camera_path
 var continue_turns = false
 signal player_finished_turn
 
 func initialize():
 	
-	if(!control.players_inicializados):		
-		control.inicializar_players($player1_table.position, $player1_table.curr_position, $player1_table.moedas_obrigatorias, $player1_table.moedas_optativas, $player1_table.n_diplomas,
-								$player1_table2.position, $player1_table2.curr_position, $player1_table2.moedas_obrigatorias, $player1_table2.moedas_optativas, $player1_table.n_diplomas,
+	if(!control.players_inicializados):
+		# Inicializa as informacoes do jogo pela primeira vez
+		# TODO: mudar a inicializacao do numero de animação
+		$player1_table.animation_number = 0
+		$player1_table2.animation_number = 1
+		control.inicializar_players($player1_table.position, $player1_table.curr_position, $player1_table.moedas_obrigatorias, $player1_table.moedas_optativas, $player1_table.n_diplomas,$player1_table.animation_number,
+								$player1_table2.position, $player1_table2.curr_position, $player1_table2.moedas_obrigatorias, $player1_table2.moedas_optativas, $player1_table.n_diplomas,$player1_table2.animation_number,
 								semestre_atual, numero_turno)
 	else:
+		# Carrega as informacoes ja armazenadas no control
 		load_game()
 	
-	get_child(0).player_number = 0
-	get_child(1).player_number = 1
+	# TODO? Mudar a ordem dos players, de acordo com quem ganhou no ultimo minijogo
+	# Seleciona o primeiro player a jogar
 	active_character = get_child(0)
 	
 	await play_turn()
@@ -42,7 +48,7 @@ func play_turn():
 		continue_turns = false
 		player_finished_turn.emit()
 		
-		# Espera para iniciar o turno do próximo player, se necessário
+		# Espera para iniciar o turno do próximo player, se necessario
 		while !continue_turns:
 			# print("batata")
 			await get_tree().create_timer(2).timeout
@@ -76,22 +82,24 @@ func load_game():
 	$player1_table.moedas_obrigatorias = control.player1.ob_coins 
 	$player1_table.moedas_optativas = control.player1.opt_coins
 	$player1_table.n_diplomas = control.player1.diplomas
+	$player1_table.animation_number = control.player1.animation
 	
 	$player1_table2.position = control.player2.location
 	$player1_table2.curr_position = control.player2.index_location
 	$player1_table2.moedas_obrigatorias = control.player2.ob_coins 
 	$player1_table2.moedas_optativas = control.player2.opt_coins
 	$player1_table2.n_diplomas = control.player2.diplomas
+	$player1_table2.animation_number = control.player2.animation
 	
 	semestre_atual = control.semestre
 	numero_turno = control.turno
 	
 func save_game():
-	control.update_control($player1_table.position, $player1_table.curr_position, $player1_table.moedas_obrigatorias, $player1_table.moedas_optativas, $player1_table.n_diplomas,
-						   $player1_table2.position, $player1_table2.curr_position, $player1_table2.moedas_obrigatorias, $player1_table2.moedas_optativas, $player1_table.n_diplomas,
+	control.update_control($player1_table.position, $player1_table.curr_position, $player1_table.moedas_obrigatorias, $player1_table.moedas_optativas, $player1_table.n_diplomas,$player1_table.animation_number,
+						   $player1_table2.position, $player1_table2.curr_position, $player1_table2.moedas_obrigatorias, $player1_table2.moedas_optativas, $player1_table.n_diplomas,$player1_table2.animation_number,
 						   semestre_atual, numero_turno)
 
-
+# Funcao que checa quando pode continuar o turno
 func _on_level_continue_turns():
 	#print("continue turns true!")
 	continue_turns = true

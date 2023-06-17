@@ -7,18 +7,17 @@ extends CharacterBody2D
 @onready var animation := $anim as AnimatedSprite2D
 #@onready var remote_transform := $remote as RemoteTransform2D
 @onready var camera := $camera as Camera2D
-var player_number = 0
-#var list_positions = [Vector2(0,100), Vector2(0,200), Vector2(100,200), Vector2(100,100), Vector2(100,0), Vector2(0,0)]
-var curr_position = -1
+var animation_number = 0 # Numero de animacao do player
+var curr_position = -1 # INDICE!!!!!!!! do player na lista global de posicoes
 var moedas_obrigatorias = 0
 var moedas_optativas = 0
 var n_diplomas = 0
 
 var able_to_move = false
 
-signal roll
-signal reached_location
-signal reached_star
+signal roll # Sinal emitido quando o jogador aperta "ENTER"
+signal reached_location # Sinal emitido quando o jogador se move para determinado local
+signal reached_star # Sinal emitido quando o jogador passa por uma casa de diploma
 
 var target_location
 
@@ -39,11 +38,15 @@ func play_turn():
 	print("numero sorteado: ", dice)
 	await move(dice)
 		
-	animation.play(str(player_number) +"_idle")
+	animation.play(str(animation_number) +"_idle")
 	
-	# TODO: Verifica se está em uma casa especial (de sala)
-	# if control.locations[curr_position].special:
-		# print("olhaii sala de aula aeeeee")
+	# Verifica se o jogador terminou em uma Sala de Aula
+	if control.locations[curr_position].special:
+		animation.play(str(animation_number) +"_idle")
+		print("olhaii sala de aula aeeeee")
+		# TODO: Randomizar se vai ter professor na sala ou nao
+		# TODO: Ir para o minigame bonus
+		await get_tree().create_timer(2).timeout
 	
 	
 func _physics_process(delta):
@@ -68,8 +71,8 @@ func move(number):
 		return
 	
 	# Set target location
-	
 	if(curr_position != -1 and ((curr_position + 1) % control.locations.size() == 0)):
+		# Caso em que o jogador esta no "ultimo" tile do mapa
 		target_location = control.locations[5].loc
 		# Atualiza a posição atual do jogador
 		curr_position = 5
@@ -80,16 +83,17 @@ func move(number):
 
 	# Espere o jogador chegar na casa desejada
 	await move_to_location(target_location)
-	
-	#target_location = position
+	target_location = position # So por seguranca
 	
 	# Espera um tico
 	await get_tree().create_timer(0.3).timeout
 	
-	# TODO: Verifica se está em uma casa especial (de diploma)
+	# Verifica se está em uma casa de diploma
 	if control.star_location.index == curr_position:
+		animation.play(str(animation_number) +"_idle")
 		print("olhaii diploma aeeeee")
-		animation.play(str(player_number) +"_idle")
+		# TODO: Verificar se o jogador pode comprar o diploma ou nao
+		# TODO: Receber input para o player poder escolher comprar ou nao a estrela
 		await get_tree().create_timer(2).timeout
 		reached_star.emit()
 		
@@ -99,15 +103,13 @@ func move(number):
 func move_to_location(location):
 	able_to_move = true
 	if(position.x > location.x + 10):
-		animation.play(str(player_number) + "_move_left")
+		animation.play(str(animation_number) + "_move_left")
 	elif(position.x + 10 < location.x):
-		animation.play(str(player_number) +"_move_right")
+		animation.play(str(animation_number) +"_move_right")
 	elif(position.y > location.y + 10):
-		animation.play(str(player_number) +"_move_up")
+		animation.play(str(animation_number) +"_move_up")
 	else:
-		animation.play(str(player_number) +"_move_down")
+		animation.play(str(animation_number) +"_move_down")
 	# Espere o jogador chegar na casa desejada
 	await reached_location
 
-# TODO:
-# Casas especiais

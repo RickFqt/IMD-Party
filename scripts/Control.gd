@@ -1,8 +1,9 @@
 extends Node2D
 
-# Variáveis globais para armazenar dados
-var loc_inicializado: bool = false
-var players_inicializados: bool = false
+# "Classe" que armazena variáveis globais do jogo
+
+var loc_inicializado: bool = false # Indica se as localizações ja foram inicializadas
+var players_inicializados: bool = false # Indica se os players ja foram inicializados (junto com a partida)
 
 # TODO: inicializar as animações dos players direito
 # Infos do player1
@@ -37,20 +38,24 @@ func _ready():
 	players.append(player1)
 	players.append(player2)
 
+# Inicializa as localizações dos tiles
 func inicializar_locations(loc):
 	locations = loc.duplicate(true)
 	loc_inicializado = true
 
+# Inicializa a posição atual do diploma
 func inicializar_star(n):
 	star_location.loc = locations[n].loc
 	star_location.index = n
 	#locations[n].special = true
 
+# Atualiza a posição da estrela
 func atualizar_star(new_n):
 	#locations[star_location.index].special = false
 	inicializar_star(new_n)
 
-func inicializar_players(loc1, idx1, m_ob1, m_opt1, dip1, loc2, idx2, m_ob2, m_opt2, dip2, sem, turn, force := false):
+# Inicializa as informações dos players e da partida
+func inicializar_players(loc1, idx1, m_ob1, m_opt1, dip1, anim1, loc2, idx2, m_ob2, m_opt2, dip2, anim2, sem, turn, force := false):
 	if !players_inicializados or force:
 		
 		# Atualiza player1
@@ -72,9 +77,9 @@ func inicializar_players(loc1, idx1, m_ob1, m_opt1, dip1, loc2, idx2, m_ob2, m_o
 		turno = turn
 		players_inicializados = true
 
-func update_control(loc1, idx1, m_ob1, m_opt1, dip1, loc2, idx2, m_ob2, m_opt2, dip2, sem, turn):
-	inicializar_players(loc1, idx1, m_ob1, m_opt1, dip1, loc2, idx2, m_ob2, m_opt2, dip2, sem, turn, true)
-
+# Atualiza as informações dos players e da partida
+func update_control(loc1, idx1, m_ob1, m_opt1, dip1, anim1, loc2, idx2, m_ob2, m_opt2, dip2, anim2, sem, turn):
+	inicializar_players(loc1, idx1, m_ob1, m_opt1, dip1, anim1, loc2, idx2, m_ob2, m_opt2, dip2, anim2, sem, turn, true)
 
 func trocar_cena(cena):
 	# Carregar a nova cena
