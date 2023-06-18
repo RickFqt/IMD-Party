@@ -17,7 +17,7 @@ var moedas_obrigatorias = 0
 var animation : AnimatedSprite2D = null
 
 # Signals received
-signal roll # Sinal emitido quando o jogador aperta "ENTER"
+signal press_enter # Sinal emitido quando o jogador aperta "ENTER"
 signal reached_star # Sinal emitido quando o jogador passa por uma casa de diploma
 signal reached_location # Sinal emitido quando o jogador se move para determinado local
 
@@ -40,7 +40,7 @@ func play_turn():
 	print("Rode o dado!!!")
 
 	# Espere o jogador rolar o dado
-	await roll
+	await press_enter
 	
 	# TODO: Fazer o dado mostrar o numero sorteado
 	
@@ -52,11 +52,7 @@ func play_turn():
 	
 	# Verifica se o jogador terminou em uma Sala de Aula
 	if global.locations[curr_position].special:
-		animation.play("Idle")
-		print("olhaii sala de aula aeeeee")
-		# TODO: Randomizar se vai ter professor na sala ou nao
-		# TODO: Ir para o minigame bonus
-		await get_tree().create_timer(2).timeout
+		await process_class()
 	
 	
 func _physics_process(delta):
@@ -73,7 +69,7 @@ func _physics_process(delta):
 	
 	# Emite se o jogador rolou o dado
 	if(Input.is_action_just_pressed("roll_dice")):
-		roll.emit()
+		press_enter.emit()
 
 # Função para se mover
 func move(number):
@@ -103,11 +99,7 @@ func move(number):
 	if global.star_location.index == curr_position:
 		animation.play("Idle")
 		print("olhaii diploma aeeeee")
-		# TODO: Verificar se o jogador pode comprar o diploma ou nao
-		# TODO: Receber input para o player poder escolher comprar ou nao a estrela
-		await get_tree().create_timer(2).timeout
-		reached_star.emit()
-		
+		await process_star()
 
 	await move(number - 1)
 	
@@ -124,3 +116,49 @@ func move_to_location(location):
 	# Espere o jogador chegar na casa desejada
 	await reached_location
 
+# Função chamada quando um jogador passa por uma casa de diploma
+func process_star():
+	# TODO: Mostrar as frases na tela para o jogador
+	if moedas_obrigatorias >= global.star_price.ob and moedas_optativas >= global.star_price.ob:
+		print("Voce quer comprar um diploma???")
+		await get_tree().create_timer(2).timeout
+		# TODO: Receber input para o player poder escolher comprar ou nao a estrela
+		# If quer comprar:
+		moedas_obrigatorias -= global.star_price.ob
+		moedas_optativas -= global.star_price.ob
+		n_diplomas += 1
+		print("Aeeee comprou o diploma!!!")
+		await get_tree().create_timer(2).timeout
+	else:
+		print("Sem moedas o suficiente :(")
+		await press_enter
+	
+	reached_star.emit()
+
+# Função chamada quando um jogador para em frente a uma sala de aula
+func process_class():
+	
+	# Suspense ........
+	print("............")
+	await get_tree().create_timer(3).timeout
+	# Randomizar se vai ter professor na sala ou nao
+	var tem_professor = (randi() % 100 + 1)
+	
+	if tem_professor > 60:
+		# TODO: Ir para o minigame bonus?
+		print("Olhaiiii, THANOS estava na sala!")
+		print("THANOS diz: \"Toma aí umas moeda, fio!\"")
+		
+		# Randomiza a quantidade de moedas ganhas
+		var n_moedas = 0
+		if tem_professor > 98:
+			n_moedas = 3
+		elif tem_professor > 80:
+			n_moedas = 2
+		else:
+			n_moedas = 1
+		moedas_optativas += n_moedas
+		await press_enter
+	else:
+		print("Nada acontece....")
+		await press_enter
