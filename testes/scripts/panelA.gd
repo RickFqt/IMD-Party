@@ -1,4 +1,4 @@
-extends Panel
+extends Control
 
 var answer : int
 var perguntas = []
@@ -68,6 +68,15 @@ func _input(event):
 				answer = 4
 				ButtonDP1.emit_signal("pressed")
 				
+				
+func buttonRightAnswer(button, texture):
+	button.add_theme_color_override("font_color", Color( 0, 1, 0, 1))
+	texture.texture = "res://jogo_oficial/Assets/Items/button.png"
+	
+func buttonWrongAnswer(button, texture):
+	button.add_theme_color_override("font_color", Color( 1, 0, 0, 1))
+	texture.texture = "res://jogo_oficial/Assets/Items/button.png"
+		
 func _onAnswerSelected():
 	if buttonsDisabled:
 		return
@@ -79,37 +88,38 @@ func _onAnswerSelected():
 		scoreP1 = scoreP1 + 1
 		LabelScoreP1.text = "SCORE: " + str(scoreP1)
 		if answer == 1:
-			ButtonAP1.add_theme_color_override("font_color", Color( 0, 1, 0, 1))
+			buttonRightAnswer(ButtonAP1, $"../Panel2/button1")
 		elif answer == 2:
-			ButtonBP1.add_theme_color_override("font_color", Color( 0, 1, 0, 1))
+			buttonRightAnswer(ButtonBP1, $"../Panel2/button2")
 		elif answer == 3:
-			ButtonCP1.add_theme_color_override("font_color", Color( 0, 1, 0, 1))
+			buttonRightAnswer(ButtonCP1, $"../Panel2/button3")
 		elif answer == 4:
-			ButtonDP1.add_theme_color_override("font_color", Color( 0, 1, 0, 1))
+			buttonRightAnswer(ButtonAP1, $"../Panel2/button4")
 	
 	
 	else:
 		# Resposta incorreta
 		print("Resposta incorreta!")
 		if answer == 1:
-			ButtonAP1.add_theme_color_override("font_color", Color( 1, 0, 0, 1))
+			buttonWrongAnswer(ButtonAP1, $"../Panel2/button1")
 		elif answer == 2:
-			ButtonBP1.add_theme_color_override("font_color", Color( 1, 0, 0, 1))
+			buttonWrongAnswer(ButtonBP1, $"../Panel2/button2")
 		elif answer == 3:
-			ButtonCP1.add_theme_color_override("font_color", Color( 1, 0, 0, 1))
+			buttonWrongAnswer(ButtonCP1, $"../Panel2/button3")
 		elif answer == 4:
-			ButtonDP1.add_theme_color_override("font_color", Color( 1, 0, 0, 1))
+			buttonWrongAnswer(ButtonAP1, $"../Panel2/button4")
 	
 	await get_tree().create_timer(2.0).timeout
 	next_Question()
 	
-
-func next_Question():
+func resetButtons():
 	ButtonAP1.add_theme_color_override("font_color", Color( 0, 0, 0, 1))
 	ButtonBP1.add_theme_color_override("font_color", Color( 0, 0, 0, 1))
 	ButtonCP1.add_theme_color_override("font_color", Color( 0, 0, 0, 1))
 	ButtonDP1.add_theme_color_override("font_color", Color( 0, 0, 0, 1))
 	
+func next_Question():
+	resetButtons()
 	idx = idx + 1
 	if idx < perguntas.size():
 		show_pergunta(idx)

@@ -1,33 +1,30 @@
 extends Panel
- 
-#Variables 
+
 var answer : int
 var perguntas = []
 var buttonsDisabled : bool
 var respostaCorretaAtual : int
 
-# @onready variables
+@onready var LabelQuestion = $Question_p1 #Obtenha o caminho para a questão
+@onready var LabelScore = $ScoreLabel_p1 #Obtenha o caminho para o score
+@onready var ButtonA = $ButtonA_p1 #Obtenha o caminho para o botão A
+@onready var ButtonB = $ButtonB_p1 #Obtenha o caminho para o botão B
+@onready var ButtonC = $ButtonC_p1 #Obtenha o caminho para o botão C
+@onready var ButtonD = $ButtonD_p1 #Obtenha o caminho para o botão D
+@onready var textureA = $button1_p1 #Obtenha o caminho para o botão A
+@onready var textureB = $button2_p1 #Obtenha o caminho para o botão B
+@onready var textureC = $button3_p1 #Obtenha o caminho para o botão C
+@onready var textureD = $button4_p1 #Obtenha o caminho para o botão D
+
 @onready var idx = 0
-@onready var scoreP1 = 0
-@onready var ButtonAP1 = $ButtonA_P1 #Obtenha o caminho para o botão A
-@onready var ButtonBP1 = $ButtonB_P1 #Obtenha o caminho para o botão B
-@onready var ButtonCP1 = $ButtonC_P1 #Obtenha o caminho para o botão C
-@onready var ButtonDP1 = $ButtonD_P1 #Obtenha o caminho para o botão D
-@onready var LabelScoreP1 = $ScoreLabel_P1 #Obtenha o caminho para o score
-@onready var LabelQuestionP1 = $Question_P1 #Obtenha o caminho para a questão
+@onready var score = 0
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-		
-	LabelQuestionP1.text = ""
-	ButtonAP1.text = ""
-	ButtonBP1.text = ""
-	ButtonCP1.text = ""
-	ButtonDP1.text = ""
-
 	var perguntasResource = load("res://jogo_oficial/Resource/bd_questions.tres")
 	
-	LabelScoreP1.text = "SCORE: " + str(scoreP1)
+	LabelScore.text = "SCORE: " + str(score)
 	
 	for p in perguntasResource.perguntas:
 		perguntas.append(p)
@@ -35,42 +32,43 @@ func _ready():
 		print(p.opcaoA)
 
 	perguntas.shuffle()
-
-# Função para começar a mostra as questões
-func _onCountdownFinished():
 	show_pergunta(idx)
 	
-# Função para mostrar a questão
+	
 func show_pergunta(id : int):
 	var perguntaAtual = perguntas[id]
 		
-	LabelQuestionP1.text = perguntaAtual.pergunta # Atribua o texto da pergunta à propriedade 'text' da label
-	ButtonAP1.text = perguntaAtual.opcaoA # Atribua o texto da opção A à propriedade 'text' do button
-	ButtonBP1.text = perguntaAtual.opcaoB # Atribua o texto da opção B à propriedade 'text' do button
-	ButtonCP1.text = perguntaAtual.opcaoC # Atribua o texto da opção C à propriedade 'text' do button
-	ButtonDP1.text = perguntaAtual.opcaoD # Atribua o texto da opção D à propriedade 'text' do button
+	LabelQuestion.text = perguntaAtual.pergunta # Atribua o texto da pergunta à propriedade 'text' da label
+	ButtonA.text = perguntaAtual.opcaoA # Atribua o texto da opção A à propriedade 'text' do button
+	ButtonB.text = perguntaAtual.opcaoB # Atribua o texto da opção B à propriedade 'text' do button
+	ButtonC.text = perguntaAtual.opcaoC # Atribua o texto da opção C à propriedade 'text' do button
+	ButtonD.text = perguntaAtual.opcaoD # Atribua o texto da opção D à propriedade 'text' do button
 	respostaCorretaAtual = perguntaAtual.respostaCorreta # Atribua a alternativa correta 
 	buttonsDisabled = false
 	
-	
-# Função para captar a resposta do player
 func _input(event):
-	if event is Input:
-		if event.pressed:
-			if event.as_text_keycode() == "A":
-				answer = 1
-				ButtonAP1.emit_signal("pressed")
-			elif event.as_text_keycode() == "S":
-				answer = 2
-				ButtonBP1.emit_signal("pressed")
-			elif event.as_text_keycode() == "D":
-				answer = 3
-				ButtonCP1.emit_signal("pressed")
-			elif event.as_text_keycode() == "F":
-				answer = 4
-				ButtonDP1.emit_signal("pressed")
+	if event is InputEventKey:
+		if event.is_action_pressed("key_a"):
+			answer = 1
+			_onAnswerSelected()
+		elif event.is_action_pressed("key_s"):
+			answer = 2
+			_onAnswerSelected()
+		elif event.is_action_pressed("key_d"):
+			answer = 3
+			_onAnswerSelected()
+		elif event.is_action_pressed("key_f"):
+			answer = 4
+			_onAnswerSelected()
 				
-# Função para corrigir a resposta do player
+func buttonRightAnswer(button, texture):
+	button.add_theme_color_override("font_color", Color( 0, 1, 0, 1))
+	texture.texture = load("res://jogo_oficial/Assets/Items/buttonRight.png")
+	
+func buttonWrongAnswer(button, texture):
+	button.add_theme_color_override("font_color", Color( 1, 0, 0, 1))
+	texture.texture = load("res://jogo_oficial/Assets/Items/buttonWrong.png")
+		
 func _onAnswerSelected():
 	if buttonsDisabled:
 		return
@@ -79,51 +77,52 @@ func _onAnswerSelected():
 	if answer == respostaCorretaAtual:
 		# Resposta correta
 		print("Resposta correta!")
-		scoreP1 = scoreP1 + 1
-		LabelScoreP1.text = "SCORE: " + str(scoreP1)
+		score = score + 1
+		LabelScore.text = "SCORE: " + str(score)
 		if answer == 1:
-			ButtonAP1.add_theme_color_override("font_color", Color( 0, 1, 0, 1))
+			buttonRightAnswer(ButtonA, textureA)
 		elif answer == 2:
-			ButtonBP1.add_theme_color_override("font_color", Color( 0, 1, 0, 1))
+			buttonRightAnswer(ButtonB, textureB)
 		elif answer == 3:
-			ButtonCP1.add_theme_color_override("font_color", Color( 0, 1, 0, 1))
+			buttonRightAnswer(ButtonC, textureC)
 		elif answer == 4:
-			ButtonDP1.add_theme_color_override("font_color", Color( 0, 1, 0, 1))
+			buttonRightAnswer(ButtonD, textureD)
 	
 	
 	else:
 		# Resposta incorreta
 		print("Resposta incorreta!")
 		if answer == 1:
-			ButtonAP1.add_theme_color_override("font_color", Color( 1, 0, 0, 1))
+			buttonWrongAnswer(ButtonA, textureA)
 		elif answer == 2:
-			ButtonBP1.add_theme_color_override("font_color", Color( 1, 0, 0, 1))
+			buttonWrongAnswer(ButtonB, textureB)
 		elif answer == 3:
-			ButtonCP1.add_theme_color_override("font_color", Color( 1, 0, 0, 1))
+			buttonWrongAnswer(ButtonC, textureC)
 		elif answer == 4:
-			ButtonDP1.add_theme_color_override("font_color", Color( 1, 0, 0, 1))
+			buttonWrongAnswer(ButtonD, textureD)
 	
 	await get_tree().create_timer(2.0).timeout
 	next_Question()
 	
-
-#Função para mostrar a pergunta seguinte
-func next_Question():
-	ButtonAP1.add_theme_color_override("font_color", Color( 0, 0, 0, 1))
-	ButtonBP1.add_theme_color_override("font_color", Color( 0, 0, 0, 1))
-	ButtonCP1.add_theme_color_override("font_color", Color( 0, 0, 0, 1))
-	ButtonDP1.add_theme_color_override("font_color", Color( 0, 0, 0, 1))
+func resetButtons():
+	ButtonA.add_theme_color_override("font_color", Color( 0, 0, 0, 1))
+	ButtonB.add_theme_color_override("font_color", Color( 0, 0, 0, 1))
+	ButtonC.add_theme_color_override("font_color", Color( 0, 0, 0, 1))
+	ButtonD.add_theme_color_override("font_color", Color( 0, 0, 0, 1))
+	textureA.texture = load("res://jogo_oficial/Assets/Items/button.png")
+	textureB.texture = load("res://jogo_oficial/Assets/Items/button.png")
+	textureC.texture = load("res://jogo_oficial/Assets/Items/button.png")
+	textureD.texture = load("res://jogo_oficial/Assets/Items/button.png")
 	
-	idx = idx + 1
+func next_Question():
+	resetButtons()
+	idx += 1
 	if idx < perguntas.size():
 		show_pergunta(idx)
 	else: 
 		print("Acabaram as perguntas")
-		print("Pontuação final: ", scoreP1)
-	
-# Função para finalizar o jogo
-func end_Game():
-	print("Fim de jogo!")
-	Global.trocar_cena("res://jogo_oficial/Scenes/map.tscn")
+		print("Pontuação final: ", score)
+		
+
 
 
