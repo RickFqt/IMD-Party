@@ -38,11 +38,11 @@ func play_turn():
 	print("numero sorteado: ", dice)
 	await move(dice)
 		
-	animation.play("idle")
+	animation.play("Idle")
 	
 	# Verifica se o jogador terminou em uma Sala de Aula
 	if global.locations[curr_position].special:
-		animation.play("idle")
+		animation.play("Idle")
 		print("olhaii sala de aula aeeeee")
 		# TODO: Randomizar se vai ter professor na sala ou nao
 		# TODO: Ir para o minigame bonus
@@ -91,7 +91,7 @@ func move(number):
 	
 	# Verifica se está em uma casa de diploma
 	if global.star_location.index == curr_position:
-		animation.play("idle")
+		animation.play("Idle")
 		print("olhaii diploma aeeeee")
 		# TODO: Verificar se o jogador pode comprar o diploma ou nao
 		# TODO: Receber input para o player poder escolher comprar ou nao a estrela

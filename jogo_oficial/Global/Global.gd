@@ -4,8 +4,8 @@ extends Node2D
 
 var player1 : Node2D # Player 1
 var player2 : Node2D # Player 2
-var player1Dir # Animação player 1
-var player2Dir # Animaçõa player 2
+var player1Dir = "res://jogo_oficial/Players/boy1char.tscn" # Animação player 1
+var player2Dir = "res://jogo_oficial/Players/boy2char.tscn" # Animaçõa player 2
 var locations = [] # Indica localização dos tiles
 var rodada : int # Indica a rodada atual da partida
 var semestre : int # Indica o semestre atual da partida
@@ -31,6 +31,11 @@ var infoPlayer2 = {
 	diplomas = 0,
 }
 
+func instance_node(node, location, parent):
+	var node_instance = node.instance()
+	parent.add_child(node_instance)
+	node_instance.global_position = location
+	return node_instance
 
 # Inicializa as localizações dos tiles
 func inicializar_locations(loc):
@@ -53,18 +58,18 @@ func inicializar_players(loc1, idx1, m_ob1, m_opt1, dip1, loc2, idx2, m_ob2, m_o
 	if !players_inicializados or force:
 		
 		# Atualiza player1
-		player1.location = loc1
-		player1.index_location = idx1
-		player1.ob_coins = m_ob1
-		player1.opt_coins = m_opt1
-		player1.diplomas = dip1
+		infoPlayer1.location = loc1
+		infoPlayer1.index_location = idx1
+		infoPlayer1.ob_coins = m_ob1
+		infoPlayer1.opt_coins = m_opt1
+		infoPlayer1.diplomas = dip1
 		
 		# Atualiza player2
-		player2.location = loc2
-		player2.index_location = idx2
-		player2.ob_coins = m_ob2
-		player2.opt_coins = m_opt2
-		player2.diplomas = dip2
+		infoPlayer2.location = loc2
+		infoPlayer2.index_location = idx2
+		infoPlayer2.ob_coins = m_ob2
+		infoPlayer2.opt_coins = m_opt2
+		infoPlayer2.diplomas = dip2
 		
 		# Atualiza o valor dos semestres e rodadas
 		semestre = sem
@@ -72,7 +77,7 @@ func inicializar_players(loc1, idx1, m_ob1, m_opt1, dip1, loc2, idx2, m_ob2, m_o
 		players_inicializados = true
 
 # Atualiza as informações dos players e da partida
-func update_control(loc1, idx1, m_ob1, m_opt1, dip1, loc2, idx2, m_ob2, m_opt2, dip2, sem, turn):
+func update_global(loc1, idx1, m_ob1, m_opt1, dip1, loc2, idx2, m_ob2, m_opt2, dip2, sem, turn):
 	inicializar_players(loc1, idx1, m_ob1, m_opt1, dip1, loc2, idx2, m_ob2, m_opt2, dip2, sem, turn, true)
 
 # Troca para a cena informada

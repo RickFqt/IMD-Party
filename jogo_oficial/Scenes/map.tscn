@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://tuijje4d6nw4" path="res://jogo_oficial/Assets/Kenney-Urban-Pack/Tiles/tile_0442 - Copia.png" id="2_miluf"]
 [ext_resource type="Texture2D" uid="uid://c3vdt3eny2hmh" path="res://jogo_oficial/Assets/Kenney-Urban-Pack/Tilemap/tilemap.png" id="3_3n7nk"]
 [ext_resource type="PackedScene" uid="uid://dt6l5474s7d6c" path="res://prefabs/turn_queue.tscn" id="4_cyoeg"]
-[ext_resource type="PackedScene" uid="uid://cvu5su62sv23g" path="res://actors/player_1_table.tscn" id="5_ch6mf"]
 [ext_resource type="Script" path="res://jogo_oficial/Scripts/turnQueueScript.gd" id="5_notne"]
 [ext_resource type="PackedScene" uid="uid://bqqker8jx7f0v" path="res://prefabs/get_locations.tscn" id="6_ih8ms"]
 [ext_resource type="Texture2D" uid="uid://e8o3yc5bingb" path="res://jogo_oficial/Assets/Kenney-Urban-Pack/Tiles/tile_0221.png" id="7_8lldu"]
 [ext_resource type="Script" path="res://jogo_oficial/Scripts/getLocationsScript.gd" id="8_8nn57"]
+[ext_resource type="Script" path="res://scripts/PlayerSpawner.gd" id="10_8a28u"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_mbixf"]
 tile_data = PackedInt32Array(0, 327681, 16, 65536, 131073, 17, 131072, 131073, 17, 196608, 327681, 17, 1, 65537, 15, 65537, 655361, 16, 131073, 589825, 17, 196609, 65537, 17, 2, 393217, 16, 65538, 262145, 17, 131074, 262145, 17, 196610, 393217, 17)
@@ -552,14 +552,6 @@ zoom = Vector2(4, 4)
 [node name="TurnQueue" parent="." instance=ExtResource("4_cyoeg")]
 script = ExtResource("5_notne")
 
-[node name="player1_table" parent="TurnQueue" instance=ExtResource("5_ch6mf")]
-position = Vector2(12, 292)
-script = null
-
-[node name="player1_table2" parent="TurnQueue" instance=ExtResource("5_ch6mf")]
-position = Vector2(12, 276)
-script = null
-
 [node name="NPCs" type="Node2D" parent="."]
 visible = false
 
@@ -1013,6 +1005,9 @@ texture = ExtResource("7_8lldu")
 [node name="loc97" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 248)
 texture = ExtResource("7_8lldu")
+
+[node name="PlayerSpawner" type="Node2D" parent="."]
+script = ExtResource("10_8a28u")
 
 [connection signal="continue_turns" from="." to="TurnQueue" method="_on_level_continue_turns"]
 [connection signal="player_finished_turn" from="TurnQueue" to="." method="_on_turn_queue_player_finished_turn"]

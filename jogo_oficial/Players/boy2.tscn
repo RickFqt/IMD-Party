@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bbgy0kj5igyds"]
+[gd_scene load_steps=13 format=3 uid="uid://bbgy0kj5igyds"]
 
 [ext_resource type="Texture2D" uid="uid://ds53coi4rwxhx" path="res://actors/assets/tile_0267.png" id="1_ulob4"]
 [ext_resource type="Texture2D" uid="uid://ctn3p5lxqe7j5" path="res://actors/assets/tile_0294.png" id="2_dgsb1"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://ceiq1a23dl6ct" path="res://actors/assets/tile_0268.png" id="9_mycnw"]
 [ext_resource type="Texture2D" uid="uid://bvh1js204t6at" path="res://actors/assets/tile_0295.png" id="10_7iipl"]
 [ext_resource type="Texture2D" uid="uid://dme6gs8tm2ffv" path="res://actors/assets/tile_0322.png" id="11_dtpkb"]
-[ext_resource type="Script" path="res://jogo_oficial/Scripts/playersScript.gd" id="12_oagpb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_505td"]
 animations = [{
@@ -20,7 +19,7 @@ animations = [{
 "texture": ExtResource("1_ulob4")
 }],
 "loop": true,
-"name": &"default",
+"name": &"Idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -93,8 +92,6 @@ animations = [{
 }]
 
 [node name="Player" type="AnimatedSprite2D"]
-position = Vector2(157, 80)
 sprite_frames = SubResource("SpriteFrames_505td")
-animation = &"walk_right"
-autoplay = "default"
-script = ExtResource("12_oagpb")
+animation = &"Idle"
+autoplay = "Idle"

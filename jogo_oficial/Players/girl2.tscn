@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bmvxcfr5rrdb5"]
+[gd_scene load_steps=15 format=3 uid="uid://bmvxcfr5rrdb5"]
 
 [ext_resource type="Texture2D" uid="uid://dvjuf6kcv3e0m" path="res://actors/assets/tile_0105.png" id="1_5moy0"]
 [ext_resource type="Texture2D" uid="uid://xn3fdnsyeics" path="res://actors/assets/tile_0132.png" id="2_t5srl"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://rdpkoyol3yjm" path="res://actors/assets/tile_0106.png" id="10_8shul"]
 [ext_resource type="Texture2D" uid="uid://cf4x3inufi1jq" path="res://actors/assets/tile_0133.png" id="11_4j36l"]
 [ext_resource type="Texture2D" uid="uid://cvsoe23cku2ud" path="res://actors/assets/tile_0160.png" id="12_pr67d"]
-[ext_resource type="Script" path="res://jogo_oficial/Scripts/playersScript.gd" id="13_8a4qf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_72n4y"]
 atlas = ExtResource("1_5moy0")
@@ -25,7 +24,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_72n4y")
 }],
 "loop": true,
-"name": &"default",
+"name": &"Idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -98,9 +97,6 @@ animations = [{
 }]
 
 [node name="Player" type="AnimatedSprite2D"]
-position = Vector2(151, 89)
 sprite_frames = SubResource("SpriteFrames_g5ybu")
-animation = &"walk_left"
-autoplay = "default"
-frame_progress = 0.00607933
-script = ExtResource("13_8a4qf")
+animation = &"Idle"
+autoplay = "Idle"

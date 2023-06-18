@@ -1,7 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://dqhr3x3il8glh"]
+[gd_scene load_steps=16 format=3 uid="uid://dqhr3x3il8glh"]
 
 [ext_resource type="Texture2D" uid="uid://c3vdt3eny2hmh" path="res://jogo_oficial/Assets/Kenney-Urban-Pack/Tilemap/tilemap.png" id="1_cjnsn"]
-[ext_resource type="Script" path="res://jogo_oficial/Scripts/playersScript.gd" id="2_esnwm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rhby0"]
 atlas = ExtResource("1_cjnsn")
@@ -135,8 +134,6 @@ animations = [{
 }]
 
 [node name="Player" type="AnimatedSprite2D"]
-position = Vector2(162, 90)
 sprite_frames = SubResource("SpriteFrames_irpfc")
 animation = &"Idle"
 autoplay = "Idle"
-script = ExtResource("2_esnwm")

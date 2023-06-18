@@ -4,8 +4,8 @@ extends Node2D
 
 # @onready variables
 @onready var turnqueue := $TurnQueue as Node2D
-@onready var player1 := $TurnQueue/player1_table as CharacterBody2D
-@onready var player2 := $TurnQueue/player1_table2 as CharacterBody2D
+# @onready var player1 := $TurnQueue/player1_table as CharacterBody2D
+# @onready var player2 := $TurnQueue/player1_table2 as CharacterBody2D
 @onready var global = get_node("/root/Global")
 
 # Variables
@@ -16,8 +16,8 @@ signal continue_turns # Sinal que permite a continuação dos turnos dos jogador
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$TurnQueue/player1_table/anim.play("idle")
-	$TurnQueue/player1_table2/anim.play("idle")
+	turnqueue.player_table1.get_child(0).play("Idle")
+	turnqueue.player_table2.get_child(0).play("Idle")
 	
 	if(!global.loc_inicializado):
 		# Inicializa os locais pela primeira vez, junto com a casa de diploma
@@ -42,8 +42,8 @@ func randomize_star():
 	
 	var possible_locations = []
 	
-	var idx_player1 = player1.curr_position
-	var idx_player2 = player2.curr_position
+	var idx_player1 = turnqueue.get_child(0).curr_position
+	var idx_player2 = turnqueue.get_child(1).curr_position
 	
 	# Numero que indica quantas casas devem ser adicionadas ao valor real do indice
 	# (considerado apenas quando o jogador esta perto do tile que roda o mapa)
