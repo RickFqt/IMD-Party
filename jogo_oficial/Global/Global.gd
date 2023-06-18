@@ -4,8 +4,8 @@ extends Node2D
 
 var player1 : Node2D # Player 1
 var player2 : Node2D # Player 2
-var player1Dir = "res://jogo_oficial/Players/boy1char.tscn" # Animação player 1
-var player2Dir = "res://jogo_oficial/Players/boy2char.tscn" # Animaçõa player 2
+var player1Dir = "res://jogo_oficial/Players/boy1.tscn" # Animação player 1
+var player2Dir = "res://jogo_oficial/Players/girl1.tscn" # Animaçõa player 2
 var locations = [] # Indica localização dos tiles
 var rodada : int # Indica a rodada atual da partida
 var semestre : int # Indica o semestre atual da partida

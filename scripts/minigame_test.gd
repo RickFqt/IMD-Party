@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var control = get_node("/root/controle")
+@onready var control = get_node("/root/Global")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,4 +13,4 @@ func _process(delta):
 
 func play_minigame():
 	await get_tree().create_timer(2).timeout
-	control.trocar_cena("res://levels/level_test.tscn")
+	control.trocar_cena("res://jogo_oficial/Scenes/map.tscn")

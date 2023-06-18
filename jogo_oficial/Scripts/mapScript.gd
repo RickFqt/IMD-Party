@@ -4,8 +4,8 @@ extends Node2D
 
 # @onready variables
 @onready var turnqueue := $TurnQueue as Node2D
-# @onready var player1 := $TurnQueue/player1_table as CharacterBody2D
-# @onready var player2 := $TurnQueue/player1_table2 as CharacterBody2D
+@onready var player1 := $TurnQueue/player_table1 as CharacterBody2D
+@onready var player2 := $TurnQueue/player_table2 as CharacterBody2D
 @onready var global = get_node("/root/Global")
 
 # Variables
@@ -16,8 +16,10 @@ signal continue_turns # Sinal que permite a continuação dos turnos dos jogador
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	turnqueue.player_table1.get_child(0).play("Idle")
-	turnqueue.player_table2.get_child(0).play("Idle")
+	
+	# Inicializa as animações dos players
+	player1.initialize_animation(1)
+	player2.initialize_animation(2)
 	
 	if(!global.loc_inicializado):
 		# Inicializa os locais pela primeira vez, junto com a casa de diploma

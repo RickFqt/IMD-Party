@@ -4,7 +4,6 @@ extends CharacterBody2D
 
 # @onready variables
 @onready var global = get_node("/root/Global")
-@onready var animation := $anim as AnimatedSprite2D
 @onready var camera := $camera as Camera2D
 
 # Variables
@@ -15,11 +14,22 @@ var curr_position = -1 # INDICE!!!!!!!! do player na lista global de posicoes
 var moedas_optativas = 0
 var able_to_move = false
 var moedas_obrigatorias = 0
+var animation : AnimatedSprite2D = null
 
 # Signals received
 signal roll # Sinal emitido quando o jogador aperta "ENTER"
 signal reached_star # Sinal emitido quando o jogador passa por uma casa de diploma
 signal reached_location # Sinal emitido quando o jogador se move para determinado local
+
+# Cria o node de animação para o player, baseado em seu número (1 para player1 ou 2 para player 2)
+func initialize_animation(n_player):
+	if n_player == 1:
+		animation = load(Global.player1Dir).instantiate()
+	else:
+		animation = load(Global.player2Dir).instantiate()
+	add_child(animation)
+
+	animation.play("Idle")
 
 # Função para jogar
 func play_turn():

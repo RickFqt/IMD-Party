@@ -2,37 +2,28 @@ extends Node2D
 
 # "Classe" que controla os turnos entre os jogadores
 
-# class_name TurnQueue
-
 # @onready variables
 @onready var global = get_node("/root/Global")
+@onready var player_table1 = $player_table1 as CharacterBody2D
+@onready var player_table2 = $player_table2 as CharacterBody2D
 
 # Variables
 var active_character
 var numero_turno = 1
 var semestre_atual = 1
 var continue_turns = false
-var player_table1: Node2D = null
-var player_table2: Node2D = null
 
 # Signals received
 signal player_finished_turn
 
-func _ready():
-	player_table1 = load(Global.player1Dir).instantiate()
-	# print("abacate")
-	#player_table1.position = global.infoPlayer1.location
-	
-	player_table2 = load(Global.player2Dir).instantiate()
-	#player_table2.position = global.infoPlayer2.location
-	add_child(player_table1)
-	add_child(player_table2)
 
 # Função de inicialização
 func initialize():
 	
 	if(!global.players_inicializados):
 		# Inicializa as informacoes do jogo pela primeira vez
+		
+		# Salva as informações no global
 		global.inicializar_players(player_table1.position, player_table1.curr_position, player_table1.moedas_obrigatorias, player_table1.moedas_optativas, player_table1.n_diplomas,
 								player_table2.position, player_table2.curr_position, player_table2.moedas_obrigatorias, player_table2.moedas_optativas, player_table2.n_diplomas,
 								semestre_atual, numero_turno)
@@ -40,7 +31,6 @@ func initialize():
 		# Carrega as informacoes ja armazenadas no global
 		load_game()
 	
-	# TODO? Mudar a ordem dos players, de acordo com quem ganhou no ultimo minijogo
 	# Seleciona o primeiro player a jogar
 	active_character = get_child(0)
 	
@@ -90,23 +80,24 @@ func change_to_minigame():
 	# ir pro minigame
 	save_game()
 	global.trocar_cena("res://jogo_oficial/Scenes/minigamePage.tscn")
+	#global.trocar_cena("res://levels/minigame_test.tscn")
 
 # Função para carregar as informações do global
 func load_game():
-	player_table1.position = global.player1.location
-	player_table1.curr_position = global.player1.index_location
-	player_table1.moedas_obrigatorias = global.player1.ob_coins 
-	player_table1.moedas_optativas = global.player1.opt_coins
-	player_table1.n_diplomas = global.player1.diplomas
+	player_table1.position = global.infoPlayer1.location
+	player_table1.curr_position = global.infoPlayer1.index_location
+	player_table1.moedas_obrigatorias = global.infoPlayer1.ob_coins 
+	player_table1.moedas_optativas = global.infoPlayer1.opt_coins
+	player_table1.n_diplomas = global.infoPlayer1.diplomas
 	
-	player_table2.position = global.player2.location
-	player_table2.curr_position = global.player2.index_location
-	player_table2.moedas_obrigatorias = global.player2.ob_coins 
-	player_table2.moedas_optativas = global.player2.opt_coins
-	player_table2.n_diplomas = global.player2.diplomas
+	player_table2.position = global.infoPlayer2.location
+	player_table2.curr_position = global.infoPlayer2.index_location
+	player_table2.moedas_obrigatorias = global.infoPlayer2.ob_coins 
+	player_table2.moedas_optativas = global.infoPlayer2.opt_coins
+	player_table2.n_diplomas = global.infoPlayer2.diplomas
 	
 	semestre_atual = global.semestre
-	numero_turno = global.turno
+	numero_turno = global.rodada
 	
 # Função para salvar as informações no global
 func save_game():

@@ -97,6 +97,7 @@ animations = [{
 }]
 
 [node name="Player" type="AnimatedSprite2D"]
+position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_g5ybu")
 animation = &"Idle"
 autoplay = "Idle"

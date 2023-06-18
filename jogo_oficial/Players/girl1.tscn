@@ -134,6 +134,7 @@ animations = [{
 }]
 
 [node name="Player" type="AnimatedSprite2D"]
+position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_irpfc")
 animation = &"Idle"
 autoplay = "Idle"
