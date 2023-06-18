@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="Perguntas" load_steps=4 format=3 uid="uid://cfglpho7i4h7d"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://cfglpho7i4h7d"]
 
-[ext_resource type="Resource" uid="uid://dvxmc3g3ddnvr" path="res://testes/resource/questions/teste.tres" id="1_l0eta"]
-[ext_resource type="Resource" uid="uid://bg47hyl0gsr71" path="res://testes/resource/questions/teste2.tres" id="2_2cf2v"]
+[ext_resource type="Resource" uid="uid://blgwsglav13eg" path="res://jogo_oficial/Resource/questions/teste.tres" id="1_gnigh"]
+[ext_resource type="Resource" uid="uid://bspg43431wfk2" path="res://jogo_oficial/Resource/questions/teste2.tres" id="2_i5oft"]
 
-[sub_resource type="GDScript" id="GDScript_ows6y"]
+[sub_resource type="GDScript" id="GDScript_neaak"]
 script/source = "extends Resource
 
 class_name Perguntas
@@ -12,6 +12,5 @@ class_name Perguntas
 "
 
 [resource]
-resource_name = "Bd_Questions"
-script = SubResource("GDScript_ows6y")
-perguntas = Array[Resource]([ExtResource("1_l0eta"), ExtResource("2_2cf2v")])
+script = SubResource("GDScript_neaak")
+perguntas = Array[Resource]([ExtResource("1_gnigh"), ExtResource("2_i5oft")])
