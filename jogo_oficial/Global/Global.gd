@@ -11,7 +11,8 @@ var rodada : int # Indica a rodada atual da partida
 var semestre : int # Indica o semestre atual da partida
 var loc_inicializado = false # Indica se as localizações ja foram inicializadas
 var players_inicializados = false # Indica se os players ja foram inicializados (junto com a partida)
-var star_location = {loc = Vector2(0,0), index = 0} # Indica a localização dos diplomas
+var star_price = {ob = 1, opt = 3} # Indica o preço do diploma
+var star_location = {loc = Vector2(0,0), index = 0} # Indica a localização do diploma
 
 # Infos do player1
 var infoPlayer1 = {
