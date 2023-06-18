@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Perguntas" load_steps=4 format=3 uid="uid://cfglpho7i4h7d"]
 
-[ext_resource type="Resource" uid="uid://dvxmc3g3ddnvr" path="res://resource/questions/teste.tres" id="1_l0eta"]
-[ext_resource type="Resource" uid="uid://bg47hyl0gsr71" path="res://resource/questions/teste2.tres" id="2_2cf2v"]
+[ext_resource type="Resource" uid="uid://dvxmc3g3ddnvr" path="res://testes/resource/questions/teste.tres" id="1_l0eta"]
+[ext_resource type="Resource" uid="uid://bg47hyl0gsr71" path="res://testes/resource/questions/teste2.tres" id="2_2cf2v"]
 
 [sub_resource type="GDScript" id="GDScript_ows6y"]
 script/source = "extends Resource

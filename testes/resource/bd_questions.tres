@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Perguntas" load_steps=4 format=3 uid="uid://c746ihqk1gfgx"]
+
+[ext_resource type="Resource" uid="uid://dvxmc3g3ddnvr" path="res://testes/resource/questions/teste.tres" id="1_jqxyu"]
+[ext_resource type="Resource" uid="uid://bg47hyl0gsr71" path="res://testes/resource/questions/teste2.tres" id="2_s024i"]
+
+[sub_resource type="GDScript" id="GDScript_ows6y"]
+script/source = "extends Resource
+
+class_name Perguntas
+
+@export var perguntas : Array[Resource]
+"
+
+[resource]
+resource_name = "Bd_Questions"
+script = SubResource("GDScript_ows6y")
+perguntas = Array[Resource]([ExtResource("1_jqxyu"), ExtResource("2_s024i")])

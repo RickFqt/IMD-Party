@@ -124,5 +124,6 @@ func next_Question():
 # Função para finalizar o jogo
 func end_Game():
 	print("Fim de jogo!")
+	Global.trocar_cena("res://jogo_oficial/Scenes/map.tscn")
 
 

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnjpngkslwjgc"]
+
+[ext_resource type="PackedScene" uid="uid://dt6l5474s7d6c" path="res://testes/prefabs/turn_queue.tscn" id="1_qdhe8"]
+[ext_resource type="PackedScene" uid="uid://cvu5su62sv23g" path="res://testes/actors/player_1_table.tscn" id="2_otrq6"]
+
+[node name="TurnQueue" instance=ExtResource("1_qdhe8")]
+
+[node name="player1_table" parent="." index="0" instance=ExtResource("2_otrq6")]
+position = Vector2(100, 62)
+
+[node name="player1_table2" parent="." index="1" instance=ExtResource("2_otrq6")]

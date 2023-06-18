@@ -3,18 +3,18 @@ extends Node
 signal countdown_finished
 signal endTime
 
+#Variables
 var timeRemaining: int = 0
 var countdownStep: float = 1
 var countdownSeconds: int = 5
 
+# @onready variables
+@onready var gameTimer = $GameTimer
+@onready var timerLabel = $TimerLabel
 @onready var countdownLabel = $CountdownLabel
 @onready var countdownTimer = $CountdownTimer
-@onready var timerLabel = $TimerLabel
-@onready var gameTimer = $GameTimer
 
 func _ready():
-	countdownTimer.timeout.connect(_onCountdownTick)
-	gameTimer.timeout.connect(_onTimerCountdownTick)
 	# Iniciar a contagem regressiva
 	startCountdown()
 
