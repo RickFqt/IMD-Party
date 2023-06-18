@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn4duosd17a6h"]
+
+[ext_resource type="Texture2D" uid="uid://78h8eshvrfwb" path="res://jogo_oficial/Assets/Items/resultAPge.png" id="1_kur6u"]
+[ext_resource type="FontFile" uid="uid://y3w3pfsp0bab" path="res://jogo_oficial/Assets/at01.ttf" id="2_j4vfs"]
+[ext_resource type="Texture2D" uid="uid://cag0c1kcifjrx" path="res://jogo_oficial/Assets/Items/items - imd_party.png" id="3_tnwjn"]
+[ext_resource type="Texture2D" uid="uid://dihun7xhqgrj7" path="res://jogo_oficial/Assets/Items/button.png" id="4_ymo4u"]
+
+[node name="TextureRect" type="TextureRect"]
+anchors_preset = -1
+anchor_left = 0.478
+anchor_top = 0.5
+anchor_right = 0.478
+anchor_bottom = 0.5
+offset_left = -88.96
+offset_top = -50.0
+offset_right = 98.04
+offset_bottom = 47.0
+texture = ExtResource("1_kur6u")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.439
+anchor_top = 0.232
+anchor_right = 0.439
+anchor_bottom = 0.232
+offset_left = -33.093
+offset_top = -11.504
+offset_right = 45.907
+offset_bottom = 61.496
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_j4vfs")
+text = "Comprar diploma?"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(88, 42)
+scale = Vector2(0.851351, 0.846154)
+texture = ExtResource("3_tnwjn")
+region_enabled = true
+region_rect = Rect2(2.82316, 67.0277, 37.3667, 26.3595)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 66.0
+offset_right = 82.0
+offset_bottom = 91.0
+texture = ExtResource("4_ymo4u")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 94.0
+offset_top = 66.0
+offset_right = 127.0
+offset_bottom = 91.0
+texture = ExtResource("4_ymo4u")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 63.0
+offset_right = 82.0
+offset_bottom = 84.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_j4vfs")
+text = "sim"
+flat = true
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 96.0
+offset_top = 63.0
+offset_right = 128.0
+offset_bottom = 84.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_j4vfs")
+text = "nao"
+flat = true
