@@ -13,6 +13,9 @@ var loc_inicializado = false # Indica se as localizações ja foram inicializada
 var players_inicializados = false # Indica se os players ja foram inicializados (junto com a partida)
 var star_price = {ob = 1, opt = 3} # Indica o preço do diploma
 var star_location = {loc = Vector2(0,0), index = 0} # Indica a localização do diploma
+var resultadoP1 = 0 #Score do mini-jogo do player 1
+var resultadoP2 = 0 #Score do mini-jogo do player 2
+
 
 # Infos do player1
 var infoPlayer1 = {

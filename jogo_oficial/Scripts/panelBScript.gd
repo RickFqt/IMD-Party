@@ -24,6 +24,7 @@ func _ready():
 	var perguntasResource = load("res://jogo_oficial/Resource/bd_questions.tres")
 	
 	LabelScore.text = "SCORE: " + str(score)
+	Global.resultadoP2 = 0
 	
 	for p in perguntasResource.perguntas:
 		perguntas.append(p)
@@ -114,7 +115,8 @@ func resetButtons():
 	
 func next_Question():
 	resetButtons()
-	idx = idx + 1
+	idx += 1
+	Global.resultadoP2 = score
 	if idx < perguntas.size():
 		show_pergunta(idx)
 	else: 

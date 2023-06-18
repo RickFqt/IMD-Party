@@ -513,6 +513,12 @@ offset_right = 320.0
 offset_bottom = 192.0
 texture = ExtResource("2_3dcy1")
 
+[node name="coin" type="Sprite2D" parent="."]
+position = Vector2(150, 134)
+texture = ExtResource("4_uqeyt")
+region_enabled = true
+region_rect = Rect2(54.8629, 24.5704, 21.6209, 20.9452)
+
 [node name="Label" type="Label" parent="."]
 offset_left = 87.0
 offset_top = 16.0
@@ -531,9 +537,3 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 script = ExtResource("5_d0kso")
-
-[node name="coin" type="Sprite2D" parent="."]
-position = Vector2(169, 134)
-texture = ExtResource("4_uqeyt")
-region_enabled = true
-region_rect = Rect2(54.8629, 24.5704, 21.6209, 20.9452)
