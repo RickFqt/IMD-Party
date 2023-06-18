@@ -5,6 +5,7 @@ extends CharacterBody2D
 # @onready variables
 @onready var global = get_node("/root/Global")
 @onready var camera := $camera as Camera2D
+@onready var dice := $dice as Node2D
 
 # Variables
 var n_diplomas = 0
@@ -38,15 +39,24 @@ func play_turn():
 	
 	# TODO: Fazer o dado aparecer
 	print("Rode o dado!!!")
+	dice.visible = true
 
 	# Espere o jogador rolar o dado
 	await press_enter
 	
+	dice.roll()
+	
+	await get_tree().create_timer(0.4).timeout
+	
 	# TODO: Fazer o dado mostrar o numero sorteado
 	
-	var dice = (randi() % 6 + 1)
-	print("numero sorteado: ", dice)
-	await move(dice)
+	var n_dice = dice.get_rolled_number()
+	print("numero sorteado: ", n_dice)
+	
+	await get_tree().create_timer(1).timeout
+	
+	dice.visible = false
+	await move(n_dice)
 		
 	animation.play("Idle")
 	

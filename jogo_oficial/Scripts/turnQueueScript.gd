@@ -79,8 +79,8 @@ func play_turn():
 func change_to_minigame():
 	# ir pro minigame
 	save_game()
-	global.trocar_cena("res://jogo_oficial/Scenes/minigamePage.tscn")
-	#global.trocar_cena("res://levels/minigame_test.tscn")
+	#global.trocar_cena("res://jogo_oficial/Scenes/minigamePage.tscn")
+	global.trocar_cena("res://testes/levels/minigame_test.tscn")
 
 # Função para carregar as informações do global
 func load_game():

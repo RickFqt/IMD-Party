@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b11yvrve6l2ke"]
+[gd_scene load_steps=15 format=3 uid="uid://b11yvrve6l2ke"]
 
 [ext_resource type="Script" path="res://jogo_oficial/Scripts/mapScript.gd" id="1_6c7p0"]
 [ext_resource type="Texture2D" uid="uid://tuijje4d6nw4" path="res://jogo_oficial/Assets/Kenney-Urban-Pack/Tiles/tile_0442 - Copia.png" id="2_miluf"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://jogo_oficial/Scripts/playersScript.gd" id="6_gi2pn"]
 [ext_resource type="PackedScene" uid="uid://bqqker8jx7f0v" path="res://testes/prefabs/get_locations.tscn" id="6_ih8ms"]
 [ext_resource type="Texture2D" uid="uid://e8o3yc5bingb" path="res://jogo_oficial/Assets/Kenney-Urban-Pack/Tiles/tile_0221.png" id="7_8lldu"]
+[ext_resource type="PackedScene" uid="uid://c7o83ekki4or0" path="res://jogo_oficial/Prefabs/Dice2/dice.tscn" id="7_uh72t"]
 [ext_resource type="Script" path="res://jogo_oficial/Scripts/getLocationsScript.gd" id="8_8nn57"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_mbixf"]
@@ -549,21 +550,6 @@ visible = false
 position = Vector2(12, 279)
 zoom = Vector2(4, 4)
 
-[node name="TurnQueue" parent="." instance=ExtResource("4_cyoeg")]
-script = ExtResource("5_notne")
-
-[node name="player_table1" type="CharacterBody2D" parent="TurnQueue"]
-position = Vector2(10, 275)
-script = ExtResource("6_gi2pn")
-
-[node name="camera" type="Camera2D" parent="TurnQueue/player_table1"]
-
-[node name="player_table2" type="CharacterBody2D" parent="TurnQueue"]
-position = Vector2(10, 289)
-script = ExtResource("6_gi2pn")
-
-[node name="camera" type="Camera2D" parent="TurnQueue/player_table2"]
-
 [node name="NPCs" type="Node2D" parent="."]
 
 [node name="Recepcionista" type="Sprite2D" parent="NPCs"]
@@ -1016,6 +1002,29 @@ texture = ExtResource("7_8lldu")
 [node name="loc97" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 248)
 texture = ExtResource("7_8lldu")
+
+[node name="TurnQueue" parent="." instance=ExtResource("4_cyoeg")]
+script = ExtResource("5_notne")
+
+[node name="player_table1" type="CharacterBody2D" parent="TurnQueue"]
+position = Vector2(10, 275)
+script = ExtResource("6_gi2pn")
+
+[node name="camera" type="Camera2D" parent="TurnQueue/player_table1"]
+
+[node name="dice" parent="TurnQueue/player_table1" instance=ExtResource("7_uh72t")]
+visible = false
+position = Vector2(20, -28)
+
+[node name="player_table2" type="CharacterBody2D" parent="TurnQueue"]
+position = Vector2(10, 289)
+script = ExtResource("6_gi2pn")
+
+[node name="camera" type="Camera2D" parent="TurnQueue/player_table2"]
+
+[node name="dice" parent="TurnQueue/player_table2" instance=ExtResource("7_uh72t")]
+visible = false
+position = Vector2(-20, -28)
 
 [connection signal="continue_turns" from="." to="TurnQueue" method="_on_level_continue_turns"]
 [connection signal="player_finished_turn" from="TurnQueue" to="." method="_on_turn_queue_player_finished_turn"]

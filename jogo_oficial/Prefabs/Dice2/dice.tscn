@@ -1,0 +1,226 @@
+[gd_scene load_steps=10 format=3 uid="uid://c7o83ekki4or0"]
+
+[ext_resource type="Texture2D" uid="uid://dtbtq674nhiq7" path="res://jogo_oficial/Prefabs/Dice/background.svg" id="1"]
+[ext_resource type="PackedScene" uid="uid://buw7gl7hfs5g5" path="res://jogo_oficial/Prefabs/Dice/hd_sprite.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://ns2glnnkmo6s" path="res://jogo_oficial/Prefabs/Dice/symbols.svg" id="3"]
+
+[sub_resource type="GDScript" id="2"]
+resource_name = "Dice"
+script/source = "# Code from:
+# https://codeberg.org/Sosasees/2d-dice-in-godot
+# Licensed under MIT License:
+# https://codeberg.org/sosasees/mit-license/raw/branch/no-year/LICENSE
+# Copyright (c) Sosasees
+
+extends Node2D
+
+
+signal dice_rolled(rolled_number)
+@export var _symbol : NodePath
+@export var _symbol_animation_player : NodePath
+@onready var symbol : Node2D = get_node(_symbol)
+@onready var symbol_animation_player : AnimationPlayer \\
+		= get_node(_symbol_animation_player)
+var rng : RandomNumberGenerator = RandomNumberGenerator.new()
+var rolled_number : int:
+	get = get_rolled_number
+func get_rolled_number() -> int:
+	return rolled_number
+
+
+func roll() -> int:
+	rng.randomize()
+	rolled_number = rng.randi_range(1, 6)
+	symbol_animation_player.play(\"Roll\")
+	emit_signal(\"dice_rolled\", get_rolled_number())
+	return rolled_number
+
+
+func update_symbol() -> void:
+	symbol.set_symbol(rolled_number)
+
+
+func _unhandled_input(event) -> void:
+	if event.is_action_pressed(\"dice_roll\"):
+		# warning-ignore:return_value_discarded
+		roll()
+"
+
+[sub_resource type="GDScript" id="1"]
+resource_name = "HDSprite"
+script/source = "# Code from:
+# https://codeberg.org/Sosasees/2d-dice-in-godot
+# Licensed under MIT License:
+# https://codeberg.org/Sosasees/mit-license/src/branch/2022/LICENSE
+# Copyright (c) Sosasees
+
+@tool extends Sprite2D
+
+
+@export var texture_scale : float = 1.0:
+	get = get_texture_scale,
+	set = set_texture_scale
+
+func get_texture_scale() -> float:
+	return texture_scale
+func set_texture_scale(new_texture_scale : float) -> void:
+	texture_scale = new_texture_scale
+	scale = Vector2.ONE / texture_scale
+"
+
+[sub_resource type="GDScript" id="4"]
+resource_name = "DiceSymbols"
+script/source = "# Code from:
+# https://codeberg.org/Sosasees/2d-dice-in-godot
+# Licensed under MIT License:
+# https://codeberg.org/Sosasees/mit-license/src/branch/2022/LICENSE
+# Copyright (c) Sosasees
+
+extends Node2D
+
+
+@onready var sprite : Sprite2D = get_node(\"HDSprite\")
+
+
+enum Symbol {
+	NONE = 0,
+	ONE = 1, TWO, THREE, FOUR, FIVE, SIX
+}
+
+
+func set_symbol(new_symbol : int) -> void:
+	sprite.set_frame(new_symbol)
+"
+
+[sub_resource type="GDScript" id="5"]
+resource_name = "HDSprite"
+script/source = "# Code from:
+# https://codeberg.org/Sosasees/2d-dice-in-godot
+# Licensed under MIT License:
+# https://codeberg.org/sosasees/mit-license/raw/branch/no-year/LICENSE
+# Copyright (c) Sosasees
+
+@tool extends Sprite2D
+
+
+@export var texture_scale : float = 1.0:
+		get = get_texture_scale,
+		set = set_texture_scale
+
+func get_texture_scale() -> float:
+	return texture_scale
+func set_texture_scale(new_texture_scale : float) -> void:
+	texture_scale = new_texture_scale
+	scale = Vector2.ONE / texture_scale
+"
+
+[sub_resource type="Animation" id="3"]
+resource_name = "Roll"
+length = 0.33
+step = 10.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.165),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"update_symbol"
+}]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Symbol:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.066, -0.306, 0.066, 0.306, 0, -0.066, 0, 0.066, 0, 1, -0.066, 0.262, 0.066, -0.262),
+"times": PackedFloat32Array(0, 0.165, 0.33)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Symbol:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.066, -0.306, 0.066, 0.306, 0, -0.066, 0, 0.066, 0, 1, -0.066, 0.262, 0.066, -0.262),
+"times": PackedFloat32Array(0, 0.165, 0.33)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.099, 1.749, 0.099, -1.749, 3.142, -0.099, 2.253, 0.099, -2.253),
+"times": PackedFloat32Array(0, 0.33)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.033, 0.22, 0.033, -0.22, 0.5, -0.066, 0, 0.066, 0, 1, -0.033, 0.384, 0.033, -0.384),
+"times": PackedFloat32Array(0, 0.165, 0.33)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.033, 0.22, 0.033, -0.22, 0.5, -0.066, 0, 0.066, 0, 1, -0.033, 0.384, 0.033, -0.384),
+"times": PackedFloat32Array(0, 0.165, 0.33)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cky5u"]
+_data = {
+"Roll": SubResource("3")
+}
+
+[node name="Dice" type="Node2D"]
+position = Vector2(0, -28)
+script = SubResource("2")
+_symbol = NodePath("Visual/Symbol")
+_symbol_animation_player = NodePath("Visual/AnimationPlayer")
+
+[node name="Visual" type="Node2D" parent="."]
+rotation = 3.142
+
+[node name="Background" type="Node2D" parent="Visual"]
+
+[node name="HDSprite" parent="Visual/Background" instance=ExtResource("2")]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1")
+script = SubResource("1")
+
+[node name="Symbol" type="Node2D" parent="Visual"]
+script = SubResource("4")
+
+[node name="HDSprite" parent="Visual/Symbol" instance=ExtResource("2")]
+modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3")
+hframes = 10
+frame = 3
+script = SubResource("5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Visual"]
+libraries = {
+"": SubResource("AnimationLibrary_cky5u")
+}
