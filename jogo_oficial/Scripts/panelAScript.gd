@@ -22,12 +22,6 @@ var respostaCorretaAtual : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	LabelQuestion.text = ""
-	ButtonA.text = ""
-	ButtonB.text = ""
-	ButtonC.text = ""
-	ButtonD.text = ""
-
 	var perguntasResource = load("res://jogo_oficial/Resource/bd_questions.tres")
 	
 	LabelScore.text = "SCORE: " + str(score)
@@ -38,9 +32,8 @@ func _ready():
 		print(p.opcaoA)
 
 	perguntas.shuffle()
-	
-func _onCountdownFinished():
 	show_pergunta(idx)
+	
 	
 func show_pergunta(id : int):
 	var perguntaAtual = perguntas[id]
@@ -130,9 +123,6 @@ func next_Question():
 		print("Acabaram as perguntas")
 		print("Pontuação final: ", score)
 		
-func end_Game():
-	print("Fim de jogo!")
-
 
 
 

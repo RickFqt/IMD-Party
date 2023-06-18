@@ -46,7 +46,7 @@ func _onCountdownTick():
 
 # Função para o iniciar o timer do jogo
 func _gameStart():
-	timeRemaining = 29  # Defina o tempo máximo em segundos 
+	timeRemaining = 5  # Defina o tempo máximo em segundos 
 	timerLabel.text = str(timeRemaining)
 	timerLabel.show()
 	gameTimer.start(timeRemaining)
@@ -64,3 +64,5 @@ func _onTimerCountdownTick():
 		countdownLabel.show()
 		emit_signal("endTime")
 		print("Time ended")
+		await get_tree().create_timer(4).timeout
+		Global.trocar_cena("res://jogo_oficial/Scenes/result_scene.tscn")
