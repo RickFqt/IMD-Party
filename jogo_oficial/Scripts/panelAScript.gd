@@ -18,11 +18,7 @@ var respostaCorretaAtual : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	ButtonAP1.pressed.connect(_onAnswerSelected, 1)
-	ButtonBP1.pressed.connect(_onAnswerSelected, 2)
-	ButtonCP1.pressed.connect(_onAnswerSelected, 3)
-	ButtonDP1.pressed.connect(_onAnswerSelected, 4)
-	
+		
 	LabelQuestionP1.text = ""
 	ButtonAP1.text = ""
 	ButtonBP1.text = ""
@@ -59,7 +55,7 @@ func show_pergunta(id : int):
 	
 # Função para captar a resposta do player
 func _input(event):
-	if event is InputEventKey:
+	if event is Input:
 		if event.pressed:
 			if event.as_text_keycode() == "A":
 				answer = 1
