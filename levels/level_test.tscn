@@ -2,21 +2,21 @@
 
 [ext_resource type="Script" path="res://scripts/level_test.gd" id="1_bct04"]
 [ext_resource type="PackedScene" uid="uid://dt6l5474s7d6c" path="res://prefabs/turn_queue.tscn" id="2_ch4hk"]
-[ext_resource type="Texture2D" uid="uid://c3vdt3eny2hmh" path="res://assets/Kenney-Urban-Pack/Tilemap/tilemap.png" id="2_scoen"]
-[ext_resource type="Texture2D" uid="uid://tuijje4d6nw4" path="res://assets/Kenney-Urban-Pack/Tiles/tile_0442 - Copia.png" id="2_tj6nh"]
+[ext_resource type="Texture2D" uid="uid://tuijje4d6nw4" path="res://jogo_oficial/Assets/Kenney-Urban-Pack/Tiles/tile_0442 - Copia.png" id="2_mn70i"]
+[ext_resource type="Texture2D" uid="uid://c3vdt3eny2hmh" path="res://jogo_oficial/Assets/Kenney-Urban-Pack/Tilemap/tilemap.png" id="3_4ao2s"]
 [ext_resource type="PackedScene" uid="uid://cvu5su62sv23g" path="res://actors/player_1_table.tscn" id="3_yndm5"]
 [ext_resource type="PackedScene" uid="uid://bqqker8jx7f0v" path="res://prefabs/get_locations.tscn" id="5_fdmeh"]
-[ext_resource type="Texture2D" uid="uid://e8o3yc5bingb" path="res://assets/Kenney-Urban-Pack/Tiles/tile_0221.png" id="7_ud5dv"]
+[ext_resource type="Texture2D" uid="uid://e8o3yc5bingb" path="res://jogo_oficial/Assets/Kenney-Urban-Pack/Tiles/tile_0221.png" id="7_4quvp"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_mbixf"]
 tile_data = PackedInt32Array(0, 327681, 16, 65536, 131073, 17, 131072, 131073, 17, 196608, 327681, 17, 1, 65537, 15, 65537, 655361, 16, 131073, 589825, 17, 196609, 65537, 17, 2, 393217, 16, 65538, 262145, 17, 131074, 262145, 17, 196610, 393217, 17)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q30dy"]
-texture = ExtResource("2_tj6nh")
+texture = ExtResource("2_mn70i")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8tg7v"]
-texture = ExtResource("2_scoen")
+texture = ExtResource("3_4ao2s")
 separation = Vector2i(1, 1)
 8:3/0 = 0
 8:4/0 = 0
@@ -560,61 +560,61 @@ visible = false
 
 [node name="Recepcionista" type="Sprite2D" parent="NPCs"]
 position = Vector2(42, 232)
-texture = ExtResource("2_scoen")
+texture = ExtResource("3_4ao2s")
 region_enabled = true
 region_rect = Rect2(408, 204, 16, 16)
 
 [node name="Professor" type="Sprite2D" parent="NPCs"]
 position = Vector2(13, 120)
-texture = ExtResource("2_scoen")
+texture = ExtResource("3_4ao2s")
 region_enabled = true
 region_rect = Rect2(407, 102, 17, 16)
 
 [node name="Professor2" type="Sprite2D" parent="NPCs"]
 position = Vector2(302, 14)
-texture = ExtResource("2_scoen")
+texture = ExtResource("3_4ao2s")
 region_enabled = true
 region_rect = Rect2(407, 102, 17, 16)
 
 [node name="Professor3" type="Sprite2D" parent="NPCs"]
 position = Vector2(301, 120)
-texture = ExtResource("2_scoen")
+texture = ExtResource("3_4ao2s")
 region_enabled = true
 region_rect = Rect2(407, 102, 17, 16)
 
 [node name="Professor4" type="Sprite2D" parent="NPCs"]
 position = Vector2(196, 14)
-texture = ExtResource("2_scoen")
+texture = ExtResource("3_4ao2s")
 region_enabled = true
 region_rect = Rect2(407, 102, 17, 16)
 
 [node name="Professor5" type="Sprite2D" parent="NPCs"]
 position = Vector2(195, 120)
-texture = ExtResource("2_scoen")
+texture = ExtResource("3_4ao2s")
 region_enabled = true
 region_rect = Rect2(407, 102, 17, 16)
 
 [node name="Professor6" type="Sprite2D" parent="NPCs"]
 position = Vector2(484, 14)
-texture = ExtResource("2_scoen")
+texture = ExtResource("3_4ao2s")
 region_enabled = true
 region_rect = Rect2(407, 102, 17, 16)
 
 [node name="Professor7" type="Sprite2D" parent="NPCs"]
 position = Vector2(483, 120)
-texture = ExtResource("2_scoen")
+texture = ExtResource("3_4ao2s")
 region_enabled = true
 region_rect = Rect2(407, 102, 17, 16)
 
 [node name="Professor8" type="Sprite2D" parent="NPCs"]
 position = Vector2(483, 232)
-texture = ExtResource("2_scoen")
+texture = ExtResource("3_4ao2s")
 region_enabled = true
 region_rect = Rect2(407, 102, 17, 16)
 
 [node name="Professor9" type="Sprite2D" parent="NPCs"]
 position = Vector2(13, 13)
-texture = ExtResource("2_scoen")
+texture = ExtResource("3_4ao2s")
 region_enabled = true
 region_rect = Rect2(407, 102, 17, 16)
 
@@ -622,391 +622,391 @@ region_rect = Rect2(407, 102, 17, 16)
 
 [node name="loc1" type="Sprite2D" parent="GetLocations"]
 position = Vector2(24, 280)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc2" type="Sprite2D" parent="GetLocations"]
 position = Vector2(40, 280)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc3" type="Sprite2D" parent="GetLocations"]
 position = Vector2(56, 280)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc4" type="Sprite2D" parent="GetLocations"]
 position = Vector2(72, 280)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc5" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 280)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc6" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 264)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc7" type="Sprite2D" parent="GetLocations"]
 position = Vector2(104, 264)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc8" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 264)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc9" type="Sprite2D" parent="GetLocations"]
 position = Vector2(136, 264)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc10" type="Sprite2D" parent="GetLocations"]
 position = Vector2(152, 264)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc11" type="Sprite2D" parent="GetLocations"]
 position = Vector2(168, 264)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc12" type="Sprite2D" parent="GetLocations"]
 position = Vector2(184, 264)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc13" type="Sprite2D" parent="GetLocations"]
 position = Vector2(200, 264)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc14" type="Sprite2D" parent="GetLocations"]
 position = Vector2(216, 264)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc15" type="Sprite2D" parent="GetLocations"]
 position = Vector2(232, 264)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc16" type="Sprite2D" parent="GetLocations"]
 position = Vector2(248, 264)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc17" type="Sprite2D" parent="GetLocations"]
 position = Vector2(264, 264)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc18" type="Sprite2D" parent="GetLocations"]
 position = Vector2(280, 264)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc19" type="Sprite2D" parent="GetLocations"]
 position = Vector2(296, 264)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc20" type="Sprite2D" parent="GetLocations"]
 position = Vector2(312, 264)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc21" type="Sprite2D" parent="GetLocations"]
 position = Vector2(328, 264)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc22" type="Sprite2D" parent="GetLocations"]
 position = Vector2(344, 264)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc23" type="Sprite2D" parent="GetLocations"]
 position = Vector2(360, 264)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc24" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 264)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc25" type="Sprite2D" parent="GetLocations"]
 position = Vector2(392, 264)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc26" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 264)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc27" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 248)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc28" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 232)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc29" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 216)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc30" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 200)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc31" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 184)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc32" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 168)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc33" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 152)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc34" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 136)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc35" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 120)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc36" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 104)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc37" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 88)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc38" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 72)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc39" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 56)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc40" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 40)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc41" type="Sprite2D" parent="GetLocations"]
 position = Vector2(392, 24)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc42" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 40)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc43" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 56)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc44" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 72)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc45" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 88)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc46" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 104)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc47" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 120)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc48" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 136)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc49" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 152)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc50" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 168)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc51" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 184)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc52" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 200)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc53" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 216)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc54" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 232)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc55" type="Sprite2D" parent="GetLocations"]
 position = Vector2(360, 232)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc56" type="Sprite2D" parent="GetLocations"]
 position = Vector2(344, 232)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc57" type="Sprite2D" parent="GetLocations"]
 position = Vector2(328, 232)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc58" type="Sprite2D" parent="GetLocations"]
 position = Vector2(312, 232)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc59" type="Sprite2D" parent="GetLocations"]
 position = Vector2(296, 232)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc60" type="Sprite2D" parent="GetLocations"]
 position = Vector2(280, 232)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc61" type="Sprite2D" parent="GetLocations"]
 position = Vector2(264, 232)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc62" type="Sprite2D" parent="GetLocations"]
 position = Vector2(248, 232)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc63" type="Sprite2D" parent="GetLocations"]
 position = Vector2(232, 232)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc64" type="Sprite2D" parent="GetLocations"]
 position = Vector2(216, 232)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc65" type="Sprite2D" parent="GetLocations"]
 position = Vector2(200, 232)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc66" type="Sprite2D" parent="GetLocations"]
 position = Vector2(184, 232)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc67" type="Sprite2D" parent="GetLocations"]
 position = Vector2(168, 232)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc68" type="Sprite2D" parent="GetLocations"]
 position = Vector2(152, 232)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc69" type="Sprite2D" parent="GetLocations"]
 position = Vector2(136, 232)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc70" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 232)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc71" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 216)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc72" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 200)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc73" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 184)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc74" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 168)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc75" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 152)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc76" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 136)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc77" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 120)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc78" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 104)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc79" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 88)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc80" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 72)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc81" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 56)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc82" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 40)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc83" type="Sprite2D" parent="GetLocations"]
 position = Vector2(104, 24)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc84" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 40)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc85" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 56)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc86" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 72)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc87" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 88)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc88" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 104)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc89" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 120)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc90" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 136)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc91" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 152)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc92" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 168)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc93" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 184)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc94" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 200)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc95" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 216)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc96" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 232)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [node name="loc97" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 248)
-texture = ExtResource("7_ud5dv")
+texture = ExtResource("7_4quvp")
 
 [connection signal="continue_turns" from="." to="TurnQueue" method="_on_level_continue_turns"]
 [connection signal="player_finished_turn" from="TurnQueue" to="." method="_on_turn_queue_player_finished_turn"]

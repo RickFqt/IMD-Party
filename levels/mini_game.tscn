@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://bedb4s1sibip6"]
 
-[ext_resource type="Texture2D" uid="uid://c3vdt3eny2hmh" path="res://assets/Kenney-Urban-Pack/Tilemap/tilemap.png" id="1_1f4to"]
+[ext_resource type="Texture2D" uid="uid://c3vdt3eny2hmh" path="res://jogo_oficial/Assets/Kenney-Urban-Pack/Tilemap/tilemap.png" id="1_1f4to"]
 [ext_resource type="Script" path="res://scripts/panelA.gd" id="1_e2bhe"]
-[ext_resource type="Texture2D" uid="uid://dihun7xhqgrj7" path="res://assets/button.png" id="1_eyx61"]
-[ext_resource type="FontFile" uid="uid://y3w3pfsp0bab" path="res://assets/at01.ttf" id="1_qbvon"]
+[ext_resource type="Texture2D" uid="uid://dihun7xhqgrj7" path="res://jogo_oficial/Assets/Items/button.png" id="1_eyx61"]
+[ext_resource type="FontFile" uid="uid://y3w3pfsp0bab" path="res://jogo_oficial/Assets/at01.ttf" id="1_qbvon"]
 [ext_resource type="Script" path="res://scripts/Countdown.gd" id="1_w5ifg"]
 [ext_resource type="Script" path="res://scripts/panelB.gd" id="4_oq36h"]
 

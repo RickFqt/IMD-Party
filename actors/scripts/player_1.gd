@@ -10,19 +10,19 @@ func _physics_process(delta):
 	
 func _move():
 	var _direction: Vector2 = Vector2(
-		Input.get_axis("move_left", "move_right"),
-		Input.get_axis("move_up", "move_down")
+		Input.get_axis("walk_left", "walk_right"),
+		Input.get_axis("walk_up", "walk_down")
 	)
 	
 	if _direction != Vector2.ZERO:
 		if _direction.x == 1:
-			animation.play("move_right")
+			animation.play("walk_right")
 		elif _direction.x == -1:
-			animation.play("move_left")
+			animation.play("walk_left")
 		elif _direction.y == 1:
-			animation.play("move_down")
+			animation.play("walk_down")
 		else:
-			animation.play("move_up")
+			animation.play("walk_up")
 			
 	else:
 		animation.play("idle")

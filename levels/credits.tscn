@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://djc4d7ylge41g"]
 
 [ext_resource type="Script" path="res://scripts/credits.gd" id="1_7j83y"]
-[ext_resource type="Texture2D" uid="uid://c3vdt3eny2hmh" path="res://assets/Kenney-Urban-Pack/Tilemap/tilemap.png" id="1_xa6ic"]
-[ext_resource type="FontFile" uid="uid://y3w3pfsp0bab" path="res://assets/at01.ttf" id="2_io48k"]
-[ext_resource type="Texture2D" uid="uid://dfi66e4ueu5d8" path="res://assets/back_button.png" id="4_n877e"]
+[ext_resource type="Texture2D" uid="uid://c3vdt3eny2hmh" path="res://jogo_oficial/Assets/Kenney-Urban-Pack/Tilemap/tilemap.png" id="1_xa6ic"]
+[ext_resource type="FontFile" uid="uid://y3w3pfsp0bab" path="res://jogo_oficial/Assets/at01.ttf" id="2_io48k"]
+[ext_resource type="Texture2D" uid="uid://dfi66e4ueu5d8" path="res://jogo_oficial/Assets/Items/back_button.png" id="4_n877e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2cot8"]
 resource_name = "Home"

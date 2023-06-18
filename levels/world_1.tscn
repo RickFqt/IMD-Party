@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=3 uid="uid://dgjk454pag6lm"]
 
-[ext_resource type="Texture2D" uid="uid://c3vdt3eny2hmh" path="res://assets/Kenney-Urban-Pack/Tilemap/tilemap.png" id="1_qyyvw"]
+[ext_resource type="Texture2D" uid="uid://c3vdt3eny2hmh" path="res://jogo_oficial/Assets/Kenney-Urban-Pack/Tilemap/tilemap.png" id="1_qyyvw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8tg7v"]
 texture = ExtResource("1_qyyvw")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://drgjpk78y05t8"]
 
-[ext_resource type="Texture2D" uid="uid://c3vdt3eny2hmh" path="res://assets/Kenney-Urban-Pack/Tilemap/tilemap.png" id="1_ke2y2"]
+[ext_resource type="Texture2D" uid="uid://c3vdt3eny2hmh" path="res://jogo_oficial/Assets/Kenney-Urban-Pack/Tilemap/tilemap.png" id="1_ke2y2"]
 [ext_resource type="Script" path="res://scripts/home_page.gd" id="1_y4hvj"]
 [ext_resource type="PackedScene" uid="uid://brk5oblqbj4m4" path="res://levels/HUD.tscn" id="2_o2ekh"]
 
