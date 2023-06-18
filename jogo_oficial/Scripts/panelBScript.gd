@@ -2,7 +2,6 @@ extends Panel
 
 var answer : int
 var perguntas = []
-var buttonsDisabled : bool
 var respostaCorretaAtual : int
 
 @onready var LabelQuestion = $Question_p2 #Obtenha o caminho para a questão
@@ -43,20 +42,19 @@ func show_pergunta(id : int):
 	ButtonC.text = perguntaAtual.opcaoC # Atribua o texto da opção C à propriedade 'text' do button
 	ButtonD.text = perguntaAtual.opcaoD # Atribua o texto da opção D à propriedade 'text' do button
 	respostaCorretaAtual = perguntaAtual.respostaCorreta # Atribua a alternativa correta 
-	buttonsDisabled = false
 	
 func _input(event):
 	if event is InputEventKey:
-		if event.is_action_pressed("key_j"):
+		if event.is_action_pressed("key_i"):
 			answer = 1
 			_onAnswerSelected()
-		elif event.is_action_pressed("key_k"):
+		elif event.is_action_pressed("key_o"):
 			answer = 2
 			_onAnswerSelected()
-		elif event.is_action_pressed("key_l"):
+		elif event.is_action_pressed("key_k"):
 			answer = 3
 			_onAnswerSelected()
-		elif event.is_action_pressed("key_ç"):
+		elif event.is_action_pressed("key_l"):
 			answer = 4
 			_onAnswerSelected()
 				
@@ -69,10 +67,6 @@ func buttonWrongAnswer(button, texture):
 	texture.texture = load("res://jogo_oficial/Assets/Items/buttonWrong.png")
 		
 func _onAnswerSelected():
-	if buttonsDisabled:
-		return
-	buttonsDisabled = true
-	
 	if answer == respostaCorretaAtual:
 		# Resposta correta
 		print("Resposta correta!")

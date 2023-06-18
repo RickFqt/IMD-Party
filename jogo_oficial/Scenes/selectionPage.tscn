@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://dj7ajtxwkrgb4"]
+[gd_scene load_steps=14 format=3 uid="uid://dj7ajtxwkrgb4"]
 
+[ext_resource type="Script" path="res://jogo_oficial/Scripts/selectionPage.gd" id="1_c3ypd"]
 [ext_resource type="Texture2D" uid="uid://c3vdt3eny2hmh" path="res://jogo_oficial/Assets/Kenney-Urban-Pack/Tilemap/tilemap.png" id="1_jj2so"]
 [ext_resource type="FontFile" uid="uid://y3w3pfsp0bab" path="res://jogo_oficial/Assets/at01.ttf" id="2_50wqu"]
 [ext_resource type="Script" path="res://jogo_oficial/Scripts/player1.gd" id="2_nro4y"]
@@ -177,6 +178,7 @@ physics_layer_0/collision_layer = 1
 sources/18 = SubResource("TileSetAtlasSource_2cot8")
 
 [node name="selectionPage" type="Node2D"]
+script = ExtResource("1_c3ypd")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ilqjh")
@@ -188,9 +190,9 @@ layer_0/tile_data = PackedInt32Array(0, 1114130, 4, 1, 1179666, 4, 2, 1179666, 4
 layout_mode = 3
 anchors_preset = 0
 offset_left = 40.0
-offset_top = 72.0
+offset_top = 64.0
 offset_right = 80.0
-offset_bottom = 112.0
+offset_bottom = 104.0
 script = ExtResource("2_nro4y")
 
 [node name="Label" type="Label" parent="Player 1"]
@@ -214,7 +216,9 @@ offset_left = -8.0
 offset_top = 16.0
 offset_right = 16.0
 offset_bottom = 40.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_50wqu")
 icon = ExtResource("3_3slvy")
 
 [node name="TextureRect" type="TextureRect" parent="Player 1/Boy 1"]
@@ -269,13 +273,57 @@ offset_right = 24.0
 offset_bottom = 24.0
 texture = ExtResource("4_rh0q5")
 
+[node name="Label2" type="Label" parent="Player 1"]
+offset_left = -8.0
+offset_top = 32.0
+offset_right = 16.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("2_50wqu")
+theme_override_font_sizes/font_size = 14
+text = "Q"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Player 1"]
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 64.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("2_50wqu")
+theme_override_font_sizes/font_size = 14
+text = "W"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Player 1"]
+offset_left = -8.0
+offset_top = 72.0
+offset_right = 16.0
+offset_bottom = 96.0
+theme_override_fonts/font = ExtResource("2_50wqu")
+theme_override_font_sizes/font_size = 14
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Player 1"]
+offset_left = 40.0
+offset_top = 72.0
+offset_right = 64.0
+offset_bottom = 96.0
+theme_override_fonts/font = ExtResource("2_50wqu")
+theme_override_font_sizes/font_size = 14
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Player 2" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 224.0
-offset_top = 72.0
+offset_top = 64.0
 offset_right = 264.0
-offset_bottom = 112.0
+offset_bottom = 104.0
 script = ExtResource("9_pnrym")
 
 [node name="Label" type="Label" parent="Player 2"]
@@ -354,32 +402,68 @@ offset_right = 24.0
 offset_bottom = 24.0
 texture = ExtResource("9_1vfsv")
 
+[node name="Label6" type="Label" parent="Player 2"]
+offset_left = -8.0
+offset_top = 34.0
+offset_right = 16.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("2_50wqu")
+theme_override_font_sizes/font_size = 14
+text = "I"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="Player 2"]
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 64.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("2_50wqu")
+theme_override_font_sizes/font_size = 14
+text = "O"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="Player 2"]
+offset_left = -8.0
+offset_top = 72.0
+offset_right = 16.0
+offset_bottom = 96.0
+theme_override_fonts/font = ExtResource("2_50wqu")
+theme_override_font_sizes/font_size = 14
+text = "K"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label9" type="Label" parent="Player 2"]
+offset_left = 40.0
+offset_top = 73.0
+offset_right = 64.0
+offset_bottom = 96.0
+theme_override_fonts/font = ExtResource("2_50wqu")
+theme_override_font_sizes/font_size = 14
+text = "L"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Label" type="Label" parent="."]
 offset_left = 80.0
 offset_top = 16.0
-offset_right = 240.0
-offset_bottom = 39.0
+offset_right = 248.0
+offset_bottom = 56.0
 theme_override_fonts/font = ExtResource("2_50wqu")
 theme_override_font_sizes/font_size = 20
-text = "Escolham seus personagens"
+text = "Escolham seus personagens
+(Para confimar aperte Enter)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="."]
-offset_left = 96.0
-offset_top = 40.0
-offset_right = 224.0
-offset_bottom = 57.0
-theme_override_fonts/font = ExtResource("2_50wqu")
-theme_override_font_sizes/font_size = 15
-text = "Clique na tecla correspondente"
-horizontal_alignment = 1
-vertical_alignment = 1
-
+[connection signal="p1_ready" from="Player 1" to="." method="_on_p_1_ready"]
 [connection signal="pressed" from="Player 1/Boy 1" to="Player 1" method="_on_boy_1_pressed"]
 [connection signal="pressed" from="Player 1/Boy 2" to="Player 1" method="_on_boy_2_pressed"]
 [connection signal="pressed" from="Player 1/Girl 1" to="Player 1" method="_on_girl_1_pressed"]
 [connection signal="pressed" from="Player 1/Girl 2" to="Player 1" method="_on_girl_2_pressed"]
+[connection signal="p2_ready" from="Player 2" to="." method="_on_p_2_ready"]
 [connection signal="pressed" from="Player 2/Boy 1" to="Player 2" method="_on_boy_1_pressed"]
 [connection signal="pressed" from="Player 2/Boy 2" to="Player 2" method="_on_boy_2_pressed"]
 [connection signal="pressed" from="Player 2/Girl 1" to="Player 2" method="_on_girl_1_pressed"]

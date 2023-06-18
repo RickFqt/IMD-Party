@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bn4duosd17a6h"]
+[gd_scene load_steps=5 format=3 uid="uid://cex1gv16vq2qc"]
 
 [ext_resource type="Texture2D" uid="uid://78h8eshvrfwb" path="res://jogo_oficial/Assets/Items/resultAPge.png" id="1_kur6u"]
 [ext_resource type="FontFile" uid="uid://y3w3pfsp0bab" path="res://jogo_oficial/Assets/at01.ttf" id="2_j4vfs"]
@@ -49,6 +49,7 @@ offset_bottom = 91.0
 texture = ExtResource("4_ymo4u")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 94.0
 offset_top = 66.0
 offset_right = 127.0
@@ -67,6 +68,7 @@ text = "sim"
 flat = true
 
 [node name="Button2" type="Button" parent="."]
+layout_mode = 0
 offset_left = 96.0
 offset_top = 63.0
 offset_right = 128.0
