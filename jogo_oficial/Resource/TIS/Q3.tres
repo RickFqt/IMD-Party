@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_altpu")
-pergunta = "17 + 45"
-opcaoA = "63"
-opcaoB = "62"
-opcaoC = "68"
-opcaoD = "67"
-respostaCorreta = 2
+pergunta = "A inclusao digital tem que ser de todos:"
+opcaoA = " junto com educacao sobre tecnologia"
+opcaoB = "sem a necessidade de educar sobre tecnologia"
+opcaoC = "que tem internet no meio digital"
+opcaoD = "os usuarios de celulares na internet"
+respostaCorreta = 1

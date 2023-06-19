@@ -19,8 +19,8 @@ var bd_ME = "res://jogo_oficial/Resource/bd_questionsME.tres"
 var bd_PROB = "res://jogo_oficial/Resource/bd_questionsPROB.tres"
 var bd_TIS = "res://jogo_oficial/Resource/bd_questionsTIS.tres"
 var bd_FMCI = "res://jogo_oficial/Resource/bd_questionsFMCI.tres"
-var questoes : Array[String] = [bd_ME, bd_PROB, bd_TIS, bd_FMCI]
-var questoes_game = ""
+var questoes : Array[String] = [bd_ME, bd_PROB, bd_FMCI]
+var questoes_game : String
 
 # Infos do player1
 var infoPlayer1 = {

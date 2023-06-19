@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_rc1p4")
-pergunta = "18 + 36"
-opcaoA = "50"
-opcaoB = "55"
-opcaoC = "53"
-opcaoD = "54"
-respostaCorreta = 4
+pergunta = "A acessibilidade digital e:"
+opcaoA = "como acessar o meio digital"
+opcaoB = "a acessibilidade no meio digital"
+opcaoC = "o acesso a internet"
+opcaoD = "o acesso a celulares"
+respostaCorreta = 2

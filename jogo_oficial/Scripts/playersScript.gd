@@ -141,7 +141,7 @@ func process_star():
 	else:
 		moedas_obrigatorias = Global.infoPlayer2.ob_coins
 		moedas_optativas = Global.infoPlayer2.opt_coins
-	if moedas_obrigatorias >= global.star_price.ob and moedas_optativas >= global.star_price.ob:
+	if moedas_obrigatorias >= Global.star_price.ob and moedas_optativas >= Global.star_price.opt:
 		#print("Voce quer comprar um diploma???")
 		diploma.visible = true
 		animation.visible = false
@@ -149,8 +149,8 @@ func process_star():
 		await endBuyTurn
 		animation.visible = true
 		if comprar:
-			moedas_obrigatorias -= global.star_price.ob
-			moedas_optativas -= global.star_price.ob
+			moedas_obrigatorias -= Global.star_price.ob
+			moedas_optativas -= Global.star_price.opt
 			n_diplomas += 1
 			
 			# Atualiza as informacoes no global

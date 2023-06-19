@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_5m78q")
-pergunta = "17 + 45"
-opcaoA = "63"
-opcaoB = "62"
-opcaoC = "68"
-opcaoD = "67"
-respostaCorreta = 2
+pergunta = "O que e fake news?"
+opcaoA = "Qualquer notícia compartilhada por rede social"
+opcaoB = "Qualquer coisa postada em uma rede social"
+opcaoC = "Uma notícia falsa compartilhada por meios digitais"
+opcaoD = "Uma notícia compartilhada por meios digitais"
+respostaCorreta = 3

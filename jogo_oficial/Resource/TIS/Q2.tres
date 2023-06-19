@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_usldf")
-pergunta = "17 + 45"
-opcaoA = "63"
-opcaoB = "62"
-opcaoC = "68"
-opcaoD = "67"
+pergunta = "Dados sao informacoes..."
+opcaoA = "sobre dados de seis lados"
+opcaoB = "que podem ser armazenadas e utilizadas"
+opcaoC = "avulsas que nao fazem sentido"
+opcaoD = "aleatórias geradas por um algoritmo"
 respostaCorreta = 2

@@ -68,4 +68,4 @@ func mostrarResultado():
 	$"../coins1".visible = true
 	$"../coins2".visible = true
 	await get_tree().create_timer(3).timeout
-	#Global.trocar_cena("res://jogo_oficial/Scenes/menuPage.tscn")
+	Global.trocar_cena("res://jogo_oficial/Scenes/menuPage.tscn")

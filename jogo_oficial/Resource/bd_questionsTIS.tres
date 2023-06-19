@@ -1,11 +1,13 @@
-[gd_resource type="Resource" load_steps=6 format=3 uid="uid://bcoc1i4wo4e1k"]
+[gd_resource type="Resource" load_steps=8 format=3 uid="uid://bcoc1i4wo4e1k"]
 
 [ext_resource type="Resource" uid="uid://dwchxw1iu1ohg" path="res://jogo_oficial/Resource/TIS/Q1.tres" id="1_cm0lw"]
 [ext_resource type="Resource" uid="uid://daao0xg22aqem" path="res://jogo_oficial/Resource/TIS/Q2.tres" id="2_wvvm4"]
 [ext_resource type="Resource" uid="uid://qb48k3qg5dxy" path="res://jogo_oficial/Resource/TIS/Q3.tres" id="3_35q5h"]
 [ext_resource type="Resource" uid="uid://dbnnwga4w7mv4" path="res://jogo_oficial/Resource/TIS/Q4.tres" id="4_ahydf"]
+[ext_resource type="Resource" uid="uid://plvbbjy5gx2x" path="res://jogo_oficial/Resource/TIS/Q5.tres" id="5_4aiju"]
 [ext_resource type="Script" path="res://jogo_oficial/Scripts/bd.gd" id="5_oyjmw"]
+[ext_resource type="Resource" uid="uid://cd6q241e04dq4" path="res://jogo_oficial/Resource/TIS/Q6.tres" id="6_t5f3m"]
 
 [resource]
 script = ExtResource("5_oyjmw")
-questoes = Array[Resource]([ExtResource("1_cm0lw"), ExtResource("2_wvvm4"), ExtResource("3_35q5h"), ExtResource("4_ahydf")])
+questoes = Array[Resource]([ExtResource("1_cm0lw"), ExtResource("2_wvvm4"), ExtResource("3_35q5h"), ExtResource("4_ahydf"), ExtResource("5_4aiju"), ExtResource("6_t5f3m")])
