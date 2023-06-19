@@ -1,11 +1,17 @@
-[gd_resource type="Resource" load_steps=6 format=3 uid="uid://52tygh7iu1vs"]
+[gd_resource type="Resource" load_steps=12 format=3 uid="uid://52tygh7iu1vs"]
 
 [ext_resource type="Script" path="res://jogo_oficial/Scripts/bd.gd" id="1_43cs6"]
 [ext_resource type="Resource" uid="uid://bomrclm0qcbvu" path="res://jogo_oficial/Resource/FMCI/Q1.tres" id="1_bvtgg"]
 [ext_resource type="Resource" uid="uid://dpb84nfuv4rym" path="res://jogo_oficial/Resource/FMCI/Q2.tres" id="2_qyfi5"]
 [ext_resource type="Resource" uid="uid://bhttx8mifajkb" path="res://jogo_oficial/Resource/FMCI/Q3.tres" id="3_3lc40"]
 [ext_resource type="Resource" uid="uid://cqaa6h2l47k8f" path="res://jogo_oficial/Resource/FMCI/Q4.tres" id="4_q8ih0"]
+[ext_resource type="Resource" uid="uid://cdqokrco2nmd7" path="res://jogo_oficial/Resource/FMCI/Q5.tres" id="5_0m1sg"]
+[ext_resource type="Resource" uid="uid://bhowalawikv52" path="res://jogo_oficial/Resource/FMCI/Q6.tres" id="6_6itgd"]
+[ext_resource type="Resource" uid="uid://b4ur0jgtq0hfv" path="res://jogo_oficial/Resource/FMCI/Q7.tres" id="7_me5vl"]
+[ext_resource type="Resource" uid="uid://f8lbwnrms432" path="res://jogo_oficial/Resource/FMCI/Q8.tres" id="8_twkcu"]
+[ext_resource type="Resource" uid="uid://dl4jbgf5jmyyw" path="res://jogo_oficial/Resource/FMCI/Q9.tres" id="9_7qumu"]
+[ext_resource type="Resource" uid="uid://cw2cnaa6rxwrn" path="res://jogo_oficial/Resource/FMCI/Q10.tres" id="10_wg6na"]
 
 [resource]
 script = ExtResource("1_43cs6")
-questoes = Array[Resource]([ExtResource("1_bvtgg"), ExtResource("2_qyfi5"), ExtResource("3_3lc40"), ExtResource("4_q8ih0")])
+questoes = Array[Resource]([ExtResource("1_bvtgg"), ExtResource("2_qyfi5"), ExtResource("3_3lc40"), ExtResource("4_q8ih0"), ExtResource("5_0m1sg"), ExtResource("6_6itgd"), ExtResource("7_me5vl"), ExtResource("8_twkcu"), ExtResource("9_7qumu"), ExtResource("10_wg6na")])

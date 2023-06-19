@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_lgwio")
-pergunta = "17 + 45"
-opcaoA = "63"
-opcaoB = "62"
-opcaoC = "68"
-opcaoD = "67"
+pergunta = "18 = 4 (mod x)"
+opcaoA = "5"
+opcaoB = "7"
+opcaoC = "9"
+opcaoD = "11"
 respostaCorreta = 2

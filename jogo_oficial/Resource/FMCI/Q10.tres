@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_alemd")
-pergunta = "17 + 45"
-opcaoA = "63"
-opcaoB = "62"
-opcaoC = "68"
-opcaoD = "67"
-respostaCorreta = 2
+pergunta = "30 = 8 (mod x)"
+opcaoA = "10"
+opcaoB = "11"
+opcaoC = "12"
+opcaoD = "13"
+respostaCorreta = 3

@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_lrsm0")
-pergunta = "17 + 45"
-opcaoA = "63"
-opcaoB = "62"
-opcaoC = "68"
-opcaoD = "67"
-respostaCorreta = 2
+pergunta = "23 = 2 (mod x)"
+opcaoA = "5"
+opcaoB = "6"
+opcaoC = "7"
+opcaoD = "8"
+respostaCorreta = 3
