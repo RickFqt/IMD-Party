@@ -1117,7 +1117,7 @@ zoom = Vector2(1.5, 1.5)
 
 [node name="dice" parent="TurnQueue/player_table1" instance=ExtResource("7_uh72t")]
 visible = false
-position = Vector2(-91, 44)
+position = Vector2(-90, 45)
 
 [node name="salaDeAula" parent="TurnQueue/player_table1" instance=ExtResource("12_kq6ud")]
 visible = false
@@ -1131,6 +1131,13 @@ visible = false
 shape = SubResource("CapsuleShape2D_h5eyx")
 disabled = true
 
+[node name="score" parent="TurnQueue/player_table1" instance=ExtResource("12_3ko6d")]
+visible = false
+offset_left = -106.0
+offset_top = -59.0
+offset_right = -106.0
+offset_bottom = -59.0
+
 [node name="player_table2" type="CharacterBody2D" parent="TurnQueue"]
 position = Vector2(10, 289)
 script = ExtResource("6_gi2pn")
@@ -1140,7 +1147,7 @@ zoom = Vector2(1.5, 1.5)
 
 [node name="dice" parent="TurnQueue/player_table2" instance=ExtResource("7_uh72t")]
 visible = false
-position = Vector2(92, 32)
+position = Vector2(92, 45)
 
 [node name="salaDeAula" parent="TurnQueue/player_table2" instance=ExtResource("12_kq6ud")]
 visible = false
@@ -1153,6 +1160,13 @@ visibility_layer = 3
 visible = false
 shape = SubResource("CapsuleShape2D_wmewy")
 disabled = true
+
+[node name="score" parent="TurnQueue/player_table2" instance=ExtResource("12_3ko6d")]
+visible = false
+offset_left = 54.0
+offset_top = -57.0
+offset_right = 54.0
+offset_bottom = -57.0
 
 [connection signal="continue_turns" from="." to="TurnQueue" method="_on_level_continue_turns"]
 [connection signal="player_finished_turn" from="TurnQueue" to="." method="_on_turn_queue_player_finished_turn"]

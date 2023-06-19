@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var dice := $dice as Node2D
 @onready var diploma = $compraDiploma
 @onready var salaDeAula = $salaDeAula
+@onready var score = $score
 
 # Variables
 var comprar = false
@@ -42,6 +43,7 @@ func initialize_animation(n_player):
 func play_turn():
 	
 	camera.make_current()
+	score.visible = true
 	
 	# TODO: Fazer o dado aparecer
 	print("Rode o dado!!!")
@@ -69,6 +71,8 @@ func play_turn():
 	# Verifica se o jogador terminou em uma Sala de Aula
 	if global.locations[curr_position].special:
 		await process_class()
+	
+	score.visible = false
 	
 	
 func _physics_process(delta):

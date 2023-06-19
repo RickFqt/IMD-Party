@@ -187,7 +187,7 @@ offset_right = 282.0
 offset_bottom = 136.0
 theme_override_fonts/font = ExtResource("3_fntfg")
 theme_override_font_sizes/font_size = 12
-text = "introduçao"
+text = "introducao"
 autowrap_mode = 3
 script = ExtResource("4_4civg")
 
