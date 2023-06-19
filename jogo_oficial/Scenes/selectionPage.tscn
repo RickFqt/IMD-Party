@@ -1,16 +1,18 @@
-[gd_scene load_steps=14 format=3 uid="uid://dj7ajtxwkrgb4"]
+[gd_scene load_steps=16 format=3 uid="uid://dj7ajtxwkrgb4"]
 
 [ext_resource type="Script" path="res://jogo_oficial/Scripts/selectionPage.gd" id="1_c3ypd"]
 [ext_resource type="Texture2D" uid="uid://c3vdt3eny2hmh" path="res://jogo_oficial/Assets/Kenney-Urban-Pack/Tilemap/tilemap.png" id="1_jj2so"]
 [ext_resource type="FontFile" uid="uid://y3w3pfsp0bab" path="res://jogo_oficial/Assets/at01.ttf" id="2_50wqu"]
 [ext_resource type="Script" path="res://jogo_oficial/Scripts/player1.gd" id="2_nro4y"]
 [ext_resource type="Texture2D" uid="uid://dyqtgf7sv4ufh" path="res://jogo_oficial/Assets/Actors/assets/tile_0024.png" id="3_3slvy"]
+[ext_resource type="Texture2D" uid="uid://hhpfgq14bcnk" path="res://jogo_oficial/Assets/Items/selectionBt.png" id="4_2163j"]
 [ext_resource type="Texture2D" uid="uid://cht253ukq75ir" path="res://jogo_oficial/Assets/Items/select_button.png" id="4_rh0q5"]
 [ext_resource type="Texture2D" uid="uid://b1j7bj8xm06v7" path="res://jogo_oficial/Assets/Actors/assets/tile_0267.png" id="4_s3pu6"]
 [ext_resource type="Texture2D" uid="uid://ctlxfjqsyny05" path="res://jogo_oficial/Assets/Actors/assets/tile_0429.png" id="5_eb4me"]
 [ext_resource type="Texture2D" uid="uid://t00p3i676o6" path="res://jogo_oficial/Assets/Actors/assets/tile_0105.png" id="6_7j5gf"]
 [ext_resource type="Texture2D" uid="uid://diosa1n1autys" path="res://jogo_oficial/Assets/Items/select_button2.png" id="9_1vfsv"]
 [ext_resource type="Script" path="res://jogo_oficial/Scripts/player2.gd" id="9_pnrym"]
+[ext_resource type="Texture2D" uid="uid://drlajm36575pp" path="res://jogo_oficial/Assets/Items/selectionBt2.png" id="12_mty0d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2cot8"]
 resource_name = "Home"
@@ -195,6 +197,15 @@ offset_right = 80.0
 offset_bottom = 104.0
 script = ExtResource("2_nro4y")
 
+[node name="selectionTurn" type="TextureRect" parent="Player 1"]
+visible = false
+layout_mode = 0
+offset_left = -8.0
+offset_top = -28.0
+offset_right = 86.0
+offset_bottom = 42.0
+texture = ExtResource("4_2163j")
+
 [node name="Label" type="Label" parent="Player 1"]
 layout_mode = 1
 anchors_preset = -1
@@ -202,8 +213,9 @@ anchor_left = -0.2
 anchor_top = -0.4
 anchor_right = -0.2
 anchor_bottom = -0.4
+offset_top = 5.0
 offset_right = 72.0
-offset_bottom = 23.0
+offset_bottom = 28.0
 theme_override_fonts/font = ExtResource("2_50wqu")
 theme_override_font_sizes/font_size = 21
 text = "Player 1"
@@ -223,7 +235,6 @@ button_mask = 0
 icon = ExtResource("3_3slvy")
 
 [node name="TextureRect" type="TextureRect" parent="Player 1/Boy 1"]
-visible = false
 layout_mode = 0
 offset_right = 24.0
 offset_bottom = 24.0
@@ -334,6 +345,16 @@ offset_right = 264.0
 offset_bottom = 104.0
 script = ExtResource("9_pnrym")
 
+[node name="selectionTurn" type="TextureRect" parent="Player 2"]
+visible = false
+layout_mode = 0
+offset_left = -32.0
+offset_top = -28.0
+offset_right = 62.0
+offset_bottom = 42.0
+texture = ExtResource("12_mty0d")
+flip_h = true
+
 [node name="Label" type="Label" parent="Player 2"]
 layout_mode = 1
 anchors_preset = -1
@@ -341,8 +362,10 @@ anchor_left = -0.2
 anchor_top = -0.4
 anchor_right = -0.2
 anchor_bottom = -0.4
-offset_right = 72.0
-offset_bottom = 23.0
+offset_left = 1.0
+offset_top = 5.0
+offset_right = 73.0
+offset_bottom = 28.0
 theme_override_fonts/font = ExtResource("2_50wqu")
 theme_override_font_sizes/font_size = 21
 text = "Player 2"
@@ -392,7 +415,6 @@ button_mask = 0
 icon = ExtResource("5_eb4me")
 
 [node name="TextureRect3" type="TextureRect" parent="Player 2/Girl 1"]
-visible = false
 layout_mode = 0
 offset_right = 24.0
 offset_bottom = 24.0

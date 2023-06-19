@@ -2,7 +2,8 @@ extends Label
 
 signal continueToScene
 
-var resultText = "Bem-vindos ao IMD Party,\nNesta aventura voces competiram entre si para ver quem conseguira se formar!"
+var resultText = "Bem-vindos ao IMD Party,\n
+				Nesta aventura voces competiram entre si para ver quem conseguira se formar!"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.text = ""
@@ -20,7 +21,7 @@ func mostrarResultado():
 		labelText += resultText[i]
 		$".".text = labelText
 		await get_tree().create_timer(0.05).timeout
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(2).timeout
 	
 	resultText = "Para rodar o dado aperter ENTER/SPACE\n\nPara selecionar uma opcao nos minijogos, clique na tecla correspondente:\n\nJogador 1: Q W A S\n\nJogador 2: I O K L\n\nBOA SORTE!!!\n"
 	

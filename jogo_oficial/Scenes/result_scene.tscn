@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://cg4tlaustipwo"]
+[gd_scene load_steps=8 format=3 uid="uid://cg4tlaustipwo"]
 
 [ext_resource type="Texture2D" uid="uid://c3vdt3eny2hmh" path="res://jogo_oficial/Assets/Kenney-Urban-Pack/Tilemap/tilemap.png" id="1_d7qq3"]
-[ext_resource type="Script" path="res://jogo_oficial/Scripts/result_scene.gd" id="1_ikwva"]
 [ext_resource type="Texture2D" uid="uid://78h8eshvrfwb" path="res://jogo_oficial/Assets/Items/resultAPge.png" id="2_3dcy1"]
 [ext_resource type="FontFile" uid="uid://y3w3pfsp0bab" path="res://jogo_oficial/Assets/at01.ttf" id="3_xydym"]
 [ext_resource type="Texture2D" uid="uid://cag0c1kcifjrx" path="res://jogo_oficial/Assets/Items/items - imd_party.png" id="4_uqeyt"]
@@ -501,7 +500,6 @@ separation = Vector2i(1, 1)
 sources/0 = SubResource("TileSetAtlasSource_gxx0m")
 
 [node name="resultScene" type="Node2D"]
-script = ExtResource("1_ikwva")
 
 [node name="Background" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_lc1tl")

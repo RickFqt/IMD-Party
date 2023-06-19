@@ -2,9 +2,8 @@ extends Label
 
 var resP1 = 0
 var resP2 = 0
-var winner = ""
 
-var resultText = ""
+var resultText = "Placar final: \n"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.text = ""
@@ -13,20 +12,29 @@ func _ready():
 	$"../coin".visible = false
 	
 	if resP1+resP2 == 0:
-		resultText = "Placar final: \nPlayer 1 : " + str(resP1) + "\nPlayer 2 : " + str(resP2) + "\n\nEstudem mais!"
+		resultText += "Player 1 : " + str(resP1) + "\nPlayer 2 : " + str(resP2) + "\n\nEstudem mais!"
 	else:
 		if resP1 > resP2: 
-			winner = "1"
 			Global.infoPlayer1.ob_coins += 3
+			
+			resultText += "Player 1 : " + str(resP1)
+			resultText += "\nPlayer 2 : " + str(resP2)
+			resultText += "\n\nPARABENS PLAYER 1!\n +3"
 		elif resP1 < resP2: 
-			winner = "2"
 			Global.infoPlayer2.ob_coins += 3
+			
+			resultText += "Player 2 : " + str(resP2)
+			resultText += "\nPlayer 1 : " + str(resP1)
+			resultText += "\n\nPARABENS PLAYER 2!\n +3"
 		else:
-			winner = "1 e 2"
 			Global.infoPlayer1.ob_coins += 3
-			Global.infoPlayer2.ob_coins += 3		
+			Global.infoPlayer2.ob_coins += 3
+			
+			resultText += "Player 1 : " + str(resP1)
+			resultText += "\nPlayer 2 : " + str(resP2)
+			resultText += "\n\nEMPATE!\n +3"
 		
-		resultText = "Placar final: \nPlayer 1 : " + str(resP1) + "\nPlayer 2 : " + str(resP2) + "\n\nPARABENS PLAYER " +  winner + "\n +3"
+		
 	
 	mostrarResultado()
 
