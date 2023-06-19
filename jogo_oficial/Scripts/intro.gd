@@ -2,8 +2,9 @@ extends Label
 
 signal continueToScene
 
-var resultText = "Bem-vindos ao IMD Party,\n
-				Nesta aventura voces competiram entre si para ver quem conseguira se formar!"
+var resultText = "Bem-vindos ao IMD Party!\n
+				Essa festa e exclusiva para os poucos alunos que conseguem passar por todo o curso e finalmente se formar. Nao e impossivel chegar aqui, mas e um pouco dificil.\n
+				Para terminar o curso, voces precisarao passar por provas de matematica, programacao, e outras areas relacionadas a tecnologia, e competir para ver quem e bom o suficiente para sobreviver ao BTI e participar do IMD Party."
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.text = ""
