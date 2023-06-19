@@ -20,12 +20,12 @@ var respostaCorretaAtual : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var perguntasResource = load("res://jogo_oficial/Resource/bd_questions.tres")
+	var perguntasResource = load(Global.questoes_game)
 	
 	LabelScore.text = "SCORE: " + str(score)
 	Global.resultadoP2 = 0
 	
-	for p in perguntasResource.perguntas:
+	for p in perguntasResource.questoes:
 		perguntas.append(p)
 		print(p.pergunta)
 		print(p.opcaoA)

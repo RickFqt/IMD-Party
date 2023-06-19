@@ -1,22 +1,11 @@
-[gd_resource type="Resource" load_steps=12 format=3 uid="uid://cfglpho7i4h7d"]
+[gd_resource type="Resource" load_steps=6 format=3 uid="uid://cfglpho7i4h7d"]
 
 [ext_resource type="Resource" uid="uid://blgwsglav13eg" path="res://jogo_oficial/Resource/ME/Q1.tres" id="1_gnigh"]
+[ext_resource type="Script" path="res://jogo_oficial/Scripts/bd.gd" id="1_rpjky"]
 [ext_resource type="Resource" uid="uid://bspg43431wfk2" path="res://jogo_oficial/Resource/ME/Q2.tres" id="2_i5oft"]
 [ext_resource type="Resource" uid="uid://l2x514gi6cft" path="res://jogo_oficial/Resource/ME/Q3.tres" id="3_prnu4"]
 [ext_resource type="Resource" uid="uid://i6ipck7ntdyl" path="res://jogo_oficial/Resource/ME/Q4.tres" id="4_sbonk"]
-[ext_resource type="Resource" uid="uid://mtvttumi7sj4" path="res://jogo_oficial/Resource/ME/Q5.tres" id="5_qfn8a"]
-[ext_resource type="Resource" uid="uid://dnugpiwfq58k1" path="res://jogo_oficial/Resource/ME/Q6.tres" id="6_edw8b"]
-[ext_resource type="Resource" uid="uid://dlw23ddut30x6" path="res://jogo_oficial/Resource/ME/Q7.tres" id="7_5dls4"]
-[ext_resource type="Resource" uid="uid://bvfkgsi0liqky" path="res://jogo_oficial/Resource/ME/Q8.tres" id="8_g4pqn"]
-[ext_resource type="Resource" uid="uid://dp1ug8smh4ghe" path="res://jogo_oficial/Resource/ME/Q9.tres" id="9_mt32k"]
-[ext_resource type="Resource" uid="uid://btb0qh3nijdj7" path="res://jogo_oficial/Resource/ME/Q10.tres" id="10_jgh0b"]
-
-[sub_resource type="GDScript" id="GDScript_byjes"]
-script/source = "extends Resource
-
-@export var questões : Array[Resource]
-"
 
 [resource]
-script = SubResource("GDScript_byjes")
-"questões" = Array[Resource]([ExtResource("1_gnigh"), ExtResource("2_i5oft"), ExtResource("3_prnu4"), ExtResource("4_sbonk"), ExtResource("5_qfn8a"), ExtResource("6_edw8b"), ExtResource("7_5dls4"), ExtResource("8_g4pqn"), ExtResource("9_mt32k"), ExtResource("10_jgh0b")])
+script = ExtResource("1_rpjky")
+questoes = Array[Resource]([ExtResource("1_gnigh"), ExtResource("2_i5oft"), ExtResource("3_prnu4"), ExtResource("4_sbonk")])

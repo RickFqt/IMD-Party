@@ -15,7 +15,12 @@ var star_price = {ob = 0, opt = 0} # Indica o preço do diploma
 var star_location = {loc = Vector2(0,0), index = 0} # Indica a localização do diploma
 var resultadoP1 = 0 #Score do mini-jogo do player 1
 var resultadoP2 = 0 #Score do mini-jogo do player 2
-
+var bd_ME = "res://jogo_oficial/Resource/bd_questionsME.tres"
+var bd_PROB = "res://jogo_oficial/Resource/bd_questionsPROB.tres"
+var bd_TIS = "res://jogo_oficial/Resource/bd_questionsTIS.tres"
+var bd_FMCI = "res://jogo_oficial/Resource/bd_questionsFMCI.tres"
+var questoes : Array[String] = [bd_ME, bd_PROB, bd_TIS, bd_FMCI]
+var questoes_game = ""
 
 # Infos do player1
 var infoPlayer1 = {
@@ -88,3 +93,8 @@ func update_global(loc1, idx1, m_ob1, m_opt1, dip1, loc2, idx2, m_ob2, m_opt2, d
 func trocar_cena(cena):
 	# Carregar a nova cena
 	get_tree().change_scene_to_file(cena)
+	
+func trocarBanco():
+	# Trocar o banco de questões do mini-game
+	questoes.shuffle()
+	questoes_game = questoes[0]

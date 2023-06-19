@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=6 format=3 uid="uid://52tygh7iu1vs"]
+
+[ext_resource type="Script" path="res://jogo_oficial/Scripts/bd.gd" id="1_43cs6"]
+[ext_resource type="Resource" uid="uid://bomrclm0qcbvu" path="res://jogo_oficial/Resource/FMCI/Q1.tres" id="1_bvtgg"]
+[ext_resource type="Resource" uid="uid://dpb84nfuv4rym" path="res://jogo_oficial/Resource/FMCI/Q2.tres" id="2_qyfi5"]
+[ext_resource type="Resource" uid="uid://bhttx8mifajkb" path="res://jogo_oficial/Resource/FMCI/Q3.tres" id="3_3lc40"]
+[ext_resource type="Resource" uid="uid://cqaa6h2l47k8f" path="res://jogo_oficial/Resource/FMCI/Q4.tres" id="4_q8ih0"]
+
+[resource]
+script = ExtResource("1_43cs6")
+questoes = Array[Resource]([ExtResource("1_bvtgg"), ExtResource("2_qyfi5"), ExtResource("3_3lc40"), ExtResource("4_q8ih0")])

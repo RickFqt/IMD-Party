@@ -46,7 +46,7 @@ func _onCountdownTick():
 
 # Função para o iniciar o timer do jogo
 func _gameStart():
-	timeRemaining = 5  # Defina o tempo máximo em segundos 
+	timeRemaining = 29  # Defina o tempo máximo em segundos 
 	timerLabel.text = str(timeRemaining)
 	timerLabel.show()
 	gameTimer.start(timeRemaining)

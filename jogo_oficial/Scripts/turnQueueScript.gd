@@ -43,7 +43,7 @@ func play_turn():
 	print("turno atual: ", numero_turno)
 	if(active_character != null):
 		
-		if semestre_atual > 1:
+		if semestre_atual > 5:
 			Global.trocar_cena("res://jogo_oficial/Scenes/final_game.tscn")
 		
 		# Inicia o turno do player
@@ -79,8 +79,9 @@ func play_turn():
 func change_to_minigame():
 	# ir pro minigame
 	save_game()
-	#global.trocar_cena("res://jogo_oficial/Scenes/minigamePage.tscn")
-	global.trocar_cena("res://testes/levels/minigame_test.tscn")
+	Global.trocarBanco()
+	global.trocar_cena("res://jogo_oficial/Scenes/minigamePage.tscn")
+	#global.trocar_cena("res://testes/levels/minigame_test.tscn")
 
 # Função para carregar as informações do global
 func load_game():

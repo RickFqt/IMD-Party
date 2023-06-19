@@ -7,7 +7,6 @@ func _ready():
 	$Panel2.visible = false
 	$Panel1.set_process_input(false)
 	$Panel2.set_process_input(false)
-	
 
 func _startGame():
 	$Panel1.visible = true
