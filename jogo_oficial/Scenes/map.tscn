@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://bqqker8jx7f0v" path="res://testes/prefabs/get_locations.tscn" id="6_ih8ms"]
 [ext_resource type="PackedScene" uid="uid://c7o83ekki4or0" path="res://jogo_oficial/Prefabs/Dice2/dice.tscn" id="7_uh72t"]
 [ext_resource type="Script" path="res://jogo_oficial/Scripts/getLocationsScript.gd" id="8_8nn57"]
-[ext_resource type="PackedScene" path="res://jogo_oficial/Scenes/compra_diploma.tscn" id="11_6xdl1"]
+[ext_resource type="PackedScene" uid="uid://cex1gv16vq2qc" path="res://jogo_oficial/Scenes/compra_diploma.tscn" id="11_6xdl1"]
 [ext_resource type="PackedScene" uid="uid://caen46q7irfws" path="res://jogo_oficial/Scenes/classRoomScene.tscn" id="12_kq6ud"]
-[ext_resource type="PackedScene" path="res://jogo_oficial/Scenes/score.tscn" id="13_4mb2s"]
+[ext_resource type="PackedScene" uid="uid://b1hxn8ymqcnpr" path="res://jogo_oficial/Scenes/score.tscn" id="13_4mb2s"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_mbixf"]
 tile_data = PackedInt32Array(0, 327681, 16, 65536, 131073, 17, 131072, 131073, 17, 196608, 327681, 17, 1, 65537, 15, 65537, 655361, 16, 131073, 589825, 17, 196609, 65537, 17, 2, 393217, 16, 65538, 262145, 17, 131074, 262145, 17, 196610, 393217, 17)
@@ -1118,7 +1118,7 @@ zoom = Vector2(1.5, 1.5)
 
 [node name="dice" parent="TurnQueue/player_table1" instance=ExtResource("7_uh72t")]
 visible = false
-position = Vector2(-91, 44)
+position = Vector2(-90, 44)
 
 [node name="salaDeAula" parent="TurnQueue/player_table1" instance=ExtResource("12_kq6ud")]
 visible = false
@@ -1133,6 +1133,11 @@ shape = SubResource("CapsuleShape2D_h5eyx")
 disabled = true
 
 [node name="score" parent="TurnQueue/player_table1" instance=ExtResource("13_4mb2s")]
+visible = false
+offset_left = -112.0
+offset_top = -60.0
+offset_right = -112.0
+offset_bottom = -60.0
 
 [node name="player_table2" type="CharacterBody2D" parent="TurnQueue"]
 position = Vector2(10, 289)
@@ -1143,7 +1148,7 @@ zoom = Vector2(1.5, 1.5)
 
 [node name="dice" parent="TurnQueue/player_table2" instance=ExtResource("7_uh72t")]
 visible = false
-position = Vector2(92, 32)
+position = Vector2(90, 45)
 
 [node name="salaDeAula" parent="TurnQueue/player_table2" instance=ExtResource("12_kq6ud")]
 visible = false
@@ -1158,6 +1163,11 @@ shape = SubResource("CapsuleShape2D_wmewy")
 disabled = true
 
 [node name="score" parent="TurnQueue/player_table2" instance=ExtResource("13_4mb2s")]
+visible = false
+offset_left = 60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = -60.0
 
 [connection signal="continue_turns" from="." to="TurnQueue" method="_on_level_continue_turns"]
 [connection signal="player_finished_turn" from="TurnQueue" to="." method="_on_turn_queue_player_finished_turn"]
