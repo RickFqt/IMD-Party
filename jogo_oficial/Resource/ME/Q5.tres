@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_l0mqg")
-pergunta = "17 + 45"
-opcaoA = "63"
-opcaoB = "62"
-opcaoC = "68"
-opcaoD = "67"
-respostaCorreta = 2
+pergunta = "16 + 30"
+opcaoA = "48"
+opcaoB = "43"
+opcaoC = "58"
+opcaoD = "46"
+respostaCorreta = 4
