@@ -61,7 +61,7 @@ func play_turn():
 	await get_tree().create_timer(1).timeout
 	
 	dice.visible = false
-	await move(26)
+	await move(n_dice)
 		
 	animation.play("Idle")
 	

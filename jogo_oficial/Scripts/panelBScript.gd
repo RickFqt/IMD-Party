@@ -67,6 +67,7 @@ func buttonWrongAnswer(button, texture):
 	texture.texture = load("res://jogo_oficial/Assets/Items/buttonWrong.png")
 		
 func _onAnswerSelected():
+	self.set_process_input(false)
 	if answer == respostaCorretaAtual:
 		# Resposta correta
 		print("Resposta correta!")
@@ -108,6 +109,7 @@ func resetButtons():
 	textureD.texture = load("res://jogo_oficial/Assets/Items/button.png")
 	
 func next_Question():
+	self.set_process_input(true)
 	resetButtons()
 	idx += 1
 	Global.resultadoP2 = score
