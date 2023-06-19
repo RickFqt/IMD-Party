@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dl4jbgf5jmyyw"]
+
+[ext_resource type="Script" path="res://jogo_oficial/Scripts/questionsScript.gd" id="1_2afcd"]
+
+[resource]
+script = ExtResource("1_2afcd")
+pergunta = "17 + 45"
+opcaoA = "63"
+opcaoB = "62"
+opcaoC = "68"
+opcaoD = "67"
+respostaCorreta = 2
