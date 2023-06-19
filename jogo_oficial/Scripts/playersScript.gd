@@ -5,11 +5,13 @@ extends CharacterBody2D
 @onready var camera := $camera as Camera2D
 @onready var dice := $dice as Node2D
 @onready var diploma = $compraDiploma
+@onready var salaDeAula = $salaDeAula
 
 # Variables
 var comprar = false
 var n_diplomas = 0
 var target_location
+var curr_player = 1
 var move_speed = 120.0
 var curr_position = -1 # INDICE!!!!!!!! do player na lista global de posicoes
 var moedas_optativas = 0
@@ -19,6 +21,7 @@ var animation : AnimatedSprite2D = null
 
 # Signals received
 signal endBuyTurn
+signal endClassTurn
 signal press_enter # Sinal emitido quando o jogador aperta "ENTER"
 signal reached_star # Sinal emitido quando o jogador passa por uma casa de diploma
 signal reached_location # Sinal emitido quando o jogador se move para determinado local
@@ -33,6 +36,7 @@ func initialize_animation(n_player):
 	add_child(animation)
 
 	animation.play("Idle")
+	curr_player = n_player
 
 # Função para jogar
 func play_turn():
@@ -151,30 +155,12 @@ func process_star():
 # Função chamada quando um jogador para em frente a uma sala de aula
 func process_class():
 	
-	# Suspense ........
-	print("............")
-	await get_tree().create_timer(3).timeout
-	# Randomizar se vai ter professor na sala ou nao
-	var tem_professor = (randi() % 100 + 1)
+	salaDeAula.visible = true
+	animation.visible = false
+	moedas_optativas += await salaDeAula.processClass(curr_player)
+	animation.visible = true
 	
-	if tem_professor > 60:
-		# TODO: Ir para o minigame bonus?
-		print("Olhaiiii, THANOS estava na sala!")
-		print("THANOS diz: \"Toma aí umas moeda, fio!\"")
-		
-		# Randomiza a quantidade de moedas ganhas
-		var n_moedas = 0
-		if tem_professor > 98:
-			n_moedas = 3
-		elif tem_professor > 80:
-			n_moedas = 2
-		else:
-			n_moedas = 1
-		moedas_optativas += n_moedas
-		await press_enter
-	else:
-		print("Nada acontece....")
-		await press_enter
+	
 
 
 func _on_compra_diploma_buy():
@@ -183,3 +169,4 @@ func _on_compra_diploma_buy():
 
 func _on_compra_diploma_end_buy_turn():
 	endBuyTurn.emit()
+

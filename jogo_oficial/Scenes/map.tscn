@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b11yvrve6l2ke"]
+[gd_scene load_steps=19 format=3 uid="uid://b11yvrve6l2ke"]
 
 [ext_resource type="Script" path="res://jogo_oficial/Scripts/mapScript.gd" id="1_6c7p0"]
 [ext_resource type="Texture2D" uid="uid://tuijje4d6nw4" path="res://jogo_oficial/Assets/Kenney-Urban-Pack/Tiles/tile_0442 - Copia.png" id="2_miluf"]
@@ -10,7 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://bqqker8jx7f0v" path="res://testes/prefabs/get_locations.tscn" id="6_ih8ms"]
 [ext_resource type="PackedScene" uid="uid://c7o83ekki4or0" path="res://jogo_oficial/Prefabs/Dice2/dice.tscn" id="7_uh72t"]
 [ext_resource type="Script" path="res://jogo_oficial/Scripts/getLocationsScript.gd" id="8_8nn57"]
-[ext_resource type="PackedScene" uid="uid://cex1gv16vq2qc" path="res://jogo_oficial/Scenes/compra_diploma.tscn" id="11_6xdl1"]
+[ext_resource type="PackedScene" path="res://jogo_oficial/Scenes/compra_diploma.tscn" id="11_6xdl1"]
+[ext_resource type="PackedScene" uid="uid://caen46q7irfws" path="res://jogo_oficial/Scenes/classRoomScene.tscn" id="12_kq6ud"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_mbixf"]
 tile_data = PackedInt32Array(0, 327681, 16, 65536, 131073, 17, 131072, 131073, 17, 196608, 327681, 17, 1, 65537, 15, 65537, 655361, 16, 131073, 589825, 17, 196609, 65537, 17, 2, 393217, 16, 65538, 262145, 17, 131074, 262145, 17, 196610, 393217, 17)
@@ -1118,6 +1119,9 @@ zoom = Vector2(1.5, 1.5)
 visible = false
 position = Vector2(-91, 44)
 
+[node name="salaDeAula" parent="TurnQueue/player_table1" instance=ExtResource("12_kq6ud")]
+visible = false
+
 [node name="compraDiploma" parent="TurnQueue/player_table1" instance=ExtResource("11_6xdl1")]
 visible = false
 visibility_layer = 2
@@ -1137,6 +1141,9 @@ zoom = Vector2(1.5, 1.5)
 [node name="dice" parent="TurnQueue/player_table2" instance=ExtResource("7_uh72t")]
 visible = false
 position = Vector2(92, 32)
+
+[node name="salaDeAula" parent="TurnQueue/player_table2" instance=ExtResource("12_kq6ud")]
+visible = false
 
 [node name="compraDiploma" parent="TurnQueue/player_table2" instance=ExtResource("11_6xdl1")]
 visible = false

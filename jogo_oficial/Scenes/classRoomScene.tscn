@@ -1,108 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://caen46q7irfws"]
+[gd_scene load_steps=5 format=3 uid="uid://caen46q7irfws"]
 
 [ext_resource type="Texture2D" uid="uid://78h8eshvrfwb" path="res://jogo_oficial/Assets/Items/resultAPge.png" id="1_pd5ht"]
+[ext_resource type="Script" path="res://jogo_oficial/Scripts/classRoomScene.gd" id="2_afcyi"]
 [ext_resource type="FontFile" uid="uid://y3w3pfsp0bab" path="res://jogo_oficial/Assets/at01.ttf" id="2_bpuwo"]
 [ext_resource type="Texture2D" uid="uid://cag0c1kcifjrx" path="res://jogo_oficial/Assets/Items/items - imd_party.png" id="3_1ip0e"]
 
 [node name="classRoomScene" type="TextureRect"]
-offset_left = -112.0
-offset_top = -4.0
-offset_right = 404.0
-offset_bottom = 188.0
+offset_left = -108.0
+offset_top = -52.0
+offset_right = 120.0
+offset_bottom = 20.0
 texture = ExtResource("1_pd5ht")
 expand_mode = 1
+script = ExtResource("2_afcyi")
 
-[node name="LabelDots" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.439
-anchor_top = 0.232
-anchor_right = 0.439
-anchor_bottom = 0.232
-offset_left = -97.524
-offset_top = -23.544
-offset_right = 130.476
-offset_bottom = 52.456
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_bpuwo")
-theme_override_font_sizes/font_size = 43
-text = ".............."
-horizontal_alignment = 1
-
-[node name="LabelNada" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.439
-anchor_top = 0.232
-anchor_right = 0.439
-anchor_bottom = 0.232
-offset_left = -101.524
-offset_top = 20.456
-offset_right = 134.476
-offset_bottom = 96.456
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_bpuwo")
-theme_override_font_sizes/font_size = 43
-text = "Nada acontece..."
-horizontal_alignment = 1
-
-[node name="LabelThanos" type="Label" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.439
-anchor_top = 0.232
-anchor_right = 0.439
-anchor_bottom = 0.232
-offset_left = -125.524
-offset_top = 16.456
-offset_right = 161.476
-offset_bottom = 130.456
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_bpuwo")
-theme_override_font_sizes/font_size = 33
-text = "THANOS estava na sala!
-THANOS diz: \"BON DIA!\""
-horizontal_alignment = 1
-
-[node name="LabelFatorial" type="Label" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.439
-anchor_top = 0.232
-anchor_right = 0.439
-anchor_bottom = 0.232
-offset_left = -57.524
-offset_top = -23.544
-offset_right = 170.476
-offset_bottom = 90.456
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_bpuwo")
-theme_override_font_sizes/font_size = 43
-text = "!"
-horizontal_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(239.956, 137.769)
-scale = Vector2(1.68883, 1.62308)
+[node name="coin" type="Sprite2D" parent="."]
+position = Vector2(108, 52)
+scale = Vector2(1.05494, 1.01154)
 texture = ExtResource("3_1ip0e")
 region_enabled = true
 region_rect = Rect2(29.3781, 25.0906, 19.6301, 20.1089)
 
-[node name="LabelCoins" type="Label" parent="."]
+[node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.439
 anchor_top = 0.232
 anchor_right = 0.439
 anchor_bottom = 0.232
-offset_left = -45.524
-offset_top = 76.456
-offset_right = 66.476
-offset_bottom = 154.456
+offset_left = -45.092
+offset_top = -11.704
+offset_right = 58.908
+offset_bottom = 48.296
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_bpuwo")
-theme_override_font_sizes/font_size = 32
-text = "+3"
+theme_override_font_sizes/font_size = 13
 horizontal_alignment = 1
+autowrap_mode = 3
