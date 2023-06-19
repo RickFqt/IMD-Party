@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_prlxj")
-pergunta = "17 + 45"
-opcaoA = "63"
-opcaoB = "62"
-opcaoC = "68"
-opcaoD = "67"
+pergunta = "Nas 52 cartas do baralho, qual a chance de tirar uma carta de coracoes?"
+opcaoA = "1/2"
+opcaoB = "1/4"
+opcaoC = "1/26"
+opcaoD = "1/52"
 respostaCorreta = 2

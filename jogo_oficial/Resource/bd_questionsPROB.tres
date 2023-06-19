@@ -1,11 +1,14 @@
-[gd_resource type="Resource" load_steps=6 format=3 uid="uid://dmmsgwk1brktc"]
+[gd_resource type="Resource" load_steps=9 format=3 uid="uid://dmmsgwk1brktc"]
 
 [ext_resource type="Script" path="res://jogo_oficial/Scripts/bd.gd" id="1_bl3qo"]
 [ext_resource type="Resource" uid="uid://cwg2yn701vxhq" path="res://jogo_oficial/Resource/PROB/Q1.tres" id="1_yos4i"]
 [ext_resource type="Resource" uid="uid://cjpkytig16ff6" path="res://jogo_oficial/Resource/PROB/Q2.tres" id="2_qgl1c"]
 [ext_resource type="Resource" uid="uid://cp8v4fnf0mcoj" path="res://jogo_oficial/Resource/PROB/Q3.tres" id="3_012cv"]
 [ext_resource type="Resource" uid="uid://psgbnvd1uai1" path="res://jogo_oficial/Resource/PROB/Q4.tres" id="4_8k0te"]
+[ext_resource type="Resource" uid="uid://dtyr76t5uofq8" path="res://jogo_oficial/Resource/PROB/Q5.tres" id="5_kicxp"]
+[ext_resource type="Resource" uid="uid://eynqlrcas3q6" path="res://jogo_oficial/Resource/PROB/Q6.tres" id="6_s4w6s"]
+[ext_resource type="Resource" uid="uid://c7kuxsrv331sr" path="res://jogo_oficial/Resource/PROB/Q7.tres" id="7_lru6p"]
 
 [resource]
 script = ExtResource("1_bl3qo")
-questoes = Array[Resource]([ExtResource("1_yos4i"), ExtResource("2_qgl1c"), ExtResource("3_012cv"), ExtResource("4_8k0te")])
+questoes = Array[Resource]([ExtResource("1_yos4i"), ExtResource("2_qgl1c"), ExtResource("3_012cv"), ExtResource("4_8k0te"), ExtResource("5_kicxp"), ExtResource("6_s4w6s"), ExtResource("7_lru6p")])

@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_qo4is")
-pergunta = "17 + 45"
-opcaoA = "63"
-opcaoB = "62"
-opcaoC = "68"
-opcaoD = "67"
-respostaCorreta = 2
+pergunta = "Qual a chance de tirar 5 em um dado?"
+opcaoA = "16%"
+opcaoB = "25%"
+opcaoC = "50%"
+opcaoD = "75%"
+respostaCorreta = 1

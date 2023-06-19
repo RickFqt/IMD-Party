@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_wj55h")
-pergunta = "18 + 36"
-opcaoA = "50"
-opcaoB = "55"
-opcaoC = "53"
-opcaoD = "54"
-respostaCorreta = 4
+pergunta = "Qual a chance de tirar cara em uma moeda?"
+opcaoA = "25%"
+opcaoB = "50%"
+opcaoC = "75%"
+opcaoD = "100%"
+respostaCorreta = 2
