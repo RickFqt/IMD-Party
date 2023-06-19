@@ -135,6 +135,12 @@ func move_to_location(location):
 
 # Função chamada quando um jogador passa por uma casa de diploma
 func process_star():
+	if curr_player == 1:
+		moedas_obrigatorias = Global.infoPlayer1.ob_coins
+		moedas_optativas = Global.infoPlayer1.opt_coins
+	else:
+		moedas_obrigatorias = Global.infoPlayer2.ob_coins
+		moedas_optativas = Global.infoPlayer2.opt_coins
 	if moedas_obrigatorias >= global.star_price.ob and moedas_optativas >= global.star_price.ob:
 		#print("Voce quer comprar um diploma???")
 		diploma.visible = true
