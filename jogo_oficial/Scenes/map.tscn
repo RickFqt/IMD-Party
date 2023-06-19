@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b11yvrve6l2ke"]
+[gd_scene load_steps=20 format=3 uid="uid://b11yvrve6l2ke"]
 
 [ext_resource type="Script" path="res://jogo_oficial/Scripts/mapScript.gd" id="1_6c7p0"]
 [ext_resource type="Texture2D" uid="uid://tuijje4d6nw4" path="res://jogo_oficial/Assets/Kenney-Urban-Pack/Tiles/tile_0442 - Copia.png" id="2_miluf"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://jogo_oficial/Scripts/getLocationsScript.gd" id="8_8nn57"]
 [ext_resource type="PackedScene" path="res://jogo_oficial/Scenes/compra_diploma.tscn" id="11_6xdl1"]
 [ext_resource type="PackedScene" uid="uid://caen46q7irfws" path="res://jogo_oficial/Scenes/classRoomScene.tscn" id="12_kq6ud"]
+[ext_resource type="PackedScene" path="res://jogo_oficial/Scenes/score.tscn" id="13_4mb2s"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_mbixf"]
 tile_data = PackedInt32Array(0, 327681, 16, 65536, 131073, 17, 131072, 131073, 17, 196608, 327681, 17, 1, 65537, 15, 65537, 655361, 16, 131073, 589825, 17, 196609, 65537, 17, 2, 393217, 16, 65538, 262145, 17, 131074, 262145, 17, 196610, 393217, 17)
@@ -1117,7 +1118,7 @@ zoom = Vector2(1.5, 1.5)
 
 [node name="dice" parent="TurnQueue/player_table1" instance=ExtResource("7_uh72t")]
 visible = false
-position = Vector2(-90, 45)
+position = Vector2(-91, 44)
 
 [node name="salaDeAula" parent="TurnQueue/player_table1" instance=ExtResource("12_kq6ud")]
 visible = false
@@ -1131,12 +1132,7 @@ visible = false
 shape = SubResource("CapsuleShape2D_h5eyx")
 disabled = true
 
-[node name="score" parent="TurnQueue/player_table1" instance=ExtResource("12_3ko6d")]
-visible = false
-offset_left = -106.0
-offset_top = -59.0
-offset_right = -106.0
-offset_bottom = -59.0
+[node name="score" parent="TurnQueue/player_table1" instance=ExtResource("13_4mb2s")]
 
 [node name="player_table2" type="CharacterBody2D" parent="TurnQueue"]
 position = Vector2(10, 289)
@@ -1147,7 +1143,7 @@ zoom = Vector2(1.5, 1.5)
 
 [node name="dice" parent="TurnQueue/player_table2" instance=ExtResource("7_uh72t")]
 visible = false
-position = Vector2(92, 45)
+position = Vector2(92, 32)
 
 [node name="salaDeAula" parent="TurnQueue/player_table2" instance=ExtResource("12_kq6ud")]
 visible = false
@@ -1161,12 +1157,7 @@ visible = false
 shape = SubResource("CapsuleShape2D_wmewy")
 disabled = true
 
-[node name="score" parent="TurnQueue/player_table2" instance=ExtResource("12_3ko6d")]
-visible = false
-offset_left = 54.0
-offset_top = -57.0
-offset_right = 54.0
-offset_bottom = -57.0
+[node name="score" parent="TurnQueue/player_table2" instance=ExtResource("13_4mb2s")]
 
 [connection signal="continue_turns" from="." to="TurnQueue" method="_on_level_continue_turns"]
 [connection signal="player_finished_turn" from="TurnQueue" to="." method="_on_turn_queue_player_finished_turn"]

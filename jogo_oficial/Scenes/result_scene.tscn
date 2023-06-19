@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dlu5b4gibdm17"]
+[gd_scene load_steps=9 format=3 uid="uid://cg4tlaustipwo"]
 
 [ext_resource type="Texture2D" uid="uid://c3vdt3eny2hmh" path="res://jogo_oficial/Assets/Kenney-Urban-Pack/Tilemap/tilemap.png" id="1_d7qq3"]
 [ext_resource type="Script" path="res://jogo_oficial/Scripts/result_scene.gd" id="1_ikwva"]
