@@ -16,7 +16,7 @@ signal continue_turns # Sinal que permite a continuação dos turnos dos jogador
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	$Compra_diploma.visible = false
 	# Inicializa as animações dos players
 	player1.initialize_animation(1)
 	player2.initialize_animation(2)
