@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
-
-
 # @onready variables
 @onready var global = get_node("/root/Global")
 @onready var camera := $camera as Camera2D
 @onready var dice := $dice as Node2D
+@onready var diploma = $compraDiploma
 
 # Variables
+var comprar = false
 var n_diplomas = 0
 var target_location
 var move_speed = 120.0
@@ -18,9 +18,11 @@ var moedas_obrigatorias = 0
 var animation : AnimatedSprite2D = null
 
 # Signals received
+signal endBuyTurn
 signal press_enter # Sinal emitido quando o jogador aperta "ENTER"
 signal reached_star # Sinal emitido quando o jogador passa por uma casa de diploma
 signal reached_location # Sinal emitido quando o jogador se move para determinado local
+
 
 # Cria o node de animação para o player, baseado em seu número (1 para player1 ou 2 para player 2)
 func initialize_animation(n_player):
@@ -128,20 +130,21 @@ func move_to_location(location):
 
 # Função chamada quando um jogador passa por uma casa de diploma
 func process_star():
-	# TODO: Mostrar as frases na tela para o jogador
 	if moedas_obrigatorias >= global.star_price.ob and moedas_optativas >= global.star_price.ob:
 		print("Voce quer comprar um diploma???")
-		await get_tree().create_timer(2).timeout
+		diploma.visible = true
+		animation.visible = false
+		await endBuyTurn
+		animation.visible = true		
 		# TODO: Receber input para o player poder escolher comprar ou nao a estrela
-		# If quer comprar:
-		moedas_obrigatorias -= global.star_price.ob
-		moedas_optativas -= global.star_price.ob
-		n_diplomas += 1
+		if comprar:
+			moedas_obrigatorias -= global.star_price.ob
+			moedas_optativas -= global.star_price.ob
+			n_diplomas += 1
+			comprar = false
 		print("Aeeee comprou o diploma!!!")
-		await get_tree().create_timer(2).timeout
 	else:
 		print("Sem moedas o suficiente :(")
-		await press_enter
 	
 	reached_star.emit()
 
@@ -172,3 +175,11 @@ func process_class():
 	else:
 		print("Nada acontece....")
 		await press_enter
+
+
+func _on_compra_diploma_buy():
+	comprar = true
+
+
+func _on_compra_diploma_end_buy_turn():
+	endBuyTurn.emit()

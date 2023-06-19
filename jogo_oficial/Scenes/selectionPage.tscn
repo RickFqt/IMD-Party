@@ -219,6 +219,7 @@ offset_bottom = 40.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_50wqu")
+button_mask = 0
 icon = ExtResource("3_3slvy")
 
 [node name="TextureRect" type="TextureRect" parent="Player 1/Boy 1"]
@@ -234,6 +235,7 @@ offset_left = 40.0
 offset_top = 16.0
 offset_right = 64.0
 offset_bottom = 40.0
+button_mask = 0
 icon = ExtResource("4_s3pu6")
 
 [node name="TextureRect2" type="TextureRect" parent="Player 1/Boy 2"]
@@ -249,6 +251,7 @@ offset_left = -8.0
 offset_top = 56.0
 offset_right = 16.0
 offset_bottom = 80.0
+button_mask = 0
 icon = ExtResource("5_eb4me")
 
 [node name="TextureRect3" type="TextureRect" parent="Player 1/Girl 1"]
@@ -264,6 +267,7 @@ offset_left = 40.0
 offset_top = 56.0
 offset_right = 64.0
 offset_bottom = 80.0
+button_mask = 0
 icon = ExtResource("6_7j5gf")
 
 [node name="TextureRect4" type="TextureRect" parent="Player 1/Girl 2"]
@@ -274,6 +278,7 @@ offset_bottom = 24.0
 texture = ExtResource("4_rh0q5")
 
 [node name="Label2" type="Label" parent="Player 1"]
+layout_mode = 0
 offset_left = -8.0
 offset_top = 32.0
 offset_right = 16.0
@@ -285,6 +290,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="Player 1"]
+layout_mode = 0
 offset_left = 40.0
 offset_top = 32.0
 offset_right = 64.0
@@ -296,6 +302,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label4" type="Label" parent="Player 1"]
+layout_mode = 0
 offset_left = -8.0
 offset_top = 72.0
 offset_right = 16.0
@@ -307,6 +314,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label5" type="Label" parent="Player 1"]
+layout_mode = 0
 offset_left = 40.0
 offset_top = 72.0
 offset_right = 64.0
@@ -348,6 +356,7 @@ offset_top = 16.0
 offset_right = 16.0
 offset_bottom = 40.0
 theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+button_mask = 0
 icon = ExtResource("3_3slvy")
 
 [node name="TextureRect" type="TextureRect" parent="Player 2/Boy 1"]
@@ -363,6 +372,7 @@ offset_left = 40.0
 offset_top = 16.0
 offset_right = 64.0
 offset_bottom = 40.0
+button_mask = 0
 icon = ExtResource("4_s3pu6")
 
 [node name="TextureRect2" type="TextureRect" parent="Player 2/Boy 2"]
@@ -378,6 +388,7 @@ offset_left = -8.0
 offset_top = 56.0
 offset_right = 16.0
 offset_bottom = 80.0
+button_mask = 0
 icon = ExtResource("5_eb4me")
 
 [node name="TextureRect3" type="TextureRect" parent="Player 2/Girl 1"]
@@ -393,6 +404,7 @@ offset_left = 40.0
 offset_top = 56.0
 offset_right = 64.0
 offset_bottom = 80.0
+button_mask = 0
 icon = ExtResource("6_7j5gf")
 
 [node name="TextureRect4" type="TextureRect" parent="Player 2/Girl 2"]
@@ -403,6 +415,7 @@ offset_bottom = 24.0
 texture = ExtResource("9_1vfsv")
 
 [node name="Label6" type="Label" parent="Player 2"]
+layout_mode = 0
 offset_left = -8.0
 offset_top = 34.0
 offset_right = 16.0
@@ -414,6 +427,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label7" type="Label" parent="Player 2"]
+layout_mode = 0
 offset_left = 40.0
 offset_top = 32.0
 offset_right = 64.0
@@ -425,6 +439,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label8" type="Label" parent="Player 2"]
+layout_mode = 0
 offset_left = -8.0
 offset_top = 72.0
 offset_right = 16.0
@@ -436,6 +451,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label9" type="Label" parent="Player 2"]
+layout_mode = 0
 offset_left = 40.0
 offset_top = 73.0
 offset_right = 64.0

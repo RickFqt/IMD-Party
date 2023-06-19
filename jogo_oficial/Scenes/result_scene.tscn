@@ -526,13 +526,7 @@ offset_right = 213.0
 offset_bottom = 172.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_xydym")
-text = "Placar final
-Player 1 : X
-Player 2 : Y
-
-PARABENS PLAYER 1
-	+5
-"
+text = "Resultado do mini-jogo"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3

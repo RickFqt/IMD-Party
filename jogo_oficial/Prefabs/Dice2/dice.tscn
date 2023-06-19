@@ -40,10 +40,7 @@ func update_symbol() -> void:
 	symbol.set_symbol(rolled_number)
 
 
-func _unhandled_input(event) -> void:
-	if event.is_action_pressed(\"dice_roll\"):
-		# warning-ignore:return_value_discarded
-		roll()
+
 "
 
 [sub_resource type="GDScript" id="1"]

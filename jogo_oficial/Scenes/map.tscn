@@ -1,15 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://b11yvrve6l2ke"]
+[gd_scene load_steps=18 format=3 uid="uid://b11yvrve6l2ke"]
 
 [ext_resource type="Script" path="res://jogo_oficial/Scripts/mapScript.gd" id="1_6c7p0"]
 [ext_resource type="Texture2D" uid="uid://tuijje4d6nw4" path="res://jogo_oficial/Assets/Kenney-Urban-Pack/Tiles/tile_0442 - Copia.png" id="2_miluf"]
 [ext_resource type="Texture2D" uid="uid://c3vdt3eny2hmh" path="res://jogo_oficial/Assets/Kenney-Urban-Pack/Tilemap/tilemap.png" id="3_3n7nk"]
 [ext_resource type="PackedScene" uid="uid://dt6l5474s7d6c" path="res://testes/prefabs/turn_queue.tscn" id="4_cyoeg"]
 [ext_resource type="Script" path="res://jogo_oficial/Scripts/turnQueueScript.gd" id="5_notne"]
+[ext_resource type="Texture2D" uid="uid://cyjejlcdwp0g1" path="res://jogo_oficial/Assets/Items/diploma.png" id="6_bkkbp"]
 [ext_resource type="Script" path="res://jogo_oficial/Scripts/playersScript.gd" id="6_gi2pn"]
 [ext_resource type="PackedScene" uid="uid://bqqker8jx7f0v" path="res://testes/prefabs/get_locations.tscn" id="6_ih8ms"]
-[ext_resource type="Texture2D" uid="uid://e8o3yc5bingb" path="res://jogo_oficial/Assets/Kenney-Urban-Pack/Tiles/tile_0221.png" id="7_8lldu"]
 [ext_resource type="PackedScene" uid="uid://c7o83ekki4or0" path="res://jogo_oficial/Prefabs/Dice2/dice.tscn" id="7_uh72t"]
 [ext_resource type="Script" path="res://jogo_oficial/Scripts/getLocationsScript.gd" id="8_8nn57"]
+[ext_resource type="PackedScene" uid="uid://cex1gv16vq2qc" path="res://jogo_oficial/Scenes/compra_diploma.tscn" id="11_6xdl1"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_mbixf"]
 tile_data = PackedInt32Array(0, 327681, 16, 65536, 131073, 17, 131072, 131073, 17, 196608, 327681, 17, 1, 65537, 15, 65537, 655361, 16, 131073, 589825, 17, 196609, 65537, 17, 2, 393217, 16, 65538, 262145, 17, 131074, 262145, 17, 196610, 393217, 17)
@@ -514,6 +515,10 @@ sources/1 = SubResource("TileSetAtlasSource_8tg7v")
 sources/0 = SubResource("TileSetAtlasSource_q30dy")
 pattern_0 = SubResource("TileMapPattern_mbixf")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h5eyx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wmewy"]
+
 [node name="LevelTest" type="Node2D"]
 script = ExtResource("1_6c7p0")
 
@@ -546,7 +551,6 @@ layer_3/z_index = 0
 layer_3/tile_data = PackedInt32Array(65540, 655361, 4, 4, 655361, 3, 131076, 655361, 4, 196612, 720897, 14, 262148, 655361, 4, 327684, 655361, 4, 393220, 655361, 5, 393219, 589825, 5, 393218, 589825, 5, 393217, 589825, 5, 393216, 524289, 5, 458756, 655361, 4, 524292, 655361, 4, 589828, 655361, 4, 720900, 655361, 4, 786436, 655361, 4, 851972, 655361, 5, 851971, 589825, 5, 851970, 589825, 5, 851969, 589825, 5, 851968, 524289, 5, 655364, 720897, 14, 196634, 720897, 14, 655386, 720897, 14, 26, 524289, 3, 65562, 524289, 4, 131098, 524289, 4, 262170, 524289, 4, 327706, 524289, 4, 393242, 524289, 5, 458778, 524289, 4, 524314, 524289, 4, 589850, 524289, 4, 720922, 524289, 4, 786458, 524289, 4, 851994, 524289, 5, 917530, 524289, 4, 983066, 524289, 4, 1114138, 524289, 4, 1179674, 524289, 5, 851995, 589825, 5, 851996, 589825, 5, 851997, 589825, 5, 851998, 655361, 5, 393243, 589825, 5, 393245, 589825, 5, 393246, 655361, 5, 1048602, 720897, 14, 983041, 720897, 7, 983042, 786433, 8, 983043, 786433, 8, 983044, 851969, 8, 917505, 983041, 6, 851982, 65537, 8, 851983, 131073, 8, 851984, 196609, 8, 393234, 524289, 5, 851986, 524289, 5, 393235, 589825, 5, 851987, 589825, 5, 393236, 589825, 5, 851988, 589825, 5, 393237, 589825, 5, 851989, 589825, 5, 18, 524289, 3, 65554, 524289, 4, 131090, 524289, 4, 196626, 524289, 4, 262162, 524289, 4, 327698, 524289, 4, 458770, 524289, 4, 524306, 524289, 4, 589842, 524289, 4, 655378, 524289, 4, 720914, 524289, 4, 786450, 524289, 4, 22, 655361, 3, 65558, 655361, 4, 131094, 655361, 4, 196630, 720897, 14, 262166, 655361, 4, 327702, 655361, 4, 393238, 655361, 5, 458774, 655361, 4, 524310, 655361, 4, 589846, 655361, 4, 655382, 720897, 14, 720918, 655361, 4, 786454, 655361, 4, 851990, 655361, 5, 393225, 589825, 5, 851977, 983041, 10, 393226, 589825, 5, 851978, 589825, 5, 393227, 589825, 5, 851979, 983041, 10, 393228, 655361, 5, 851980, 655361, 5, 8, 524289, 3, 65544, 524289, 4, 131080, 524289, 4, 196616, 720897, 14, 262152, 524289, 4, 327688, 524289, 4, 393224, 524289, 5, 458760, 524289, 4, 524296, 524289, 4, 589832, 524289, 4, 655368, 720897, 14, 720904, 524289, 4, 786440, 524289, 4, 851976, 524289, 5, 12, 655361, 3, 65548, 655361, 4, 131084, 655361, 4, 196620, 655361, 4, 262156, 655361, 4, 327692, 655361, 4, 458764, 655361, 4, 524300, 655361, 4, 589836, 655361, 4, 655372, 655361, 4, 786444, 655361, 4, 720908, 655361, 4, 786448, 131073, 13, 589837, 851969, 10, 327697, 851969, 10, 65549, 851969, 10, 131086, 131073, 13, 458767, 131073, 12, 524302, 131073, 12, 393232, 131073, 12, 720911, 131073, 13, 655374, 131073, 13, 262160, 131073, 13, 196623, 131073, 13, 851981, 1, 8, 851985, 262145, 8, 393244, 589825, 5)
 
 [node name="camera" type="Camera2D" parent="."]
-visible = false
 position = Vector2(12, 279)
 zoom = Vector2(4, 4)
 
@@ -617,391 +621,488 @@ script = ExtResource("8_8nn57")
 
 [node name="loc1" type="Sprite2D" parent="GetLocations"]
 position = Vector2(24, 280)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc2" type="Sprite2D" parent="GetLocations"]
 position = Vector2(40, 280)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc3" type="Sprite2D" parent="GetLocations"]
 position = Vector2(56, 280)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc4" type="Sprite2D" parent="GetLocations"]
 position = Vector2(72, 280)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc5" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 280)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc6" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 264)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc7" type="Sprite2D" parent="GetLocations"]
 position = Vector2(104, 264)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc8" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 264)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc9" type="Sprite2D" parent="GetLocations"]
 position = Vector2(136, 264)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc10" type="Sprite2D" parent="GetLocations"]
 position = Vector2(152, 264)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc11" type="Sprite2D" parent="GetLocations"]
 position = Vector2(168, 264)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc12" type="Sprite2D" parent="GetLocations"]
 position = Vector2(184, 264)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc13" type="Sprite2D" parent="GetLocations"]
 position = Vector2(200, 264)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc14" type="Sprite2D" parent="GetLocations"]
 position = Vector2(216, 264)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc15" type="Sprite2D" parent="GetLocations"]
 position = Vector2(232, 264)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc16" type="Sprite2D" parent="GetLocations"]
 position = Vector2(248, 264)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc17" type="Sprite2D" parent="GetLocations"]
 position = Vector2(264, 264)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc18" type="Sprite2D" parent="GetLocations"]
 position = Vector2(280, 264)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc19" type="Sprite2D" parent="GetLocations"]
 position = Vector2(296, 264)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc20" type="Sprite2D" parent="GetLocations"]
 position = Vector2(312, 264)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc21" type="Sprite2D" parent="GetLocations"]
 position = Vector2(328, 264)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc22" type="Sprite2D" parent="GetLocations"]
 position = Vector2(344, 264)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc23" type="Sprite2D" parent="GetLocations"]
 position = Vector2(360, 264)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc24" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 264)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc25" type="Sprite2D" parent="GetLocations"]
 position = Vector2(392, 264)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc26" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 264)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc27" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 248)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc28" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 232)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc29" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 216)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc30" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 200)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc31" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 184)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc32" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 168)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc33" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 152)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc34" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 136)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc35" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 120)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc36" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 104)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc37" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 88)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc38" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 72)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc39" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 56)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc40" type="Sprite2D" parent="GetLocations"]
 position = Vector2(408, 40)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc41" type="Sprite2D" parent="GetLocations"]
 position = Vector2(392, 24)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc42" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 40)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc43" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 56)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc44" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 72)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc45" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 88)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc46" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 104)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc47" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 120)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc48" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 136)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc49" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 152)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc50" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 168)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc51" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 184)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc52" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 200)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc53" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 216)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc54" type="Sprite2D" parent="GetLocations"]
 position = Vector2(376, 232)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc55" type="Sprite2D" parent="GetLocations"]
 position = Vector2(360, 232)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc56" type="Sprite2D" parent="GetLocations"]
 position = Vector2(344, 232)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc57" type="Sprite2D" parent="GetLocations"]
 position = Vector2(328, 232)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc58" type="Sprite2D" parent="GetLocations"]
 position = Vector2(312, 232)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc59" type="Sprite2D" parent="GetLocations"]
 position = Vector2(296, 232)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc60" type="Sprite2D" parent="GetLocations"]
 position = Vector2(280, 232)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc61" type="Sprite2D" parent="GetLocations"]
 position = Vector2(264, 232)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc62" type="Sprite2D" parent="GetLocations"]
 position = Vector2(248, 232)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc63" type="Sprite2D" parent="GetLocations"]
 position = Vector2(232, 232)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc64" type="Sprite2D" parent="GetLocations"]
 position = Vector2(216, 232)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc65" type="Sprite2D" parent="GetLocations"]
 position = Vector2(200, 232)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc66" type="Sprite2D" parent="GetLocations"]
 position = Vector2(184, 232)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc67" type="Sprite2D" parent="GetLocations"]
 position = Vector2(168, 232)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc68" type="Sprite2D" parent="GetLocations"]
 position = Vector2(152, 232)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc69" type="Sprite2D" parent="GetLocations"]
 position = Vector2(136, 232)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc70" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 232)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc71" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 216)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc72" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 200)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc73" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 184)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc74" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 168)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc75" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 152)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc76" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 136)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc77" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 120)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc78" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 104)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc79" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 88)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc80" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 72)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc81" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 56)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc82" type="Sprite2D" parent="GetLocations"]
 position = Vector2(120, 40)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc83" type="Sprite2D" parent="GetLocations"]
 position = Vector2(104, 24)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc84" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 40)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc85" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 56)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc86" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 72)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc87" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 88)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc88" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 104)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc89" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 120)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc90" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 136)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc91" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 152)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc92" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 168)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc93" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 184)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc94" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 200)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc95" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 216)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc96" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 232)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="loc97" type="Sprite2D" parent="GetLocations"]
 position = Vector2(88, 248)
-texture = ExtResource("7_8lldu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_bkkbp")
 
 [node name="TurnQueue" parent="." instance=ExtResource("4_cyoeg")]
 script = ExtResource("5_notne")
@@ -1011,22 +1112,46 @@ position = Vector2(10, 275)
 script = ExtResource("6_gi2pn")
 
 [node name="camera" type="Camera2D" parent="TurnQueue/player_table1"]
+zoom = Vector2(1.5, 1.5)
 
 [node name="dice" parent="TurnQueue/player_table1" instance=ExtResource("7_uh72t")]
 visible = false
-position = Vector2(20, -28)
+position = Vector2(-91, 44)
+
+[node name="compraDiploma" parent="TurnQueue/player_table1" instance=ExtResource("11_6xdl1")]
+visible = false
+visibility_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TurnQueue/player_table1"]
+visible = false
+shape = SubResource("CapsuleShape2D_h5eyx")
+disabled = true
 
 [node name="player_table2" type="CharacterBody2D" parent="TurnQueue"]
 position = Vector2(10, 289)
 script = ExtResource("6_gi2pn")
 
 [node name="camera" type="Camera2D" parent="TurnQueue/player_table2"]
+zoom = Vector2(1.5, 1.5)
 
 [node name="dice" parent="TurnQueue/player_table2" instance=ExtResource("7_uh72t")]
 visible = false
-position = Vector2(-20, -28)
+position = Vector2(92, 32)
+
+[node name="compraDiploma" parent="TurnQueue/player_table2" instance=ExtResource("11_6xdl1")]
+visible = false
+visibility_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TurnQueue/player_table2"]
+visible = false
+shape = SubResource("CapsuleShape2D_wmewy")
+disabled = true
 
 [connection signal="continue_turns" from="." to="TurnQueue" method="_on_level_continue_turns"]
 [connection signal="player_finished_turn" from="TurnQueue" to="." method="_on_turn_queue_player_finished_turn"]
 [connection signal="reached_star" from="TurnQueue/player_table1" to="." method="_on_player1_reached_star"]
+[connection signal="buy" from="TurnQueue/player_table1/compraDiploma" to="TurnQueue/player_table1" method="_on_compra_diploma_buy"]
+[connection signal="end_buy_turn" from="TurnQueue/player_table1/compraDiploma" to="TurnQueue/player_table1" method="_on_compra_diploma_end_buy_turn"]
 [connection signal="reached_star" from="TurnQueue/player_table2" to="." method="_on_player2_reached_star"]
+[connection signal="buy" from="TurnQueue/player_table2/compraDiploma" to="TurnQueue/player_table2" method="_on_compra_diploma_buy"]
+[connection signal="end_buy_turn" from="TurnQueue/player_table2/compraDiploma" to="TurnQueue/player_table2" method="_on_compra_diploma_end_buy_turn"]

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=4 format=3 uid="uid://cfglpho7i4h7d"]
+[gd_resource type="Resource" script_class="Perguntas" load_steps=4 format=3 uid="uid://cfglpho7i4h7d"]
 
 [ext_resource type="Resource" uid="uid://blgwsglav13eg" path="res://jogo_oficial/Resource/questions/teste.tres" id="1_gnigh"]
 [ext_resource type="Resource" uid="uid://bspg43431wfk2" path="res://jogo_oficial/Resource/questions/teste2.tres" id="2_i5oft"]
