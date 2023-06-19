@@ -6,6 +6,8 @@ extends Node2D
 @onready var turnqueue := $TurnQueue as Node2D
 @onready var player1 := $TurnQueue/player_table1 as CharacterBody2D
 @onready var player2 := $TurnQueue/player_table2 as CharacterBody2D
+@onready var score1 = $TurnQueue/player_table1/score
+@onready var score2 = $TurnQueue/player_table2/score
 @onready var global = get_node("/root/Global")
 
 # Variables
@@ -20,6 +22,11 @@ func _ready():
 	# Inicializa as animações dos players
 	player1.initialize_animation(1)
 	player2.initialize_animation(2)
+	
+	# Inicializa os scores
+	score1.initialize(1)
+	score2.initialize(2)
+	
 	
 	if(!global.loc_inicializado):
 		# Inicializa os locais pela primeira vez, junto com a casa de diploma

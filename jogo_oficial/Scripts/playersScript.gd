@@ -45,26 +45,23 @@ func play_turn():
 	camera.make_current()
 	score.visible = true
 	
-	# TODO: Fazer o dado aparecer
+	# Faz o dado aparecer
 	print("Rode o dado!!!")
 	dice.visible = true
 
 	# Espere o jogador rolar o dado
 	await press_enter
 	
+	# Roda o dado ANIMADO
 	dice.roll()
-	
 	await get_tree().create_timer(0.4).timeout
-	
-	# TODO: Fazer o dado mostrar o numero sorteado
-	
 	var n_dice = dice.get_rolled_number()
 	print("numero sorteado: ", n_dice)
 	
 	await get_tree().create_timer(1).timeout
 	
 	dice.visible = false
-	await move(n_dice)
+	await move(26)
 		
 	animation.play("Idle")
 	
@@ -139,20 +136,31 @@ func move_to_location(location):
 # Função chamada quando um jogador passa por uma casa de diploma
 func process_star():
 	if moedas_obrigatorias >= global.star_price.ob and moedas_optativas >= global.star_price.ob:
-		print("Voce quer comprar um diploma???")
+		#print("Voce quer comprar um diploma???")
 		diploma.visible = true
 		animation.visible = false
+		# Espera receber input do player escolhendo comprar ou nao a estrela
 		await endBuyTurn
-		animation.visible = true		
-		# TODO: Receber input para o player poder escolher comprar ou nao a estrela
+		animation.visible = true
 		if comprar:
 			moedas_obrigatorias -= global.star_price.ob
 			moedas_optativas -= global.star_price.ob
 			n_diplomas += 1
+			
+			# Atualiza as informacoes no global
+			if curr_player == 1:
+				Global.infoPlayer1.diplomas = n_diplomas
+				Global.infoPlayer1.ob_coins = moedas_obrigatorias
+				Global.infoPlayer1.opt_coins = moedas_optativas
+			else:
+				Global.infoPlayer2.diplomas = n_diplomas
+				Global.infoPlayer2.ob_coins = moedas_obrigatorias
+				Global.infoPlayer2.opt_coins = moedas_optativas
+				
 			comprar = false
-		print("Aeeee comprou o diploma!!!")
-	else:
-		print("Sem moedas o suficiente :(")
+		#print("Aeeee comprou o diploma!!!")
+	#else:
+		#print("Sem moedas o suficiente :(")
 	
 	reached_star.emit()
 
@@ -162,9 +170,16 @@ func process_class():
 	salaDeAula.visible = true
 	animation.visible = false
 	moedas_optativas += await salaDeAula.processClass(curr_player)
+	
+	# Atualiza as informacoes no global
+	if curr_player == 1:
+		Global.infoPlayer1.opt_coins = moedas_optativas
+	else:
+		Global.infoPlayer2.opt_coins = moedas_optativas
+	
 	animation.visible = true
-	
-	
+	# Espera um teco
+	await get_tree().create_timer(1).timeout
 
 
 func _on_compra_diploma_buy():

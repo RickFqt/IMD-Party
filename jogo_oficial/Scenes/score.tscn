@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1hxn8ymqcnpr"]
+[gd_scene load_steps=5 format=3 uid="uid://b1hxn8ymqcnpr"]
 
+[ext_resource type="Script" path="res://jogo_oficial/Scripts/score.gd" id="1_qgg14"]
 [ext_resource type="Texture2D" uid="uid://78h8eshvrfwb" path="res://jogo_oficial/Assets/Items/resultAPge.png" id="1_s1ehy"]
 [ext_resource type="FontFile" uid="uid://y3w3pfsp0bab" path="res://jogo_oficial/Assets/at01.ttf" id="1_u7f6a"]
 [ext_resource type="Texture2D" uid="uid://cag0c1kcifjrx" path="res://jogo_oficial/Assets/Items/items - imd_party.png" id="2_yjuf7"]
@@ -13,6 +14,7 @@ offset_right = -272.0
 offset_bottom = -124.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qgg14")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
