@@ -208,4 +208,4 @@ theme_override_fonts/font = ExtResource("3_fntfg")
 text = "Enter"
 flat = true
 
-[connection signal="continueToScene" from="Label" to="." method="_on_continue_to_scene"]
+[connection signal="continueToScene" from="Label" to="." method="_on_continue_to_scene" flags=18]
