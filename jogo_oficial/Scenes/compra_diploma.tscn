@@ -35,12 +35,58 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_j4vfs")
 text = "Comprar diploma?"
 
+[node name="priceObCoin" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.439
+anchor_top = 0.232
+anchor_right = 0.439
+anchor_bottom = 0.232
+offset_left = -34.8768
+offset_top = 28.496
+offset_right = -22.8768
+offset_bottom = 41.496
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_j4vfs")
+theme_override_font_sizes/font_size = 11
+text = "-3"
+
+[node name="priceOptCoin" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.439
+anchor_top = 0.232
+anchor_right = 0.439
+anchor_bottom = 0.232
+offset_left = -18.8768
+offset_top = 28.496
+offset_right = -6.87681
+offset_bottom = 41.496
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_j4vfs")
+theme_override_font_sizes/font_size = 11
+text = "-3"
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(88, 42)
 scale = Vector2(0.851351, 0.846154)
 texture = ExtResource("3_tnwjn")
 region_enabled = true
 region_rect = Rect2(2.82316, 67.0277, 37.3667, 26.3595)
+
+[node name="opt_coin" type="Sprite2D" parent="."]
+position = Vector2(74.2162, 56)
+scale = Vector2(0.425676, 0.423077)
+texture = ExtResource("3_tnwjn")
+region_enabled = true
+region_rect = Rect2(29.7961, 25.2755, 18.912, 19.3908)
+
+[node name="ob_coin" type="Sprite2D" parent="."]
+position = Vector2(58.2162, 56)
+scale = Vector2(0.425676, 0.423077)
+texture = ExtResource("3_tnwjn")
+region_enabled = true
+region_rect = Rect2(56.464, 25.2227, 19.1514, 19.1514)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0

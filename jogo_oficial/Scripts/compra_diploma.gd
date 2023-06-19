@@ -4,6 +4,10 @@ extends TextureRect
 signal end_buy_turn
 signal buy
 
+func _ready():
+	$priceObCoin.text = "-" + str(Global.star_price.ob)
+	$priceOptCoin.text = "-" + str(Global.star_price.opt)
+
 func _input(event):
 	if event is InputEventKey:
 		if event.is_action_pressed("key_1"):
